@@ -1,21 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Check, Shield, Lightbulb, Users, Heart, Target, Scale, Recycle, ArrowRight } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Check, Shield, Lightbulb, Users, Heart, Target, Scale, Recycle, ArrowRight, Flag, ShieldCheck, FolderGit2, Code, Network, Wrench, Lock, BadgeCheck, Users2, Megaphone } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 
 const orgStructure = [
-    { title: "1. Direction Générale", description: "Définit la vision stratégique et assure le leadership global de l'entreprise." },
-    { title: "2. Direction des Systèmes d'Information", description: "Supervise l'infrastructure technologique et la sécurité des données." },
-    { title: "3. Gestion de Projet", description: "Planifie, exécute et livre les projets clients avec succès." },
-    { title: "4. Développement et Ingénierie", description: "Conçoit et développe des solutions logicielles innovantes et sur mesure." },
-    { title: "5. Infrastructure et Réseaux", description: "Gère et maintient la robustesse et la performance de l'infrastructure." },
-    { title: "6. Support et Maintenance", description: "Fournit une assistance technique et assure la continuité des services." },
-    { title: "7. Sécurité Informatique", description: "Protège les actifs numériques de l'entreprise et de ses clients." },
-    { title: "8. Qualité et Assurance", description: "Garantit que les produits et services respectent les plus hauts standards." },
-    { title: "9. Ressources Humaines et Formation", description: "Attire, développe et retient les meilleurs talents de l'industrie." },
-    { title: "10. Marketing et Ventes", description: "Promeut nos solutions et construit des relations durables avec nos clients." },
+    { title: "Direction Générale", description: "Définit la vision stratégique et assure le leadership global de l'entreprise.", icon: Flag },
+    { title: "Systèmes d'Information", description: "Supervise l'infrastructure technologique et la sécurité des données.", icon: ShieldCheck },
+    { title: "Gestion de Projet", description: "Planifie, exécute et livre les projets clients avec succès.", icon: FolderGit2 },
+    { title: "Développement", description: "Conçoit et développe des solutions logicielles innovantes et sur mesure.", icon: Code },
+    { title: "Infrastructure", description: "Gère et maintient la robustesse et la performance de l'infrastructure.", icon: Network },
+    { title: "Support et Maintenance", description: "Fournit une assistance technique et assure la continuité des services.", icon: Wrench },
+    { title: "Sécurité Informatique", description: "Protège les actifs numériques de l'entreprise et de ses clients.", icon: Lock },
+    { title: "Qualité et Assurance", description: "Garantit que les produits et services respectent les plus hauts standards.", icon: BadgeCheck },
+    { title: "Ressources Humaines", description: "Attire, développe et retient les meilleurs talents de l'industrie.", icon: Users2 },
+    { title: "Marketing et Ventes", description: "Promeut nos solutions et construit des relations durables avec nos clients.", icon: Megaphone },
 ];
 
 
@@ -194,12 +194,19 @@ export default function AProposPage() {
               Une organisation claire et efficace au service de nos ambitions et de la réussite de vos projets.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {orgStructure.map((item) => (
-              <div key={item.title}>
-                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
-              </div>
+              <Card key={item.title} className="text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                 <CardHeader className="items-center">
+                    <div className="bg-primary/10 p-4 rounded-full">
+                       <item.icon className="h-8 w-8 text-primary" />
+                    </div>
+                 </CardHeader>
+                 <CardContent>
+                    <CardTitle className="text-lg">{item.title}</CardTitle>
+                    <p className="text-muted-foreground text-sm mt-2">{item.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

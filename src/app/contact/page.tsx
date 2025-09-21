@@ -81,6 +81,28 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-20 lg:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight">Nous trouver</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Venez nous rendre visite à notre bureau parisien.
+            </p>
+          </div>
+          <div className="rounded-lg overflow-hidden shadow-xl">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.991625693158!2d2.349014915674398!3d48.85837007928751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

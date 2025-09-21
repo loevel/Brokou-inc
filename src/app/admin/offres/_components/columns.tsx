@@ -69,5 +69,7 @@ export const columns: ColumnDef<JobOffer>[] = [
       const offer = row.original;
       return <ActionsCell offer={offer} />;
     },
+    enableSorting: false,
+    enableHiding: false,
   },
 ];

@@ -64,5 +64,7 @@ export const columns: ColumnDef<Service>[] = [
       const service = row.original;
       return <ActionsCell service={service} />;
     },
+    enableSorting: false,
+    enableHiding: false,
   },
 ];

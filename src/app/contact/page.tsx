@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 
 export const metadata = {
-  title: "Contact - Brokou Hub",
+  title: "Contact - BROKOU INC",
   description: "Contactez-nous pour toute question ou pour démarrer un projet. Nous sommes là pour vous aider.",
 };
 

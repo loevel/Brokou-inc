@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: ServiceDetailPageProps) {
     return { title: "Service non trouvé" };
   }
   return {
-    title: `${service.name} - Brokou Hub`,
+    title: `${service.name} - BROKOU INC`,
     description: service.description_short,
   };
 }

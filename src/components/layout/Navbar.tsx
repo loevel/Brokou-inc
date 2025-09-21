@@ -42,7 +42,7 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
           <Briefcase className="h-6 w-6 text-primary" />
-          <span>Brokou Hub</span>
+          <span>BROKOU INC</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -66,7 +66,7 @@ export function Navbar() {
               <div className="flex justify-between items-center mb-8">
                  <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsOpen(false)}>
                     <Briefcase className="h-6 w-6 text-primary" />
-                    <span>Brokou Hub</span>
+                    <span>BROKOU INC</span>
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                     <X />

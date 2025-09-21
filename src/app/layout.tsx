@@ -5,7 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Brokou Hub",
+  title: "BROKOU INC",
   description: "Site vitrine de BROKOU INC",
 };
 

@@ -4,7 +4,7 @@ import { jobOffers } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 
 export const metadata = {
-  title: "Carrières - Brokou Hub",
+  title: "Carrières - BROKOU INC",
   description: "Rejoignez notre équipe d'innovateurs et façonnez l'avenir du numérique. Découvrez nos offres d'emploi actuelles.",
 };
 

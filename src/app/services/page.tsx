@@ -4,7 +4,7 @@ import { services } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 
 export const metadata = {
-  title: "Nos Services - Brokou Hub",
+  title: "Nos Services - BROKOU INC",
   description: "Découvrez la gamme complète de services que Brokou Inc. propose pour accompagner votre transformation numérique.",
 };
 

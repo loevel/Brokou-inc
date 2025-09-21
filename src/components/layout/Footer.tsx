@@ -11,7 +11,7 @@ export function Footer() {
           <div className="flex flex-col">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-4">
               <Briefcase className="h-7 w-7 text-primary" />
-              <span>Brokou Hub</span>
+              <span>BROKOU INC</span>
             </Link>
             <p className="text-muted-foreground max-w-xs">
               Solutions innovantes pour un monde en pleine transformation numérique.

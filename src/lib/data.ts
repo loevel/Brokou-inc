@@ -46,7 +46,7 @@ export const services: Service[] = [
     iconName: "Megaphone",
     icon: Megaphone,
     description_short: "Augmentez votre visibilité et engagez votre audience cible.",
-    description_long: "Nos stratégies de marketing digital sont conçues pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
+    description_long: "Nos stratégies de marketing digital sont conçées pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
     imageId: "service-marketing"
   },
   {
@@ -78,6 +78,29 @@ export const jobOffers: JobOffer[] = [
     location: "Paris, France",
     type: "Temps plein",
     description: "Nous recherchons un développeur Full-Stack expérimenté pour rejoindre notre équipe d'innovation. Vous travaillerez sur des projets stimulants, de la conception à la mise en production. Maîtrise de React, Node.js et des bases de données SQL/NoSQL requise. Expérience avec les services cloud (AWS, Azure) est un plus.",
+    mode: "Présentiel",
+    validityDate: "2025-10-31",
+    introduction: "Nous recherchons un développeur Full-Stack expérimenté pour rejoindre notre équipe d'innovation.",
+    activities: [
+      "Concevoir, développer et maintenir des applications web et mobiles.",
+      "Collaborer avec les équipes produit et design pour créer des expériences utilisateur exceptionnelles.",
+      "Participer à l'architecture et aux choix technologiques.",
+      "Assurer la qualité du code via des tests et des revues de code."
+    ],
+    deliverables: [
+      "Applications web et mobiles fonctionnelles et performantes.",
+      "Documentation technique.",
+      "Code testé et maintenable."
+    ],
+    requirements: [
+      "Maîtrise de React, Node.js et des bases de données SQL/NoSQL.",
+      "Expérience avec les services cloud (AWS, Azure) est un plus.",
+      "Minimum 5 ans d'expérience en développement logiciel."
+    ],
+    remuneration: "À négocier",
+    status: "Permanent",
+    startDate: "Dès que possible",
+    socialBenefits: true
   },
   {
     id: "chef-projet",
@@ -85,13 +108,59 @@ export const jobOffers: JobOffer[] = [
     location: "Lyon, France",
     type: "Temps plein",
     description: "En tant que Chef de Projet Technique, vous serez responsable de la planification, de l'exécution et de la livraison de nos projets de développement logiciel. Vous coordonnerez les équipes, gérerez les budgets et communiquerez avec les parties prenantes. Forte expérience en gestion de projet Agile/Scrum nécessaire.",
+    mode: "Hybride",
+    validityDate: "2025-11-15",
+    introduction: "Nous cherchons un Chef de Projet Technique pour piloter nos projets innovants.",
+    activities: [
+      "Planifier et suivre les projets de A à Z.",
+      "Gérer les ressources et les budgets.",
+      "Communiquer avec les parties prenantes.",
+      "Assurer le respect des délais et de la qualité."
+    ],
+    deliverables: [
+      "Projets livrés à temps et dans le budget.",
+      "Rapports de suivi de projet.",
+      "Satisfaction client."
+    ],
+    requirements: [
+      "Forte expérience en gestion de projet Agile/Scrum.",
+      "Excellentes compétences en communication.",
+      "Background technique en développement logiciel."
+    ],
+    remuneration: "Selon profil",
+    status: "Permanent",
+    startDate: "Dès que possible",
+    socialBenefits: true
   },
   {
-    id: "expert-data",
+    id: "data-scientist",
     title: "Data Scientist",
     location: "Télétravail",
     type: "Contrat",
     description: "Rejoignez notre équipe data pour transformer des ensembles de données complexes en informations stratégiques. Vous développerez des modèles prédictifs, effectuerez des analyses statistiques et créerez des visualisations percutantes. Maîtrise de Python (Pandas, Scikit-learn) et des outils de BI (Tableau, Power BI) indispensable.",
+    mode: "Télétravail",
+    validityDate: "2025-12-01",
+    introduction: "Nous recrutons un Data Scientist pour renforcer notre pôle d'analyse de données.",
+    activities: [
+      "Analyser de grands ensembles de données pour en extraire des insights.",
+      "Construire et déployer des modèles de machine learning.",
+      "Créer des tableaux de bord et des visualisations de données.",
+      "Communiquer les résultats aux équipes métier."
+    ],
+    deliverables: [
+      "Modèles prédictifs et analyses statistiques.",
+      "Tableaux de bord interactifs.",
+      "Rapports d'analyse."
+    ],
+    requirements: [
+      "Maîtrise de Python (Pandas, Scikit-learn).",
+      "Expérience avec des outils de BI (Tableau, Power BI).",
+      "Solide compréhension des algorithmes de machine learning."
+    ],
+    remuneration: "TJM à définir",
+    status: "Contrat 12 mois",
+    startDate: "Janvier 2025",
+    socialBenefits: false
   },
   {
     id: "designer-ux-ui",
@@ -99,8 +168,32 @@ export const jobOffers: JobOffer[] = [
     location: "Paris, France",
     type: "Temps partiel",
     description: "Nous cherchons un designer talentueux pour créer des expériences utilisateur intuitives et esthétiques pour nos applications web et mobiles. Vous mènerez des recherches utilisateurs, créerez des wireframes et des prototypes, et collaborerez étroitement avec les développeurs. Portfolio requis.",
+    mode: "Présentiel",
+    validityDate: "2025-10-20",
+    introduction: "Nous sommes à la recherche d'un designer UX/UI pour améliorer l'expérience de nos utilisateurs.",
+    activities: [
+      "Mener des recherches utilisateurs et des tests d'utilisabilité.",
+      "Créer des wireframes, mockups et prototypes interactifs.",
+      "Définir et maintenir un design system.",
+      "Collaborer avec les développeurs pour assurer l'intégration fidèle des maquettes."
+    ],
+    deliverables: [
+      "Parcours utilisateurs optimisés.",
+      "Maquettes haute-fidélité.",
+      "Prototypes interactifs."
+    ],
+    requirements: [
+      "Portfolio démontrant une forte expertise en UX/UI.",
+      "Maîtrise des outils de design (Figma, Sketch, etc.).",
+      "Expérience en design d'applications web et mobiles."
+    ],
+    remuneration: "À discuter",
+    status: "Temps partiel (20h/semaine)",
+    startDate: "Novembre 2024",
+    socialBenefits: true
   },
 ];
+
 
 export function getIcon(name: string): React.FC<LucideProps> {
     return iconMap[name] || Lightbulb;

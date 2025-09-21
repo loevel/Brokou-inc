@@ -16,4 +16,14 @@ export type JobOffer = {
   location: string;
   type: "Temps plein" | "Temps partiel" | "Contrat";
   description: string;
+  mode: string;
+  validityDate: string;
+  introduction: string;
+  activities: string[];
+  deliverables: string[];
+  requirements: string[];
+  remuneration: string;
+  status: string;
+  startDate: string;
+  socialBenefits: boolean;
 };

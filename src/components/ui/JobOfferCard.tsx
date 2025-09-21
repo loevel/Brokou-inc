@@ -2,6 +2,7 @@
 
 import { useState, useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
+import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
@@ -99,7 +100,9 @@ export function JobOfferCard({ offer }: JobOfferCardProps) {
         <form action={formAction}>
           <SummaryButton />
         </form>
-        <Button>Postuler</Button>
+        <Button asChild>
+          <Link href={`/carrieres/${offer.id}`}>Postuler</Link>
+        </Button>
       </CardFooter>
     </Card>
   );

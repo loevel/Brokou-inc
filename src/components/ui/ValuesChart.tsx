@@ -2,23 +2,36 @@
 
 import * as React from "react";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { Scale, Recycle, Users, Share, LucideProps } from "lucide-react";
 
 interface ValueData {
   name: string;
   description: string;
   color: string;
+  iconName: string;
 }
 
 interface ValuesChartProps {
   data: ValueData[];
 }
 
+const iconMap: { [key: string]: React.FC<LucideProps> } = {
+    Scale,
+    Recycle,
+    Users,
+    Share,
+};
+
 const ChartTooltipContent = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
+    const Icon = iconMap[data.iconName];
     return (
       <div className="rounded-lg border bg-background p-4 shadow-lg max-w-xs">
-        <h4 className="font-bold text-lg mb-2" style={{ color: data.color }}>{data.name}</h4>
+        <div className="flex items-center mb-2">
+            {Icon && <Icon className="h-6 w-6 mr-3" style={{ color: data.color }} />}
+            <h4 className="font-bold text-lg" style={{ color: data.color }}>{data.name}</h4>
+        </div>
         <p className="text-sm text-muted-foreground">{data.description}</p>
       </div>
     );
@@ -54,3 +67,5 @@ export function ValuesChart({ data }: ValuesChartProps) {
     </ResponsiveContainer>
   );
 }
+
+    

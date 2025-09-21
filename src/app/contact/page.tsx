@@ -51,7 +51,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                         <h3 className="text-lg font-semibold">Notre Bureau</h3>
-                        <p className="text-muted-foreground">123 Rue de l'Innovation, 75001 Paris, France</p>
+                        <p className="text-muted-foreground">3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada</p>
                     </div>
                  </div>
                  <div className="flex items-start gap-4">
@@ -87,12 +87,12 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight">Nous trouver</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Venez nous rendre visite à notre bureau parisien.
+              Venez nous rendre visite à notre bureau.
             </p>
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.991625693158!2d2.349014915674398!3d48.85837007928751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis%2C%20France!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.589953938551!2d-73.43577768444432!3d45.41913197910003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc905803423b705%3A0x1d1f0c5b3b1be4!2s3755%20Boulevard%20Matte%20E%2C%20Brossard%2C%20QC%20J4Y%202P4%2C%20Canada!5e0!3m2!1sen!2sus"
               width="100%"
               height="450"
               style={{ border: 0 }}

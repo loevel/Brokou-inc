@@ -34,7 +34,7 @@ export function Footer() {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span>123 Rue de l'Innovation, 75001 Paris</span>
+                <span>3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary" />

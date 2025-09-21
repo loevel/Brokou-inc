@@ -1,12 +1,9 @@
 "use client";
 
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { cn } from '@/lib/utils';
 import type { LucideIcon } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface ClockItem {
   title: string;
@@ -20,97 +17,64 @@ interface OrganizationalClockProps {
 
 export function OrganizationalClock({ items }: OrganizationalClockProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const sectionsRef = useRef<HTMLDivElement[]>([]);
-  const clockRef = useRef<HTMLDivElement>(null);
   const handRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const detailsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const numItems = items.length;
   const angleStep = 360 / numItems;
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const sections = sectionsRef.current;
-      const hand = handRef.current;
-      const clockItems = itemsRef.current;
+  useEffect(() => {
+    if (!handRef.current) return;
 
-      // Pin the container
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: `+=${items.length * 100}%`,
-          pin: true,
-          scrub: true,
-        },
-      });
+    const rotation = activeIndex * angleStep;
 
-      // Animate clock hand and highlight active item
-      items.forEach((item, index) => {
-        // Rotate hand
-        timeline.to(hand, {
-            rotation: index * angleStep,
-            duration: 1,
-            ease: 'none',
-        }, `step-${index}`);
-        
-        // Highlight clock item
-        timeline.to(clockItems[index], {
-            scale: 1.2,
-            color: 'hsl(var(--primary))',
-            duration: 0.5,
-        }, `step-${index}`);
+    gsap.to(handRef.current, {
+      rotation: rotation,
+      duration: 0.7,
+      ease: 'power3.inOut',
+    });
 
-        // Show description card
-        timeline.to(sections[index], {
-            opacity: 1,
-            duration: 0.5
-        }, `step-${index}`);
-        
-        if (index > 0) {
-            // Un-highlight previous clock item
-            timeline.to(clockItems[index - 1], {
-                scale: 1,
-                color: 'hsl(var(--muted-foreground))',
-                duration: 0.5,
-            }, `step-${index}`);
-            // Hide previous description card
-            timeline.to(sections[index - 1], {
-                opacity: 0,
-                duration: 0.5
-            }, `step-${index}`);
-        }
-        
-        // Add a pause
-        timeline.to({}, {duration: 2}, `step-${index}`);
-      });
+    itemsRef.current.forEach((itemEl, index) => {
+      if (itemEl) {
+        gsap.to(itemEl, {
+          scale: index === activeIndex ? 1.2 : 1,
+          color: index === activeIndex ? 'hsl(var(--primary))' : 'hsl(var(--muted-foreground))',
+          duration: 0.5,
+          ease: 'power2.out',
+        });
+      }
+    });
 
-      // Handle the last item fade out
-      timeline.to(clockItems[items.length - 1], {
-        scale: 1,
-        color: 'hsl(var(--muted-foreground))',
-        duration: 0.5,
-      }, 'end');
-      timeline.to(sections[items.length - 1], {
-        opacity: 0,
-        duration: 0.5
-      }, 'end');
+    detailsRef.current.forEach((detailEl, index) => {
+      if (detailEl) {
+        gsap.to(detailEl, {
+          opacity: index === activeIndex ? 1 : 0,
+          y: index === activeIndex ? 0 : 20,
+          duration: 0.5,
+          ease: 'power2.out',
+          display: index === activeIndex ? 'block' : 'none',
+        });
+      }
+    });
+  }, [activeIndex, angleStep]);
 
-
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, [angleStep, items.length]);
+  const handleItemClick = (index: number) => {
+    setActiveIndex(index);
+  };
 
   return (
-    <div ref={containerRef} className="lg:grid lg:grid-cols-2 lg:gap-24 items-center h-screen">
+    <div ref={containerRef} className="lg:grid lg:grid-cols-2 lg:gap-24 items-center min-h-[70vh]">
       {/* Left Column: Descriptions */}
       <div className="relative h-64">
         {items.map((item, index) => (
           <div
             key={item.title}
-            ref={(el) => (sectionsRef.current[index] = el!)}
+            ref={(el) => (detailsRef.current[index] = el)}
             className="absolute inset-0 flex flex-col justify-center opacity-0"
+            style={{ display: index === activeIndex ? 'block' : 'none' }}
           >
             <div className="p-8 rounded-lg shadow-lg bg-card">
               <div className="flex items-center gap-4 mb-4">
@@ -126,7 +90,7 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
       </div>
 
       {/* Right Column: Clock */}
-      <div ref={clockRef} className="hidden lg:flex items-center justify-center h-screen">
+      <div className="hidden lg:flex items-center justify-center h-full">
         <div className="relative w-96 h-96 rounded-full border-4 border-primary/20 flex items-center justify-center">
             {/* Center dot */}
             <div className="absolute w-4 h-4 bg-primary rounded-full z-10"></div>
@@ -145,12 +109,13 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
                 <div
                   key={item.title}
                   ref={(el) => (itemsRef.current[index] = el)}
-                  className="absolute flex flex-col items-center text-center transition-transform duration-300 text-muted-foreground"
+                  className="absolute flex flex-col items-center text-center transition-transform duration-300 text-muted-foreground cursor-pointer"
                   style={{
                     left: `${x}%`,
                     top: `${y}%`,
                     transform: `translate(-50%, -50%)`,
                   }}
+                  onClick={() => handleItemClick(index)}
                 >
                     <div className="p-3 bg-card rounded-full border shadow-md">
                         <item.icon className="h-6 w-6" />

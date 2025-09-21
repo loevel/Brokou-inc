@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValuesChart } from "@/components/ui/ValuesChart";
 import { Scale, Recycle, Users, Share, ArrowRight, Flag, ShieldCheck, FolderGit2, Code, Network, Wrench, Lock, BadgeCheck, Users2, Megaphone, Target } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
-import { OrganizationalClock } from "@/components/ui/OrganizationalClock";
+import { OrganizationalStructure } from "@/components/ui/OrganizationalStructure";
 
 const orgStructure = [
     { title: "Direction Générale", description: "Définit la vision stratégique et assure le leadership global de l'entreprise.", icon: Flag },
@@ -177,15 +177,15 @@ export default function AProposPage() {
           </div>
       </section>
 
-      <section className="py-20 lg:py-24 bg-secondary overflow-x-hidden">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      <section className="py-20 lg:py-24 bg-secondary">
+        <div className="container mx-auto px-4 overflow-hidden">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Structure organisationnelle</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
               BROKOU INC. s'est dotée d'une structure organisationnelle permet une répartition claire des rôles et responsabilités, favorisant une gestion efficace des projets TI de toutes tailles.
             </p>
           </div>
-          <OrganizationalClock items={orgStructure} />
+          <OrganizationalStructure items={orgStructure} />
         </div>
       </section>
     </div>

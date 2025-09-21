@@ -23,9 +23,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
+import { Loader2, Lightbulb, Briefcase, BarChart, Megaphone, Code, Cloud, Users } from "lucide-react";
 import { useState } from "react";
 import type { Service } from "@/lib/types";
+import { getIcon } from "@/lib/data";
+
+const iconOptions = [
+    { value: "Lightbulb", label: "Idée & Stratégie", icon: Lightbulb },
+    { value: "Briefcase", label: "Affaires & Transformation", icon: Briefcase },
+    { value: "BarChart", label: "Données & Analyse", icon: BarChart },
+    { value: "Megaphone", label: "Marketing", icon: Megaphone },
+    { value: "Code", label: "Développement", icon: Code },
+    { value: "Cloud", label: "Cloud & Infrastructure", icon: Cloud },
+    { value: "Users", label: "Utilisateurs & RH", icon: Users },
+];
 
 const formSchema = z.object({
   name: z.string().min(3, {
@@ -112,13 +123,14 @@ export function AddServiceForm({ onServiceAdded }: AddServiceFormProps) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="Lightbulb">Lightbulb</SelectItem>
-                  <SelectItem value="Briefcase">Briefcase</SelectItem>
-                  <SelectItem value="BarChart">BarChart</SelectItem>
-                  <SelectItem value="Megaphone">Megaphone</SelectItem>
-                  <SelectItem value="Code">Code</SelectItem>
-                  <SelectItem value="Cloud">Cloud</SelectItem>
-                  <SelectItem value="Users">Users</SelectItem>
+                  {iconOptions.map(option => (
+                      <SelectItem key={option.value} value={option.value}>
+                          <div className="flex items-center gap-2">
+                              <option.icon className="h-4 w-4" />
+                              <span>{option.label}</span>
+                          </div>
+                      </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
               <FormMessage />

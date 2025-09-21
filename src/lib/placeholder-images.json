@@ -1,3 +1,76 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract background for hero section",
+      "imageUrl": "https://picsum.photos/seed/1/1920/1080",
+      "imageHint": "abstract background"
+    },
+    {
+      "id": "service-consulting",
+      "description": "Image for strategic consulting service",
+      "imageUrl": "https://picsum.photos/seed/2/600/400",
+      "imageHint": "business meeting"
+    },
+    {
+      "id": "service-digital",
+      "description": "Image for digital transformation service",
+      "imageUrl": "https://picsum.photos/seed/3/600/400",
+      "imageHint": "data network"
+    },
+    {
+      "id": "service-data",
+      "description": "Image for data analysis service",
+      "imageUrl": "https://picsum.photos/seed/4/600/400",
+      "imageHint": "dashboard chart"
+    },
+    {
+      "id": "service-marketing",
+      "description": "Image for marketing service",
+      "imageUrl": "https://picsum.photos/seed/5/600/400",
+      "imageHint": "marketing strategy"
+    },
+    {
+      "id": "service-dev",
+      "description": "Image for software development service",
+      "imageUrl": "https://picsum.photos/seed/6/600/400",
+      "imageHint": "coding screen"
+    },
+    {
+      "id": "service-cloud",
+      "description": "Image for cloud solutions service",
+      "imageUrl": "https://picsum.photos/seed/7/600/400",
+      "imageHint": "server room"
+    },
+    {
+      "id": "why-choose-us",
+      "description": "Image for the 'Why Choose Us' section",
+      "imageUrl": "https://picsum.photos/seed/8/800/600",
+      "imageHint": "team collaboration"
+    },
+    {
+      "id": "about-us-header",
+      "description": "Header image for the About Us page",
+      "imageUrl": "https://picsum.photos/seed/9/1600/600",
+      "imageHint": "modern office"
+    },
+    {
+      "id": "contact-header",
+      "description": "Header image for the Contact page",
+      "imageUrl": "https://picsum.photos/seed/10/1600/600",
+      "imageHint": "communication technology"
+    },
+    {
+      "id": "careers-header",
+      "description": "Header image for the Careers page",
+      "imageUrl": "https://picsum.photos/seed/11/1600/600",
+      "imageHint": "job opportunity"
+    },
+    {
+      "id": "services-header",
+      "description": "Header image for the Services page",
+      "imageUrl": "https://picsum.photos/seed/12/1600/600",
+      "imageHint": "business growth"
+    }
+  ]
 }

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -25,9 +27,7 @@ const formSchema = z.object({
   description: z.string().min(5, {
     message: "La description doit contenir au moins 5 caractères.",
   }),
-  imageUrl: z.string().url({
-    message: "Veuillez entrer une URL valide.",
-  }),
+  imageUrl: z.string().min(1, { message: "L'URL est requise." }),
   imageHint: z.string().min(2, {
     message: "L'indice AI doit contenir au moins 2 caractères.",
   }),
@@ -107,6 +107,9 @@ export function EditImageForm({ image, onImageUpdated }: EditImageFormProps) {
               <FormControl>
                 <Input placeholder="https://picsum.photos/seed/p1/60/60" {...field} />
               </FormControl>
+               <FormDescription>
+                Utilisez une URL complète (https://...) ou un chemin local vers le dossier `public` (ex: /images/clients/logo.svg).
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

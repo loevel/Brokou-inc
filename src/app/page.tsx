@@ -14,6 +14,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
+
 
 export default function Home() {
   const whyChooseUsImage = placeholderImages.placeholderImages.find(p => p.id === "why-choose-us");
@@ -126,6 +128,12 @@ export default function Home() {
               align: "start",
               loop: true,
             }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+                stopOnInteraction: false,
+              }),
+            ]}
             className="w-full max-w-6xl mx-auto"
           >
             <CarouselContent>

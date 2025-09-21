@@ -4,6 +4,9 @@ import Image from "next/image";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const address = "3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada";
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
 
   return (
     <footer className="bg-secondary text-secondary-foreground border-t">
@@ -34,7 +37,7 @@ export function Footer() {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary mt-1" />
-                <span>3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada</span>
+                <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{address}</a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary" />

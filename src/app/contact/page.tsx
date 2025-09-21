@@ -10,6 +10,8 @@ export const metadata = {
 
 export default function ContactPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "contact-header");
+  const address = "3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada";
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
   return (
     <div>
@@ -51,7 +53,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                         <h3 className="text-lg font-semibold">Adresse du siège social</h3>
-                        <p className="text-muted-foreground">3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada</p>
+                        <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">{address}</a>
                     </div>
                  </div>
                  <div className="flex items-start gap-4">

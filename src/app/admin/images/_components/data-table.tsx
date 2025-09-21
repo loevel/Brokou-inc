@@ -37,6 +37,7 @@ interface DataTableProps<TData extends ImagePlaceholder, TValue> {
   onImageAdded: (newImage: ImagePlaceholder) => void;
   onImageUpdated: (updatedImage: ImagePlaceholder) => void;
   onImageDeleted: (imageId: string) => void;
+  showAddButton?: boolean;
 }
 
 export function DataTable<TData extends ImagePlaceholder, TValue>({
@@ -45,6 +46,7 @@ export function DataTable<TData extends ImagePlaceholder, TValue>({
   onImageAdded,
   onImageUpdated,
   onImageDeleted,
+  showAddButton = true,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [isAddDialogOpen, setIsAddDialogOpen] = React.useState(false);
@@ -76,29 +78,27 @@ export function DataTable<TData extends ImagePlaceholder, TValue>({
 
   return (
     <div>
-        <div className="flex items-center justify-between mb-6">
-            <div>
-                <h1 className="text-3xl font-bold tracking-tight">Gestion des Images</h1>
-                <p className="text-muted-foreground">Ajoutez, modifiez ou supprimez les images (partenaires, outils, etc.).</p>
+        {showAddButton && (
+            <div className="flex items-center justify-end mb-4">
+                <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
+                  <DialogTrigger asChild>
+                    <Button>
+                        <PlusCircle className="mr-2 h-4 w-4" />
+                        Ajouter une image
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle>Ajouter une nouvelle image</DialogTitle>
+                      <DialogDescription>
+                        Remplissez les détails de l'image ci-dessous. L'ID aidera à la catégoriser.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <AddImageForm onImageAdded={handleImageAdded} />
+                  </DialogContent>
+                </Dialog>
             </div>
-            <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
-              <DialogTrigger asChild>
-                <Button>
-                    <PlusCircle className="mr-2 h-4 w-4" />
-                    Ajouter une image
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px]">
-                <DialogHeader>
-                  <DialogTitle>Ajouter une nouvelle image</DialogTitle>
-                  <DialogDescription>
-                    Remplissez les détails de l'image ci-dessous.
-                  </DialogDescription>
-                </DialogHeader>
-                <AddImageForm onImageAdded={handleImageAdded} />
-              </DialogContent>
-            </Dialog>
-        </div>
+        )}
       <div className="rounded-md border">
         <Table>
           <TableHeader>

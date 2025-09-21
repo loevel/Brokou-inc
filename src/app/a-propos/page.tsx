@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Shield, Lightbulb, Users, Heart, Target, Scale, Recycle, ArrowRight, Flag, ShieldCheck, FolderGit2, Code, Network, Wrench, Lock, BadgeCheck, Users2, Megaphone } from "lucide-react";
+import { ValuesChart } from "@/components/ui/ValuesChart";
+import { Shield, Users, Heart, Target, Scale, Recycle, ArrowRight, Flag, ShieldCheck, FolderGit2, Code, Network, Wrench, Lock, BadgeCheck, Users2, Megaphone } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 
 const orgStructure = [
@@ -18,6 +21,12 @@ const orgStructure = [
     { title: "Marketing et Ventes", description: "Promeut nos solutions et construit des relations durables avec nos clients.", icon: Megaphone },
 ];
 
+const values = [
+    { name: 'Innovation', description: "Nous repoussons les limites pour créer des solutions d'avenir.", icon: 'Lightbulb', color: 'hsl(var(--chart-1))' },
+    { name: 'Intégrité', description: "Nous agissons avec honnêteté et transparence en toutes circonstances.", icon: 'Shield', color: 'hsl(var(--chart-2))' },
+    { name: 'Partenariat', description: "Nous collaborons étroitement avec nos clients pour assurer leur succès.", icon: 'Users', color: 'hsl(var(--chart-3))' },
+    { name: 'Passion', description: "Notre passion pour la technologie nous pousse à l'excellence.", icon: 'Heart', color: 'hsl(var(--chart-4))' }
+];
 
 export default function AProposPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "about-us-header");
@@ -67,7 +76,7 @@ export default function AProposPage() {
             <div>
                  <h2 className="text-3xl font-bold tracking-tight">Notre entreprise</h2>
                  <p className="mt-4 text-muted-foreground">
-                    Fondée sur des principes d'innovation et d'intégrité, Brokou Inc. est un leader dans le domaine des solutions technologiques. Nous nous engageons à fournir une excellence inégalée et des résultats qui comptent. Notre approche est construite sur des piliers solides qui garantissent votre succès.
+                    Fondée sur des principes d'innovation et d'intégrité, BROKOU INC. est un leader dans le domaine des solutions technologiques. Nous nous engageons à fournir une excellence inégalée et des résultats qui comptent. Notre approche est construite sur des piliers solides qui garantissent votre succès.
                  </p>
             </div>
         </div>
@@ -122,30 +131,11 @@ export default function AProposPage() {
               <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold tracking-tight">Nos valeurs</h2>
                   <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-                      Nos valeurs fondamentales guident chacune de nos décisions et actions. Elles sont le socle de notre culture d'entreprise et de notre engagement envers nos clients.
+                      Nos valeurs fondamentales guident chacune de nos décisions et actions. Elles sont le socle de notre culture d'entreprise et de notre engagement envers nos clients. Survolez un segment pour en savoir plus.
                   </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  <Card className="text-center p-6">
-                      <Lightbulb className="h-10 w-10 text-primary mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold mb-2">Innovation</h3>
-                      <p className="text-sm text-muted-foreground">Nous repoussons les limites pour créer des solutions d'avenir.</p>
-                  </Card>
-                  <Card className="text-center p-6">
-                      <Shield className="h-10 w-10 text-primary mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold mb-2">Intégrité</h3>
-                      <p className="text-sm text-muted-foreground">Nous agissons avec honnêteté et transparence en toutes circonstances.</p>
-                  </Card>
-                  <Card className="text-center p-6">
-                      <Users className="h-10 w-10 text-primary mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold mb-2">Partenariat</h3>
-                      <p className="text-sm text-muted-foreground">Nous collaborons étroitement avec nos clients pour assurer leur succès.</p>
-                  </Card>
-                   <Card className="text-center p-6">
-                      <Heart className="h-10 w-10 text-primary mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold mb-2">Passion</h3>
-                      <p className="text-sm text-muted-foreground">Notre passion pour la technologie nous pousse à l'excellence.</p>
-                  </Card>
+              <div className="w-full h-[400px] lg:h-[500px]">
+                <ValuesChart data={values} />
               </div>
           </div>
       </section>

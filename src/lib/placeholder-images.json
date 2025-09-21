@@ -81,7 +81,7 @@
     {
       "id": "vision-image",
       "description": "A soccer ball on a trophy, representing vision and goals",
-      "imageUrl": "https://picsum.photos/seed/about2/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1546188994-07c34f6e5e1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx2aXNpb258ZW58MHx8fHwxNzU4NDI0MjA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "trophy goal"
     },
     {

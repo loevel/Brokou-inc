@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Briefcase, Mail, MapPin, Phone, Twitter, Linkedin, Github } from "lucide-react";
+import { Mail, MapPin, Phone, Twitter, Linkedin, Github, Briefcase } from "lucide-react";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -10,8 +10,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-4">
-              <Briefcase className="h-7 w-7 text-primary" />
-              <span>BROKOU INC</span>
+              <Briefcase className="h-8 w-8 text-primary" />
+              <span>Brokou Inc.</span>
             </Link>
             <p className="text-muted-foreground max-w-xs">
               Solutions innovantes pour un monde en pleine transformation numérique.

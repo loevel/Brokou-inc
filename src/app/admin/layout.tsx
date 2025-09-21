@@ -26,10 +26,12 @@ const AdminNavLink = ({ href, children, icon: Icon }: { href: string; children: 
 
     return (
         <SidebarMenuItem>
-            <Link href={href} legacyBehavior passHref>
-                <SidebarMenuButton isActive={isActive}>
-                    <Icon className="h-4 w-4" />
-                    <span>{children}</span>
+            <Link href={href} passHref>
+                <SidebarMenuButton asChild isActive={isActive}>
+                    <span>
+                        <Icon className="h-4 w-4" />
+                        <span>{children}</span>
+                    </span>
                 </SidebarMenuButton>
             </Link>
         </SidebarMenuItem>

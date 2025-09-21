@@ -121,7 +121,7 @@ export default function AProposPage() {
             <div>
                  <h2 className="text-3xl font-bold tracking-tight">Notre mission</h2>
                  <p className="mt-4 text-muted-foreground">
-                    Fournir des solutions technologiques innovantes et sur mesure qui permettent à nos clients d'atteindre leurs objectifs stratégiques, d'optimiser leur efficacité opérationnelle et de se démarquer dans un monde numérique en constante évolution.
+                    Vous accompagner avec des processus d’acquisition responsables. Avant notre première intervention, nous venons à votre rencontre pour vous écouter, échanger sur vos attentes, identifier vos besoins pour ainsi définir vos priorités. Il s’agit de mieux vous connaître et mieux comprendre vos enjeux. Cette approche est essentielle pour vous conseiller, bâtir le système d’information qui vous correspond et vous guider dans vos choix stratégiques en intégrant le développement durable.
                  </p>
             </div>
         </div>

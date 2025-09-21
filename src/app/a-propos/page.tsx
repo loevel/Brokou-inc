@@ -182,7 +182,7 @@ export default function AProposPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Structure organisationnelle</h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-              Une organisation claire et efficace au service de nos ambitions et de la réussite de vos projets.
+              BROKOU INC. s'est dotée d'une structure organisationnelle permet une répartition claire des rôles et responsabilités, favorisant une gestion efficace des projets TI de toutes tailles.
             </p>
           </div>
           <OrganizationalClock items={orgStructure} />

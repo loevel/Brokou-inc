@@ -162,6 +162,30 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="cta" className="py-20 lg:py-32">
+        <div className="container mx-auto px-4 text-center">
+          <Card className="max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl">
+            <CardContent className="p-0">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Prêt à transformer votre entreprise ?
+              </h2>
+              <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
+                Contactez-nous dès aujourd'hui pour discuter de votre projet et
+                découvrir comment nous pouvons vous aider à atteindre vos
+                objectifs.
+              </p>
+              <div className="mt-8">
+                <Button variant="secondary" size="lg" asChild>
+                  <Link href="/contact">
+                    Contactez-nous
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section id="tools" className="bg-secondary py-20 lg:py-32">
         <div className="container mx-auto px-4">
            <div className="text-center mb-12">
@@ -204,30 +228,6 @@ export default function Home() {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
-        </div>
-      </section>
-
-      <section id="cta" className="py-20 lg:py-32">
-        <div className="container mx-auto px-4 text-center">
-          <Card className="max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl">
-            <CardContent className="p-0">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                Prêt à transformer votre entreprise ?
-              </h2>
-              <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-                Contactez-nous dès aujourd'hui pour discuter de votre projet et
-                découvrir comment nous pouvons vous aider à atteindre vos
-                objectifs.
-              </p>
-              <div className="mt-8">
-                <Button variant="secondary" size="lg" asChild>
-                  <Link href="/contact">
-                    Contactez-nous
-                  </Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
     </div>

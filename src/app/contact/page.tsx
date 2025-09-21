@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ui/ContactForm";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Printer, Building2 } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 
 export const metadata = {
@@ -50,17 +50,8 @@ export default function ContactPage() {
                         <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                        <h3 className="text-lg font-semibold">Notre Bureau</h3>
+                        <h3 className="text-lg font-semibold">Adresse du siège social</h3>
                         <p className="text-muted-foreground">3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada</p>
-                    </div>
-                 </div>
-                 <div className="flex items-start gap-4">
-                    <div className="bg-primary/10 p-3 rounded-md mt-1">
-                        <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-semibold">Email</h3>
-                        <a href="mailto:contact@brokou.inc" className="text-muted-foreground hover:text-primary">contact@brokou.inc</a>
                     </div>
                  </div>
                  <div className="flex items-start gap-4">
@@ -69,7 +60,25 @@ export default function ContactPage() {
                     </div>
                     <div>
                         <h3 className="text-lg font-semibold">Téléphone</h3>
-                        <a href="tel:+33123456789" className="text-muted-foreground hover:text-primary">+33 1 23 45 67 89</a>
+                        <a href="tel:5149141934" className="text-muted-foreground hover:text-primary">(514) 914-1934</a>
+                    </div>
+                 </div>
+                 <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 p-3 rounded-md mt-1">
+                        <Printer className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-semibold">Télécopieur</h3>
+                        <p className="text-muted-foreground">(450) 444-3318</p>
+                    </div>
+                 </div>
+                 <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 p-3 rounded-md mt-1">
+                        <Building2 className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-semibold">Bureau de Québec</h3>
+                        <p className="text-muted-foreground">(En cours d'aménagement)</p>
                     </div>
                  </div>
               </div>

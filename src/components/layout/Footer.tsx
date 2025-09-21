@@ -32,13 +32,13 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-primary" />
+              <li className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-primary mt-1" />
                 <span>3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary" />
-                <a href="tel:+33123456789" className="hover:text-primary transition-colors">+33 1 23 45 67 89</a>
+                <a href="tel:5149141934" className="hover:text-primary transition-colors">(514) 914-1934</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />

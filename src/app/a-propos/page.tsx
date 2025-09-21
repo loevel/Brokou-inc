@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValuesChart } from "@/components/ui/ValuesChart";
 import { Scale, Recycle, Users, Share, ArrowRight, Flag, ShieldCheck, FolderGit2, Code, Network, Wrench, Lock, BadgeCheck, Users2, Megaphone, Target } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
+import { OrganizationalClock } from "@/components/ui/OrganizationalClock";
 
 const orgStructure = [
     { title: "Direction Générale", description: "Définit la vision stratégique et assure le leadership global de l'entreprise.", icon: Flag },
@@ -176,7 +177,7 @@ export default function AProposPage() {
           </div>
       </section>
 
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-24 bg-secondary overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Structure organisationnelle</h2>
@@ -184,25 +185,9 @@ export default function AProposPage() {
               Une organisation claire et efficace au service de nos ambitions et de la réussite de vos projets.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {orgStructure.map((item) => (
-              <Card key={item.title} className="text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
-                 <CardHeader className="items-center">
-                    <div className="bg-primary/10 p-4 rounded-full">
-                       <item.icon className="h-8 w-8 text-primary" />
-                    </div>
-                 </CardHeader>
-                 <CardContent>
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
-                    <p className="text-muted-foreground text-sm mt-2">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <OrganizationalClock items={orgStructure} />
         </div>
       </section>
     </div>
   );
 }
-
-    

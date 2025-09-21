@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-4">
-              Brokou Inc.
+              <Image src="/logo.png" alt="Brokou Inc. Logo" width={140} height={40} />
             </Link>
             <p className="text-muted-foreground max-w-xs">
               Solutions innovantes pour un monde en pleine transformation numérique.

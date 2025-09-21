@@ -1,9 +1,11 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { cn } from '@/lib/utils';
 import type { LucideIcon } from 'lucide-react';
+import { Button } from './button';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ClockItem {
   title: string;
@@ -16,135 +18,114 @@ interface OrganizationalClockProps {
 }
 
 export function OrganizationalClock({ items }: OrganizationalClockProps) {
+  const [activeIndex, setActiveIndex] = useState(Math.floor(items.length / 2));
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const detailsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const iconWrappersRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const numItems = items.length;
-  const angleStep = 360 / numItems;
-
-  useEffect(() => {
-    // Animate the active item
-    itemsRef.current.forEach((itemEl, index) => {
-      if (itemEl) {
-        gsap.to(itemEl, {
-          scale: index === activeIndex ? 1.2 : 1,
-          color: index === activeIndex ? 'hsl(var(--primary))' : 'hsl(var(--muted-foreground))',
-          duration: 0.5,
-          ease: 'power2.out',
-        });
-      }
-    });
-
-     iconWrappersRef.current.forEach((wrapperEl, index) => {
-      if (wrapperEl) {
-        gsap.to(wrapperEl, {
-          backgroundColor: index === activeIndex ? 'hsl(var(--primary))' : 'hsl(var(--card))',
-          color: index === activeIndex ? 'hsl(var(--primary-foreground))' : 'hsl(var(--primary))',
-          duration: 0.5,
-          ease: 'power2.out',
-        });
-      }
-    });
-
-    // Animate the detail card
-    detailsRef.current.forEach((detailEl, index) => {
-      if (detailEl) {
-        const isActive = index === activeIndex;
-        gsap.to(detailEl, {
-          opacity: isActive ? 1 : 0,
-          y: isActive ? 0 : 20,
-          zIndex: isActive ? 10 : (numItems - index),
-          duration: 0.5,
-          ease: 'power2.out',
-          display: isActive ? 'block' : 'none'
-        });
-      }
-    });
-  }, [activeIndex, numItems]);
 
   const handleItemClick = (index: number) => {
     setActiveIndex(index);
   };
-
-  const handleMouseEnter = (index: number) => {
-    if (index !== activeIndex) {
-      gsap.to(itemsRef.current[index], { scale: 1.1, duration: 0.3 });
-      gsap.to(iconWrappersRef.current[index], { backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))', duration: 0.3 });
-    }
+  
+  const nextItem = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
 
-  const handleMouseLeave = (index: number) => {
-    if (index !== activeIndex) {
-      gsap.to(itemsRef.current[index], { scale: 1, duration: 0.3 });
-      gsap.to(iconWrappersRef.current[index], { backgroundColor: 'hsl(var(--card))', color: 'hsl(var(--primary))', duration: 0.3 });
-    }
+  const prevItem = () => {
+    setActiveIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
   };
 
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    itemsRef.current.forEach((itemEl, index) => {
+        if (!itemEl) return;
+
+        const distance = index - activeIndex;
+        const isFar = Math.abs(distance) > 2;
+
+        let scale = 1;
+        let x = 0;
+        let zIndex = items.length - Math.abs(distance);
+        let opacity = 1;
+
+        if (distance !== 0) {
+            scale = Math.max(1 - Math.abs(distance) * 0.2, 0.5);
+            x = (distance * 50) + (distance > 0 ? 30 : -30);
+        }
+        
+        if (isFar) {
+            opacity = 0;
+            x = distance > 0 ? 200 : -200;
+        }
+
+        gsap.to(itemEl, {
+            x: `${x}%`,
+            scale: scale,
+            zIndex: zIndex,
+            opacity: opacity,
+            duration: 0.5,
+            ease: 'power3.out',
+        });
+    });
+
+  }, [activeIndex, items.length]);
 
   return (
-    <div ref={containerRef} className="lg:grid lg:grid-cols-2 lg:gap-24 items-center min-h-[70vh]">
-      {/* Descriptions */}
-      <div className="relative h-64 lg:order-2">
-        {items.map((item, index) => (
-          <div
-            key={item.title}
-            ref={(el) => (detailsRef.current[index] = el)}
-            className={cn("absolute inset-0 flex flex-col justify-center", index === 0 ? "opacity-100" : "opacity-0")}
-            style={{
-                display: index === 0 ? 'flex' : 'none',
-                zIndex: index === 0 ? 10 : numItems - index
-            }}
-          >
-            <div className="p-8 rounded-lg shadow-lg bg-card">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="bg-primary/10 p-3 rounded-md">
-                   <item.icon className="h-8 w-8 text-primary" />
+    <div className="w-full flex flex-col items-center">
+      <div 
+        ref={containerRef} 
+        className="relative w-full h-[400px] flex justify-center items-center overflow-hidden"
+        style={{ perspective: '1000px' }}
+      >
+        {items.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={item.title}
+              ref={(el) => (itemsRef.current[index] = el)}
+              className="absolute w-64 h-80 cursor-pointer"
+              onClick={() => handleItemClick(index)}
+            >
+              <div className={cn(
+                "w-full h-full p-6 rounded-lg shadow-lg border transition-all duration-500 ease-power3-out flex flex-col justify-between text-center",
+                activeIndex === index ? 'bg-primary text-primary-foreground' : 'bg-card text-card-foreground'
+              )}>
+                <div className="flex-grow flex flex-col items-center justify-center">
+                  <Icon className="h-12 w-12 mb-4" />
+                  <h3 className="text-xl font-bold tracking-tight">{item.title}</h3>
                 </div>
-                <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
+                <p className={cn(
+                    "text-sm transition-opacity duration-300",
+                    activeIndex === index ? 'opacity-70' : 'opacity-0'
+                )}>
+                  {item.description}
+                </p>
               </div>
-              <p className="text-muted-foreground">{item.description}</p>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-
-      {/* Clock */}
-      <div className="hidden lg:flex items-center justify-center h-full lg:order-1 mt-12 lg:mt-0">
-        <div className="relative w-96 h-96 rounded-full border-4 border-primary/20 flex items-center justify-center">
-            {/* Center dot */}
-            <div className="absolute w-4 h-4 bg-primary rounded-full z-10"></div>
-            
-            {/* Clock Items */}
-            {items.map((item, index) => {
-              const angle = angleStep * index - 90; // -90 to start from top
-              const x = 50 + 45 * Math.cos(angle * Math.PI / 180);
-              const y = 50 + 45 * Math.sin(angle * Math.PI / 180);
-              return (
-                <div
-                  key={item.title}
-                  ref={(el) => (itemsRef.current[index] = el)}
-                  className="absolute flex flex-col items-center text-center transition-transform duration-300 text-muted-foreground cursor-pointer"
-                  style={{
-                    left: `${x}%`,
-                    top: `${y}%`,
-                    transform: `translate(-50%, -50%)`,
-                  }}
-                  onClick={() => handleItemClick(index)}
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={() => handleMouseLeave(index)}
-                >
-                    <div ref={el => iconWrappersRef.current[index] = el} className="p-3 bg-card rounded-full border shadow-md">
-                        <item.icon className="h-6 w-6" />
-                    </div>
-                  <span className="mt-2 text-xs font-semibold w-24">{item.title}</span>
-                </div>
-              );
-            })}
+      <div className="flex items-center gap-4 mt-8">
+        <Button onClick={prevItem} variant="outline" size="icon">
+          <ChevronLeft className="h-4 w-4" />
+          <span className="sr-only">Précédent</span>
+        </Button>
+        <div className="flex items-center gap-2">
+            {items.map((_, index) => (
+                <button 
+                    key={index} 
+                    onClick={() => setActiveIndex(index)}
+                    className={cn(
+                        "w-2 h-2 rounded-full transition-all duration-300",
+                        activeIndex === index ? 'bg-primary scale-125' : 'bg-muted-foreground/50'
+                    )}
+                />
+            ))}
         </div>
+        <Button onClick={nextItem} variant="outline" size="icon">
+          <ChevronRight className="h-4 w-4" />
+          <span className="sr-only">Suivant</span>
+        </Button>
       </div>
     </div>
   );

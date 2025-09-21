@@ -177,7 +177,7 @@ export default function AProposPage() {
           </div>
       </section>
 
-      <section className="py-20 lg:py-24 bg-secondary overflow-hidden">
+      <section className="py-20 lg:py-24 bg-secondary overflow-x-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Structure organisationnelle</h2>

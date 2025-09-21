@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useState, useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
@@ -39,7 +39,7 @@ function SummaryButton() {
 }
 
 export function JobOfferCard({ offer }: JobOfferCardProps) {
-  const [state, formAction] = useFormState(async (prevState: any, formData: FormData) => {
+  const [state, formAction] = useActionState(async (prevState: any, formData: FormData) => {
     try {
       const result = await summarizeJobDescription({ jobDescription: offer.description });
       return { summary: result.summary, error: '' };

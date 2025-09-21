@@ -77,7 +77,7 @@ export default function AProposPage() {
             <div>
                  <h2 className="text-3xl font-bold tracking-tight">Notre entreprise</h2>
                  <p className="mt-4 text-muted-foreground">
-                    Fondée sur des principes d'innovation et d'intégrité, BROKOU INC. est un leader dans le domaine des solutions technologiques. Nous nous engageons à fournir une excellence inégalée et des résultats qui comptent. Notre approche est construite sur des piliers solides qui garantissent votre succès.
+                    BROKOU INC. est une entreprise spécialisée dans la gouvernance des TI, les solutions d'affaires, les réseaux et le support technique en informatiqe. La gestion des projets TI est l'une des activités phares que nous avons consolidés à travers le temps. Se voulant être aussi un centre d’excellence dans l'acquisition des compétences en technologie de l'information, BROKOU met ainsi le cap vers une destination plus créatrice d'emplois valorisants.
                  </p>
             </div>
         </div>

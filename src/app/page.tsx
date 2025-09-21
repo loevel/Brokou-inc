@@ -9,6 +9,7 @@ import { HeroSection } from "@/components/ui/HeroSection";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import placeholderImages from "@/lib/placeholder-images.json";
+import clientImagesData from "@/lib/client-images.json";
 import {
   Carousel,
   CarouselContent,
@@ -21,7 +22,7 @@ import Autoplay from "embla-carousel-autoplay"
 
 export default function Home() {
   const whyChooseUsImage = placeholderImages.placeholderImages.find(p => p.id === "why-choose-us");
-  const partners = placeholderImages.placeholderImages.filter(p => p.id.startsWith("partner-"));
+  const partners = clientImagesData.clientImages;
   const tools = placeholderImages.placeholderImages.filter(p => p.id.startsWith("tool-"));
 
 
@@ -145,11 +146,10 @@ export default function Home() {
                 <CarouselItem key={partner.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
                   <div className="p-1">
                     <Image
-                      src={partner.imageUrl}
-                      alt={partner.description}
-                      data-ai-hint={partner.imageHint}
-                      width={60}
-                      height={60}
+                      src={partner.src}
+                      alt={partner.alt}
+                      width={80}
+                      height={80}
                       className="object-contain"
                     />
                   </div>

@@ -73,6 +73,30 @@
       "imageHint": "business growth"
     },
     {
+      "id": "company-logo-large",
+      "description": "A large version of the company logo on a building",
+      "imageUrl": "https://picsum.photos/seed/about1/800/600",
+      "imageHint": "company building"
+    },
+    {
+      "id": "vision-image",
+      "description": "A soccer ball on a trophy, representing vision and goals",
+      "imageUrl": "https://picsum.photos/seed/about2/800/600",
+      "imageHint": "trophy goal"
+    },
+    {
+      "id": "mission-image",
+      "description": "Scrabble tiles spelling out a positive message",
+      "imageUrl": "https://picsum.photos/seed/about3/800/600",
+      "imageHint": "inspirational message"
+    },
+    {
+      "id": "engagement-image",
+      "description": "A team collaborating in a modern office",
+      "imageUrl": "https://picsum.photos/seed/about4/800/600",
+      "imageHint": "team meeting"
+    },
+    {
       "id": "partner-1",
       "description": "Partner 1 Logo",
       "imageUrl": "https://picsum.photos/seed/p1/60/60",

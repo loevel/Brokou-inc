@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValuesChart } from "@/components/ui/ValuesChart";
-import { Shield, Users, Heart, Target, Scale, Recycle, ArrowRight, Flag, ShieldCheck, FolderGit2, Code, Network, Wrench, Lock, BadgeCheck, Users2, Megaphone } from "lucide-react";
+import { Scale, Recycle, Users, Share, ArrowRight, Flag, ShieldCheck, FolderGit2, Code, Network, Wrench, Lock, BadgeCheck, Users2, Megaphone, Target } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 
 const orgStructure = [
@@ -22,10 +22,10 @@ const orgStructure = [
 ];
 
 const values = [
-    { name: 'Innovation', description: "Nous repoussons les limites pour créer des solutions d'avenir.", icon: 'Lightbulb', color: 'hsl(var(--chart-1))' },
-    { name: 'Intégrité', description: "Nous agissons avec honnêteté et transparence en toutes circonstances.", icon: 'Shield', color: 'hsl(var(--chart-2))' },
-    { name: 'Partenariat', description: "Nous collaborons étroitement avec nos clients pour assurer leur succès.", icon: 'Users', color: 'hsl(var(--chart-3))' },
-    { name: 'Passion', description: "Notre passion pour la technologie nous pousse à l'excellence.", icon: 'Heart', color: 'hsl(var(--chart-4))' }
+    { name: 'Équité', description: "Nous réalisons l'égalité en milieu de travail : Nous faisons en sorte que personne ne puisse se voir refuser un emploi, des avantages ou une promotion pour des raisons qui ne sont pas liées à la compétence.", icon: 'Scale', color: 'hsl(var(--chart-1))' },
+    { name: 'Économie', description: "Nous sommes une entreprise Éco-Responsable : Nous avons une responsabilité envers l'environnement. Cela implique une prise de conscience des impacts que nos actions - et celles des autres - ont sur le monde qui nous entoure et sur les générations futures. En tant que entreprise citoyenne, nous avons un devoir de protection de notre planète et de ses habitants et la seule façon de le faire est d'être plus conscients de nos actions et de leurs conséquences. L'éco-responsabilité est l'un des outils les plus puissants à notre disposition pour contribuer à la préservation de notre belle planète.", icon: 'Recycle', color: 'hsl(var(--chart-2))' },
+    { name: 'Collaboration', description: "Nous ne gérons pas seulement les ressources humaines, mais les personnes. Chez nous, c’est l’humain avant tout.", icon: 'Users', color: 'hsl(var(--chart-3))' },
+    { name: 'Partage', description: "Le partage de nos bonnes pratiques favorise la collaboration et la cohésion au sein de notre entreprise. Nous voulons que nos collaborateurs partagent leurs connaissances et leurs idées afin de participer activement à un environnement de travail positif où les équipes travaillent ensemble vers des objectifs communs. La collaboration est un facteur crucial pour le succès de notre entreprise. Elle améliore la productivité, facilite le partage des connaissances, apporte une nouvelle approche de gestion de projet et renforce le climat social.", icon: 'Share', color: 'hsl(var(--chart-4))' }
 ];
 
 export default function AProposPage() {

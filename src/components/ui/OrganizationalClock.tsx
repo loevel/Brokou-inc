@@ -95,8 +95,7 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
           <div
             key={item.title}
             ref={(el) => (detailsRef.current[index] = el)}
-            className="absolute inset-0 flex flex-col justify-center opacity-0"
-            style={{ display: 'none' }}
+            className={cn("absolute inset-0 flex flex-col justify-center", index === 0 ? "opacity-100" : "opacity-0")}
           >
             <div className="p-8 rounded-lg shadow-lg bg-card">
               <div className="flex items-center gap-4 mb-4">

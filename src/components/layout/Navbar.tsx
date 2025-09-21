@@ -5,8 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Briefcase } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
@@ -41,8 +42,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-            <Briefcase className="h-6 w-6 text-primary" />
-            <span>Brokou Inc.</span>
+            <Image src="https://picsum.photos/seed/logo/120/40" alt="Brokou Inc. Logo" width={120} height={40} />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -65,8 +65,7 @@ export function Navbar() {
             <SheetContent side="right" className="w-full">
               <div className="flex justify-between items-center mb-8">
                  <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsOpen(false)}>
-                    <Briefcase className="h-6 w-6 text-primary" />
-                    <span>Brokou Inc.</span>
+                    <Image src="https://picsum.photos/seed/logo/120/40" alt="Brokou Inc. Logo" width={120} height={40} />
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                     <X />

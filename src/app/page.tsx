@@ -22,6 +22,8 @@ import Autoplay from "embla-carousel-autoplay"
 export default function Home() {
   const whyChooseUsImage = placeholderImages.placeholderImages.find(p => p.id === "why-choose-us");
   const partners = placeholderImages.placeholderImages.filter(p => p.id.startsWith("partner-"));
+  const tools = placeholderImages.placeholderImages.filter(p => p.id.startsWith("tool-"));
+
 
   return (
     <div className="flex flex-col">
@@ -146,6 +148,51 @@ export default function Home() {
                       src={partner.imageUrl}
                       alt={partner.description}
                       data-ai-hint={partner.imageHint}
+                      width={60}
+                      height={60}
+                      className="object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
+
+      <section id="tools" className="bg-secondary py-20 lg:py-32">
+        <div className="container mx-auto px-4">
+           <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Nos Outils de Prédilection
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Nous utilisons les meilleures technologies pour construire des solutions performantes.
+            </p>
+          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2500,
+                stopOnInteraction: false,
+              }),
+            ]}
+            className="w-full max-w-6xl mx-auto"
+          >
+            <CarouselContent>
+              {tools.map((tool) => (
+                <CarouselItem key={tool.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
+                  <div className="p-1">
+                    <Image
+                      src={tool.imageUrl}
+                      alt={tool.description}
+                      data-ai-hint={tool.imageHint}
                       width={60}
                       height={60}
                       className="object-contain"

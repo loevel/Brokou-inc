@@ -119,6 +119,54 @@
       "description": "Partner 8 Logo",
       "imageUrl": "https://picsum.photos/seed/p8/60/60",
       "imageHint": "company logo"
+    },
+    {
+      "id": "tool-1",
+      "description": "Tool 1 Logo",
+      "imageUrl": "https://picsum.photos/seed/t1/60/60",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "tool-2",
+      "description": "Tool 2 Logo",
+      "imageUrl": "https://picsum.photos/seed/t2/60/60",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "tool-3",
+      "description": "Tool 3 Logo",
+      "imageUrl": "https://picsum.photos/seed/t3/60/60",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "tool-4",
+      "description": "Tool 4 Logo",
+      "imageUrl": "https://picsum.photos/seed/t4/60/60",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "tool-5",
+      "description": "Tool 5 Logo",
+      "imageUrl": "https://picsum.photos/seed/t5/60/60",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "tool-6",
+      "description": "Tool 6 Logo",
+      "imageUrl": "https://picsum.photos/seed/t6/60/60",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "tool-7",
+      "description": "Tool 7 Logo",
+      "imageUrl": "https://picsum.photos/seed/t7/60/60",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "tool-8",
+      "description": "Tool 8 Logo",
+      "imageUrl": "https://picsum.photos/seed/t8/60/60",
+      "imageHint": "tech logo"
     }
   ]
 }

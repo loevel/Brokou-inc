@@ -15,7 +15,7 @@ import {
   SidebarInset,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Briefcase, LayoutDashboard, BriefcaseBusiness, FileText, LogOut, Loader2 } from "lucide-react";
+import { Briefcase, LayoutDashboard, BriefcaseBusiness, FileText, LogOut, Loader2, ImageIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -70,6 +70,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
             <AdminNavLink href="/admin/dashboard" icon={LayoutDashboard}>Tableau de bord</AdminNavLink>
             <AdminNavLink href="/admin/services" icon={BriefcaseBusiness}>Gestion Services</AdminNavLink>
             <AdminNavLink href="/admin/offres" icon={FileText}>Gestion Offres</AdminNavLink>
+            <AdminNavLink href="/admin/images" icon={ImageIcon}>Gestion Images</AdminNavLink>
           </SidebarMenu>
         </SidebarContent>
         <SidebarFooter>

@@ -17,7 +17,6 @@ interface OrganizationalClockProps {
 
 export function OrganizationalClock({ items }: OrganizationalClockProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const handRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const detailsRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -27,16 +26,6 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
   const angleStep = 360 / numItems;
 
   useEffect(() => {
-    if (!handRef.current) return;
-
-    const rotation = activeIndex * angleStep;
-
-    gsap.to(handRef.current, {
-      rotation: rotation,
-      duration: 0.7,
-      ease: 'power3.inOut',
-    });
-
     itemsRef.current.forEach((itemEl, index) => {
       if (itemEl) {
         gsap.to(itemEl, {
@@ -59,7 +48,7 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
         });
       }
     });
-  }, [activeIndex, angleStep]);
+  }, [activeIndex]);
 
   const handleItemClick = (index: number) => {
     setActiveIndex(index);
@@ -94,11 +83,6 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
         <div className="relative w-96 h-96 rounded-full border-4 border-primary/20 flex items-center justify-center">
             {/* Center dot */}
             <div className="absolute w-4 h-4 bg-primary rounded-full z-10"></div>
-            
-            {/* Clock Hand */}
-            <div ref={handRef} className="absolute w-1/2 h-1 bg-primary origin-left top-1/2 left-1/2 transform -translate-y-1/2">
-                <div className="absolute right-0 w-3 h-3 bg-primary rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-            </div>
             
             {/* Clock Items */}
             {items.map((item, index) => {

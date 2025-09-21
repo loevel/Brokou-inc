@@ -1,7 +1,8 @@
 "use client";
 
-import { ColumnDef } from "@tanstack/react-table";
+import { ColumnDef, Row, Table } from "@tanstack/react-table";
 import type { JobOffer } from "@/lib/types";
+import * as React from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,12 +11,46 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { EditOfferForm } from "./edit-offer-form";
 
-const ActionsCell = ({ offer }: { offer: JobOffer }) => {
+declare module '@tanstack/react-table' {
+  interface TableMeta<TData> {
+    onOfferUpdated: (updatedOffer: TData) => void;
+  }
+}
+
+const ActionsCell = ({ row, table }: { row: Row<JobOffer>, table: Table<JobOffer> }) => {
+  const offer = row.original;
+  const [isEditDialogOpen, setIsEditDialogOpen] = React.useState(false);
+
+  const handleOfferUpdated = (updatedOffer: JobOffer) => {
+    table.options.meta?.onOfferUpdated(updatedOffer);
+    setIsEditDialogOpen(false);
+  };
+  
   return (
+    <>
+    <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Modifier l'offre d'emploi</DialogTitle>
+          <DialogDescription>
+            Mettez à jour les détails de l'offre ci-dessous.
+          </DialogDescription>
+        </DialogHeader>
+        <EditOfferForm offer={offer} onOfferUpdated={handleOfferUpdated} />
+      </DialogContent>
+    </Dialog>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="h-8 w-8 p-0">
@@ -29,10 +64,11 @@ const ActionsCell = ({ offer }: { offer: JobOffer }) => {
           Copier l'ID
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Modifier</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setIsEditDialogOpen(true)}>Modifier</DropdownMenuItem>
         <DropdownMenuItem className="text-destructive">Supprimer</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+    </>
   );
 };
 
@@ -65,9 +101,8 @@ export const columns: ColumnDef<JobOffer>[] = [
   },
   {
     id: "actions",
-    cell: ({ row }) => {
-      const offer = row.original;
-      return <ActionsCell offer={offer} />;
+    cell: ({ row, table }) => {
+      return <ActionsCell row={row} table={table} />;
     },
     enableSorting: false,
     enableHiding: false,

@@ -14,9 +14,20 @@ export default function GestionOffresPage() {
     setJobOffers((prevOffers) => [newOffer, ...prevOffers]);
   };
 
+  const handleOfferUpdated = (updatedOffer: JobOffer) => {
+    setJobOffers((prevOffers) => 
+        prevOffers.map(offer => offer.id === updatedOffer.id ? updatedOffer : offer)
+    );
+  };
+
   return (
     <div>
-      <DataTable columns={columns} data={jobOffers} onOfferAdded={handleOfferAdded} />
+      <DataTable 
+        columns={columns} 
+        data={jobOffers} 
+        onOfferAdded={handleOfferAdded}
+        onOfferUpdated={handleOfferUpdated}
+       />
     </div>
   );
 }

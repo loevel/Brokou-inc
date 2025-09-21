@@ -36,15 +36,17 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   onOfferAdded: (newOffer: JobOffer) => void;
+  onOfferUpdated: (updatedOffer: JobOffer) => void;
 }
 
 export function DataTable<TData extends JobOffer, TValue>({
   columns,
   data,
   onOfferAdded,
+  onOfferUpdated
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
-  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+  const [isAddDialogOpen, setIsAddDialogOpen] = React.useState(false);
   
   const table = useReactTable({
     data,
@@ -56,11 +58,16 @@ export function DataTable<TData extends JobOffer, TValue>({
     state: {
       sorting,
     },
+    meta: {
+      onOfferUpdated: (updatedOffer: JobOffer) => {
+        onOfferUpdated(updatedOffer);
+      }
+    }
   });
 
   const handleOfferAdded = (newOffer: JobOffer) => {
     onOfferAdded(newOffer);
-    setIsDialogOpen(false);
+    setIsAddDialogOpen(false);
   };
 
   return (
@@ -70,7 +77,7 @@ export function DataTable<TData extends JobOffer, TValue>({
                 <h1 className="text-3xl font-bold tracking-tight">Gestion des Offres d'Emploi</h1>
                 <p className="text-muted-foreground">Ajoutez, modifiez ou supprimez les offres d'emploi.</p>
             </div>
-            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
               <DialogTrigger asChild>
                 <Button>
                     <PlusCircle className="mr-2 h-4 w-4" />

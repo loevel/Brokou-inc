@@ -1,10 +1,22 @@
 import type { Service, JobOffer } from "@/lib/types";
-import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users } from "lucide-react";
+import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users, type LucideIcon, type LucideProps } from "lucide-react";
+import React from 'react';
+
+const iconMap: { [key: string]: LucideIcon } = {
+    Lightbulb,
+    Briefcase,
+    BarChart,
+    Megaphone,
+    Code,
+    Cloud,
+    Users
+};
 
 export const services: Service[] = [
   {
     id: "consulting",
     name: "Conseil Stratégique",
+    iconName: "Lightbulb",
     icon: Lightbulb,
     description_short: "Alignez votre technologie avec vos objectifs commerciaux.",
     description_long: "Nous offrons des services de conseil stratégique pour aider les entreprises à naviguer dans le paysage numérique complexe. Nos experts travaillent avec vous pour développer une feuille de route informatique qui soutient et accélère vos objectifs commerciaux. De l'évaluation de l'infrastructure à la planification de la transformation numérique, nous sommes votre partenaire de confiance.",
@@ -13,6 +25,7 @@ export const services: Service[] = [
   {
     id: "digital-transformation",
     name: "Transformation Numérique",
+    iconName: "Briefcase",
     icon: Briefcase,
     description_short: "Modernisez vos opérations et améliorez l'expérience client.",
     description_long: "La transformation numérique est essentielle pour rester compétitif. Nous vous aidons à moderniser vos processus, à adopter de nouvelles technologies et à améliorer l'expérience client. Nos solutions couvrent l'automatisation des processus, l'intégration de systèmes et la mise en œuvre de plateformes cloud pour une agilité et une efficacité accrues.",
@@ -21,6 +34,7 @@ export const services: Service[] = [
   {
     id: "data-analytics",
     name: "Analyse de Données & BI",
+    iconName: "BarChart",
     icon: BarChart,
     description_short: "Transformez vos données en informations exploitables.",
     description_long: "Libérez le potentiel de vos données avec nos services d'analyse et de business intelligence. Nous vous aidons à collecter, analyser et visualiser vos données pour prendre des décisions plus éclairées. De la mise en place de tableaux de bord interactifs à l'analyse prédictive, nous vous donnons les outils pour comprendre votre entreprise en profondeur.",
@@ -29,6 +43,7 @@ export const services: Service[] = [
   {
     id: "marketing-digital",
     name: "Marketing Digital",
+    iconName: "Megaphone",
     icon: Megaphone,
     description_short: "Augmentez votre visibilité et engagez votre audience cible.",
     description_long: "Nos stratégies de marketing digital sont conçues pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
@@ -37,6 +52,7 @@ export const services: Service[] = [
   {
     id: "developpement-logiciel",
     name: "Développement Logiciel",
+    iconName: "Code",
     icon: Code,
     description_short: "Des solutions logicielles sur mesure pour répondre à vos besoins.",
     description_long: "Nous développons des applications web et mobiles robustes, évolutives et sécurisées. Notre équipe de développeurs expérimentés utilise les dernières technologies pour créer des solutions qui répondent précisément à vos exigences métier et offrent une expérience utilisateur exceptionnelle.",
@@ -45,6 +61,7 @@ export const services: Service[] = [
   {
     id: "solutions-cloud",
     name: "Solutions Cloud",
+    iconName: "Cloud",
     icon: Cloud,
     description_short: "Migrez vers le cloud pour plus de flexibilité et de scalabilité.",
     description_long: "Tirez parti de la puissance du cloud avec nos services de migration, d'optimisation et de gestion. Que vous soyez sur AWS, Azure ou Google Cloud, nous vous aidons à construire une infrastructure cloud sécurisée, performante et rentable.",
@@ -84,3 +101,7 @@ export const jobOffers: JobOffer[] = [
     description: "Nous cherchons un designer talentueux pour créer des expériences utilisateur intuitives et esthétiques pour nos applications web et mobiles. Vous mènerez des recherches utilisateurs, créerez des wireframes et des prototypes, et collaborerez étroitement avec les développeurs. Portfolio requis.",
   },
 ];
+
+export function getIcon(name: string): React.FC<LucideProps> {
+    return iconMap[name] || Lightbulb;
+}

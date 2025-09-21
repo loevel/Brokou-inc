@@ -3,7 +3,8 @@ import type { LucideIcon } from "lucide-react";
 export type Service = {
   id: string;
   name: string;
-  icon: LucideIcon;
+  iconName: string; // Changed from icon: LucideIcon
+  icon: LucideIcon; // Kept for places where we can use it directly on the server
   description_short: string;
   description_long: string;
   imageId: string;

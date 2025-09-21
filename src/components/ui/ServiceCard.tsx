@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { Service } from "@/lib/types";
+import { getIcon } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import placeholderImages from "@/lib/placeholder-images.json";
@@ -12,12 +13,13 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service }: ServiceCardProps) {
   const serviceImage = placeholderImages.placeholderImages.find(p => p.id === service.imageId);
+  const Icon = getIcon(service.iconName);
 
   return (
     <Card className="flex flex-col overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
       <CardHeader className="flex-row items-center gap-4 pb-4">
         <div className="bg-primary/10 p-3 rounded-md">
-          <service.icon className="h-6 w-6 text-primary" />
+          <Icon className="h-6 w-6 text-primary" />
         </div>
         <CardTitle className="text-xl">{service.name}</CardTitle>
       </CardHeader>

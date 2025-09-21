@@ -88,7 +88,7 @@ export default function AProposPage() {
              <div>
                  <h2 className="text-3xl font-bold tracking-tight">Notre vision</h2>
                  <p className="mt-4 text-muted-foreground">
-                    Devenir le partenaire technologique de référence en Europe, reconnu pour notre capacité à transformer les défis complexes en opportunités de croissance durable pour nos clients.
+                    Fournir une accessibilité aux solutions d'affaires de qualité...
                  </p>
             </div>
             {visionImage && (

@@ -7,9 +7,18 @@ import { HeroSection } from "@/components/ui/HeroSection";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import placeholderImages from "@/lib/placeholder-images.json";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 export default function Home() {
   const whyChooseUsImage = placeholderImages.placeholderImages.find(p => p.id === "why-choose-us");
+  const partners = placeholderImages.placeholderImages.filter(p => p.id.startsWith("partner-"));
+
   return (
     <div className="flex flex-col">
       <HeroSection />
@@ -99,6 +108,45 @@ export default function Home() {
               )}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="partners" className="py-20 lg:py-32">
+        <div className="container mx-auto px-4">
+           <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Ils nous font confiance
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Nous sommes fiers de collaborer avec des entreprises leaders de leur secteur.
+            </p>
+          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-6xl mx-auto"
+          >
+            <CarouselContent>
+              {partners.map((partner) => (
+                <CarouselItem key={partner.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
+                  <div className="p-1">
+                    <Image
+                      src={partner.imageUrl}
+                      alt={partner.description}
+                      data-ai-hint={partner.imageHint}
+                      width={60}
+                      height={60}
+                      className="object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </section>
 

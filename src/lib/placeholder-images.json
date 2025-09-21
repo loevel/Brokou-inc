@@ -71,6 +71,54 @@
       "description": "Header image for the Services page",
       "imageUrl": "https://picsum.photos/seed/12/1600/600",
       "imageHint": "business growth"
+    },
+    {
+      "id": "partner-1",
+      "description": "Partner 1 Logo",
+      "imageUrl": "https://picsum.photos/seed/p1/60/60",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "partner-2",
+      "description": "Partner 2 Logo",
+      "imageUrl": "https://picsum.photos/seed/p2/60/60",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "partner-3",
+      "description": "Partner 3 Logo",
+      "imageUrl": "https://picsum.photos/seed/p3/60/60",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "partner-4",
+      "description": "Partner 4 Logo",
+      "imageUrl": "https://picsum.photos/seed/p4/60/60",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "partner-5",
+      "description": "Partner 5 Logo",
+      "imageUrl": "https://picsum.photos/seed/p5/60/60",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "partner-6",
+      "description": "Partner 6 Logo",
+      "imageUrl": "https://picsum.photos/seed/p6/60/60",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "partner-7",
+      "description": "Partner 7 Logo",
+      "imageUrl": "https://picsum.photos/seed/p7/60/60",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "partner-8",
+      "description": "Partner 8 Logo",
+      "imageUrl": "https://picsum.photos/seed/p8/60/60",
+      "imageHint": "company logo"
     }
   ]
 }

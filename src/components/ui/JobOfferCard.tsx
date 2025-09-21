@@ -55,14 +55,16 @@ export function JobOfferCard({ offer }: JobOfferCardProps) {
             <CardTitle className="text-xl mb-2">{offer.title}</CardTitle>
             <Badge variant={offer.type === 'Temps plein' ? 'default' : 'secondary'}>{offer.type}</Badge>
         </div>
-        <CardDescription className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-          <div className="flex items-center gap-2">
-            <Briefcase className="h-4 w-4" />
-            <span>Brokou Inc.</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="h-4 w-4" />
-            <span>{offer.location}</span>
+        <CardDescription asChild>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-2">
+              <Briefcase className="h-4 w-4" />
+              <span>Brokou Inc.</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4" />
+              <span>{offer.location}</span>
+            </div>
           </div>
         </CardDescription>
       </CardHeader>

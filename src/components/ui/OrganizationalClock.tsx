@@ -53,16 +53,18 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
     // Animate the detail card
     detailsRef.current.forEach((detailEl, index) => {
       if (detailEl) {
+        const isActive = index === activeIndex;
         gsap.to(detailEl, {
-          opacity: index === activeIndex ? 1 : 0,
-          y: index === activeIndex ? 0 : 20,
+          opacity: isActive ? 1 : 0,
+          y: isActive ? 0 : 20,
+          zIndex: isActive ? 10 : (numItems - index),
           duration: 0.5,
           ease: 'power2.out',
-          display: index === activeIndex ? 'block' : 'none',
+          display: isActive ? 'block' : 'none'
         });
       }
     });
-  }, [activeIndex]);
+  }, [activeIndex, numItems]);
 
   const handleItemClick = (index: number) => {
     setActiveIndex(index);
@@ -85,8 +87,33 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
 
   return (
     <div ref={containerRef} className="lg:grid lg:grid-cols-2 lg:gap-24 items-center min-h-[70vh]">
-      {/* Left Column: Clock */}
-      <div className="hidden lg:flex items-center justify-center h-full">
+      {/* Descriptions */}
+      <div className="relative h-64 lg:order-2">
+        {items.map((item, index) => (
+          <div
+            key={item.title}
+            ref={(el) => (detailsRef.current[index] = el)}
+            className={cn("absolute inset-0 flex flex-col justify-center", index === 0 ? "opacity-100" : "opacity-0")}
+            style={{
+                display: index === 0 ? 'flex' : 'none',
+                zIndex: index === 0 ? 10 : numItems - index
+            }}
+          >
+            <div className="p-8 rounded-lg shadow-lg bg-card">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="bg-primary/10 p-3 rounded-md">
+                   <item.icon className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
+              </div>
+              <p className="text-muted-foreground">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Clock */}
+      <div className="hidden lg:flex items-center justify-center h-full lg:order-1 mt-12 lg:mt-0">
         <div className="relative w-96 h-96 rounded-full border-4 border-primary/20 flex items-center justify-center">
             {/* Center dot */}
             <div className="absolute w-4 h-4 bg-primary rounded-full z-10"></div>
@@ -118,28 +145,6 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
               );
             })}
         </div>
-      </div>
-
-      {/* Right Column: Descriptions */}
-      <div className="relative h-64">
-        {items.map((item, index) => (
-          <div
-            key={item.title}
-            ref={(el) => (detailsRef.current[index] = el)}
-            className={cn("absolute inset-0 flex flex-col justify-center", index === 0 ? "opacity-100" : "opacity-0")}
-            style={{display: index === 0 ? 'block' : 'none'}}
-          >
-            <div className="p-8 rounded-lg shadow-lg bg-card">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="bg-primary/10 p-3 rounded-md">
-                   <item.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
-              </div>
-              <p className="text-muted-foreground">{item.description}</p>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );

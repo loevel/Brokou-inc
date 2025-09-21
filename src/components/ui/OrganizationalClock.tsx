@@ -19,6 +19,7 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const detailsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const iconWrappersRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -26,6 +27,7 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
   const angleStep = 360 / numItems;
 
   useEffect(() => {
+    // Animate the active item
     itemsRef.current.forEach((itemEl, index) => {
       if (itemEl) {
         gsap.to(itemEl, {
@@ -37,6 +39,18 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
       }
     });
 
+     iconWrappersRef.current.forEach((wrapperEl, index) => {
+      if (wrapperEl) {
+        gsap.to(wrapperEl, {
+          backgroundColor: index === activeIndex ? 'hsl(var(--primary))' : 'hsl(var(--card))',
+          color: index === activeIndex ? 'hsl(var(--primary-foreground))' : 'hsl(var(--primary))',
+          duration: 0.5,
+          ease: 'power2.out',
+        });
+      }
+    });
+
+    // Animate the detail card
     detailsRef.current.forEach((detailEl, index) => {
       if (detailEl) {
         gsap.to(detailEl, {
@@ -53,6 +67,21 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
   const handleItemClick = (index: number) => {
     setActiveIndex(index);
   };
+
+  const handleMouseEnter = (index: number) => {
+    if (index !== activeIndex) {
+      gsap.to(itemsRef.current[index], { scale: 1.1, duration: 0.3 });
+      gsap.to(iconWrappersRef.current[index], { backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))', duration: 0.3 });
+    }
+  };
+
+  const handleMouseLeave = (index: number) => {
+    if (index !== activeIndex) {
+      gsap.to(itemsRef.current[index], { scale: 1, duration: 0.3 });
+      gsap.to(iconWrappersRef.current[index], { backgroundColor: 'hsl(var(--card))', color: 'hsl(var(--primary))', duration: 0.3 });
+    }
+  };
+
 
   return (
     <div ref={containerRef} className="lg:grid lg:grid-cols-2 lg:gap-24 items-center min-h-[70vh]">
@@ -78,8 +107,10 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
                     transform: `translate(-50%, -50%)`,
                   }}
                   onClick={() => handleItemClick(index)}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
                 >
-                    <div className="p-3 bg-card rounded-full border shadow-md">
+                    <div ref={el => iconWrappersRef.current[index] = el} className="p-3 bg-card rounded-full border shadow-md">
                         <item.icon className="h-6 w-6" />
                     </div>
                   <span className="mt-2 text-xs font-semibold w-24">{item.title}</span>
@@ -96,6 +127,7 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
             key={item.title}
             ref={(el) => (detailsRef.current[index] = el)}
             className={cn("absolute inset-0 flex flex-col justify-center", index === 0 ? "opacity-100" : "opacity-0")}
+            style={{display: index === 0 ? 'block' : 'none'}}
           >
             <div className="p-8 rounded-lg shadow-lg bg-card">
               <div className="flex items-center gap-4 mb-4">

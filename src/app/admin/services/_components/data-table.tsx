@@ -20,17 +20,31 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { AddServiceForm } from "./add-service-form";
+import type { Service } from "@/lib/types";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  onServiceAdded: (newService: Omit<Service, 'icon'>) => void;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  onServiceAdded
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [isAddDialogOpen, setIsAddDialogOpen] = React.useState(false);
+  
   const table = useReactTable({
     data,
     columns,
@@ -43,6 +57,11 @@ export function DataTable<TData, TValue>({
     },
   });
 
+  const handleServiceAdded = (newService: Omit<Service, 'icon'>) => {
+    onServiceAdded(newService);
+    setIsAddDialogOpen(false);
+  };
+
   return (
     <div>
         <div className="flex items-center justify-between mb-6">
@@ -50,10 +69,23 @@ export function DataTable<TData, TValue>({
                 <h1 className="text-3xl font-bold tracking-tight">Gestion des Services</h1>
                 <p className="text-muted-foreground">Ajoutez, modifiez ou supprimez les services proposés.</p>
             </div>
-            <Button>
-                <PlusCircle className="mr-2 h-4 w-4" />
-                Ajouter un service
-            </Button>
+            <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
+              <DialogTrigger asChild>
+                <Button>
+                    <PlusCircle className="mr-2 h-4 w-4" />
+                    Ajouter un service
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Ajouter un nouveau service</DialogTitle>
+                  <DialogDescription>
+                    Remplissez les détails du service ci-dessous.
+                  </DialogDescription>
+                </DialogHeader>
+                <AddServiceForm onServiceAdded={handleServiceAdded} />
+              </DialogContent>
+            </Dialog>
         </div>
       <div className="rounded-md border">
         <Table>

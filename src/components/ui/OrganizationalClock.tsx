@@ -56,29 +56,7 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
 
   return (
     <div ref={containerRef} className="lg:grid lg:grid-cols-2 lg:gap-24 items-center min-h-[70vh]">
-      {/* Left Column: Descriptions */}
-      <div className="relative h-64">
-        {items.map((item, index) => (
-          <div
-            key={item.title}
-            ref={(el) => (detailsRef.current[index] = el)}
-            className="absolute inset-0 flex flex-col justify-center opacity-0"
-            style={{ display: 'none' }}
-          >
-            <div className="p-8 rounded-lg shadow-lg bg-card">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="bg-primary/10 p-3 rounded-md">
-                   <item.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
-              </div>
-              <p className="text-muted-foreground">{item.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Right Column: Clock */}
+      {/* Left Column: Clock */}
       <div className="hidden lg:flex items-center justify-center h-full">
         <div className="relative w-96 h-96 rounded-full border-4 border-primary/20 flex items-center justify-center">
             {/* Center dot */}
@@ -109,6 +87,28 @@ export function OrganizationalClock({ items }: OrganizationalClockProps) {
               );
             })}
         </div>
+      </div>
+
+      {/* Right Column: Descriptions */}
+      <div className="relative h-64">
+        {items.map((item, index) => (
+          <div
+            key={item.title}
+            ref={(el) => (detailsRef.current[index] = el)}
+            className="absolute inset-0 flex flex-col justify-center opacity-0"
+            style={{ display: 'none' }}
+          >
+            <div className="p-8 rounded-lg shadow-lg bg-card">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="bg-primary/10 p-3 rounded-md">
+                   <item.icon className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold tracking-tight">{item.title}</h3>
+              </div>
+              <p className="text-muted-foreground">{item.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

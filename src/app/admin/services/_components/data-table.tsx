@@ -31,16 +31,22 @@ import {
 import { AddServiceForm } from "./add-service-form";
 import type { Service } from "@/lib/types";
 
-interface DataTableProps<TData, TValue> {
+type SerializableService = Omit<Service, "icon">;
+
+interface DataTableProps<TData extends SerializableService, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  onServiceAdded: (newService: Omit<Service, 'icon'>) => void;
+  onServiceAdded: (newService: SerializableService) => void;
+  onServiceUpdated: (updatedService: SerializableService) => void;
+  onServiceDeleted: (serviceId: string) => void;
 }
 
-export function DataTable<TData, TValue>({
+export function DataTable<TData extends SerializableService, TValue>({
   columns,
   data,
-  onServiceAdded
+  onServiceAdded,
+  onServiceUpdated,
+  onServiceDeleted,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [isAddDialogOpen, setIsAddDialogOpen] = React.useState(false);
@@ -55,9 +61,17 @@ export function DataTable<TData, TValue>({
     state: {
       sorting,
     },
+    meta: {
+      onServiceUpdated: (updatedService: SerializableService) => {
+        onServiceUpdated(updatedService);
+      },
+      onServiceDeleted: (serviceId: string) => {
+        onServiceDeleted(serviceId);
+      }
+    }
   });
 
-  const handleServiceAdded = (newService: Omit<Service, 'icon'>) => {
+  const handleServiceAdded = (newService: SerializableService) => {
     onServiceAdded(newService);
     setIsAddDialogOpen(false);
   };

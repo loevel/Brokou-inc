@@ -8,7 +8,6 @@ import type { Service } from "@/lib/types";
 import { getIcon } from "@/lib/data";
 
 export default function GestionServicesPage() {
-  // We need to keep the full service object in state, including the icon component
   const [services, setServices] = useState<Service[]>(initialServices);
 
   const handleServiceAdded = (newService: Omit<Service, 'icon'>) => {
@@ -18,6 +17,16 @@ export default function GestionServicesPage() {
     };
     setServices((prevServices) => [fullNewService, ...prevServices]);
   };
+  
+  const handleServiceUpdated = (updatedService: Omit<Service, 'icon'>) => {
+    setServices((prevServices) => 
+        prevServices.map(service => service.id === updatedService.id ? { ...updatedService, icon: getIcon(updatedService.iconName) } : service)
+    );
+  };
+
+  const handleServiceDeleted = (serviceId: string) => {
+    setServices((prevServices) => prevServices.filter(service => service.id !== serviceId));
+  }
 
   // The data passed to the table needs to be serializable
   const serializableServices = services.map(service => {
@@ -31,6 +40,8 @@ export default function GestionServicesPage() {
         columns={columns} 
         data={serializableServices} 
         onServiceAdded={handleServiceAdded}
+        onServiceUpdated={handleServiceUpdated}
+        onServiceDeleted={handleServiceDeleted}
       />
     </div>
   );

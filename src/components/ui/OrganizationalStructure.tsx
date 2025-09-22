@@ -28,6 +28,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
 
   const handleItemClick = (index: number) => {
     setActiveIndex(index);
+    resetAutoplay();
   };
   
   const nextItem = () => {
@@ -38,19 +39,26 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
     setActiveIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
   };
 
-  useEffect(() => {
+  const startAutoplay = () => {
     if (autoplay && !isHovering) {
       intervalRef.current = setInterval(nextItem, 3000);
-    } else {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
     }
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
+  };
+
+  const stopAutoplay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+  };
+
+  const resetAutoplay = () => {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  useEffect(() => {
+    startAutoplay();
+    return () => stopAutoplay();
   }, [autoplay, isHovering, items.length]);
 
   useEffect(() => {
@@ -84,6 +92,8 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
             ease: 'power3.out',
         });
     });
+
+    resetAutoplay();
 
   }, [activeIndex, items.length]);
 
@@ -132,7 +142,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
         })}
       </div>
        <div className="flex items-center gap-4 mt-8">
-        <Button onClick={prevItem} variant="outline" size="icon">
+        <Button onClick={() => { prevItem(); resetAutoplay(); }} variant="outline" size="icon">
           <ChevronLeft className="h-4 w-4" />
           <span className="sr-only">Précédent</span>
         </Button>
@@ -140,7 +150,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
             {items.map((_, index) => (
                 <button 
                     key={index} 
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => handleItemClick(index)}
                     className={cn(
                         "w-2 h-2 rounded-full transition-all duration-300",
                         activeIndex === index ? 'bg-primary scale-125' : 'bg-muted-foreground/50'
@@ -148,7 +158,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
                 />
             ))}
         </div>
-        <Button onClick={nextItem} variant="outline" size="icon">
+        <Button onClick={() => { nextItem(); resetAutoplay(); }} variant="outline" size="icon">
           <ChevronRight className="h-4 w-4" />
           <span className="sr-only">Suivant</span>
         </Button>

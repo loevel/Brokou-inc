@@ -16,12 +16,15 @@ interface StructureItem {
 
 interface OrganizationalStructureProps {
   items: StructureItem[];
+  autoplay?: boolean;
 }
 
-export function OrganizationalStructure({ items }: OrganizationalStructureProps) {
+export function OrganizationalStructure({ items, autoplay = false }: OrganizationalStructureProps) {
   const [activeIndex, setActiveIndex] = useState(Math.floor(items.length / 2));
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [isHovering, setIsHovering] = useState(false);
 
   const handleItemClick = (index: number) => {
     setActiveIndex(index);
@@ -34,6 +37,21 @@ export function OrganizationalStructure({ items }: OrganizationalStructureProps)
   const prevItem = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
   };
+
+  useEffect(() => {
+    if (autoplay && !isHovering) {
+      intervalRef.current = setInterval(nextItem, 3000);
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    }
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [autoplay, isHovering, items.length]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -70,7 +88,11 @@ export function OrganizationalStructure({ items }: OrganizationalStructureProps)
   }, [activeIndex, items.length]);
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div 
+        className="w-full flex flex-col items-center"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+    >
       <div 
         ref={containerRef} 
         className="relative w-full h-[350px] flex justify-center items-center overflow-visible"

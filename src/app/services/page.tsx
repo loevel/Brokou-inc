@@ -86,7 +86,7 @@ export default function ServicesPage() {
                          <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{category}</h2>
                          </div>
-                        <OrganizationalStructure items={orgStructureItems} />
+                        <OrganizationalStructure items={orgStructureItems} autoplay={true} />
                     </div>
                 )
             }

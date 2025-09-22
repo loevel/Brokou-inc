@@ -204,8 +204,9 @@ export default function Home() {
 
       <section id="cta" className="py-20 lg:py-32">
         <div className="container mx-auto px-4 text-center">
-          <Card className="max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl">
-            <CardContent className="p-0">
+          <Card className="relative overflow-hidden max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary via-chart-1 to-accent opacity-80"></div>
+            <CardContent className="p-0 relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold">
                 Prêt à transformer votre entreprise ?
               </h2>

@@ -62,6 +62,24 @@
       "imageHint": "cyber security"
     },
     {
+      "id": "service-fibre",
+      "description": "Workers installing fiber optic cables",
+      "imageUrl": "https://picsum.photos/seed/fibre/600/400",
+      "imageHint": "fiber optic"
+    },
+    {
+      "id": "service-telephonie",
+      "description": "IP phone patch panel",
+      "imageUrl": "https://picsum.photos/seed/telephonie/600/400",
+      "imageHint": "network cables"
+    },
+    {
+      "id": "service-iot",
+      "description": "Connected devices on a shelf",
+      "imageUrl": "https://picsum.photos/seed/iot/600/400",
+      "imageHint": "smart home"
+    },
+    {
       "id": "why-choose-us",
       "description": "Image for the 'Why Choose Us' section",
       "imageUrl": "https://picsum.photos/seed/8/800/600",

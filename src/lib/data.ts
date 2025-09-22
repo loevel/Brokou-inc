@@ -1,5 +1,5 @@
 import type { Service, JobOffer } from "@/lib/types";
-import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users, type LucideIcon, type LucideProps, ShieldCheck, FolderGit, ShieldAlert } from "lucide-react";
+import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users, type LucideIcon, type LucideProps, ShieldCheck, FolderGit, ShieldAlert, Network, Phone, Router } from "lucide-react";
 import React from 'react';
 
 const iconMap: { [key: string]: LucideIcon } = {
@@ -13,6 +13,9 @@ const iconMap: { [key: string]: LucideIcon } = {
     FolderGit,
     ShieldAlert,
     ShieldCheck,
+    Network,
+    Phone,
+    Router,
 };
 
 export const services: Service[] = [
@@ -115,7 +118,7 @@ export const services: Service[] = [
     iconName: "Megaphone",
     icon: Megaphone,
     description_short: "Augmentez votre visibilité et engagez votre audience cible.",
-    description_long: "Nos stratégies de marketing digital sont conçues pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
+    description_long: "Nos stratégies de marketing digital sont conçées pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
     imageId: "service-marketing",
     category: "Solutions d'affaires"
   },
@@ -128,6 +131,39 @@ export const services: Service[] = [
     description_long: "Tirez parti de la puissance du cloud avec nos services de migration, d'optimisation et de gestion. Que vous soyez sur AWS, Azure ou Google Cloud, nous vous aidons à construire une infrastructure cloud sécurisée, performante et rentable.",
     imageId: "service-cloud",
     category: "Solutions d'affaires"
+  },
+  {
+    id: "fibre-optique",
+    name: "Fibre optique",
+    iconName: "Network",
+    icon: Network,
+    category: "Réseaux et télécoms",
+    description_short: "Installation et maintenance.",
+    description_long: "Nous offrons des services complets d'installation et de maintenance de fibre optique pour garantir une connectivité ultra-rapide et fiable à votre entreprise.",
+    imageId: "service-fibre",
+    details: ["Installation professionnelle", "Maintenance préventive et corrective", "Tests et certification de réseau"]
+  },
+  {
+    id: "telephonie-ip",
+    name: "Téléphonie IP",
+    iconName: "Phone",
+    icon: Phone,
+    category: "Réseaux et télécoms",
+    description_short: "Économiser sur les frais de câblage, puisque l'installation de téléphones IP requiert uniquement la présence d'un réseau internet.",
+    description_long: "Modernisez votre système de communication avec nos solutions de téléphonie IP. Profitez d'une qualité d'appel supérieure, de fonctionnalités avancées et d'une gestion simplifiée, tout en réduisant vos coûts.",
+    imageId: "service-telephonie",
+     details: ["Installation et configuration de systèmes VoIP", "Intégration avec vos outils existants", "Support technique et formation"]
+  },
+  {
+    id: "objets-connectes",
+    name: "Objets connectés",
+    iconName: "Router",
+    icon: Router,
+    category: "Réseaux et télécoms",
+    description_short: "Rassembler de nouvelles masses de données sur le réseau et donc, de nouvelles connaissances et formes de savoirs.",
+    description_long: "Intégrez l'Internet des Objets (IoT) dans votre stratégie d'entreprise. Nous vous aidons à déployer et gérer des parcs d'objets connectés pour collecter des données précieuses, automatiser des processus et créer de nouveaux services.",
+    imageId: "service-iot",
+    details: ["Conseil et stratégie IoT", "Déploiement de capteurs et appareils", "Plateforme de gestion et d'analyse des données"]
   }
 ];
 

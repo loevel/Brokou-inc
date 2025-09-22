@@ -24,42 +24,39 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
   const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const [isHovering, setIsHovering] = useState(false);
 
-  const handleItemClick = (index: number) => {
-    setActiveIndex(index);
-    resetAutoplay();
-  };
-  
+  const totalItems = items.length;
+
   const nextItem = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % totalItems);
   };
 
   const prevItem = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
-  };
-
-  const startAutoplay = () => {
-    if (autoplay && !isHovering) {
-      intervalRef.current = setInterval(nextItem, 3000);
-    }
-  };
-
-  const stopAutoplay = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
+    setActiveIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
   };
 
   const resetAutoplay = () => {
-    stopAutoplay();
-    startAutoplay();
-  }
+    if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+    }
+    if (autoplay) {
+        intervalRef.current = setInterval(nextItem, 3000);
+    }
+  };
 
   useEffect(() => {
-    startAutoplay();
-    return () => stopAutoplay();
-  }, [autoplay, isHovering, items.length]);
+    itemsRef.current = itemsRef.current.slice(0, totalItems);
+  }, [totalItems]);
+  
+  useEffect(() => {
+    resetAutoplay();
+    return () => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+    };
+  }, [activeIndex, autoplay, totalItems]);
+
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -69,7 +66,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
 
         const distance = index - activeIndex;
         
-        let zIndex = items.length - Math.abs(distance);
+        let zIndex = totalItems - Math.abs(distance);
         let scale = 1;
         let opacity = 1;
         let x = 0;
@@ -79,9 +76,8 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
             opacity = 0.4;
             x = distance * 50 + (distance > 0 ? 30 : -30);
         } else {
-             zIndex = items.length + 1;
+             zIndex = totalItems + 1;
         }
-
 
         gsap.to(itemEl, {
             x: `${x}%`,
@@ -93,15 +89,11 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
         });
     });
 
-    resetAutoplay();
-
-  }, [activeIndex, items.length]);
+  }, [activeIndex, totalItems]);
 
   return (
     <div 
         className="w-full flex flex-col items-center"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
     >
       <div 
         ref={containerRef} 
@@ -116,7 +108,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
               ref={(el) => (itemsRef.current[index] = el)}
               className="absolute w-60 h-80 cursor-pointer"
               style={{ transformStyle: 'preserve-3d' }}
-              onClick={() => handleItemClick(index)}
+              onClick={() => setActiveIndex(index)}
             >
               <div className={cn(
                 "w-full h-full p-6 rounded-lg shadow-lg border transition-all duration-500 ease-in-out flex flex-col justify-between text-center bg-card text-card-foreground",
@@ -142,7 +134,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
         })}
       </div>
        <div className="flex items-center gap-4 mt-8">
-        <Button onClick={() => { prevItem(); resetAutoplay(); }} variant="outline" size="icon">
+        <Button onClick={prevItem} variant="outline" size="icon">
           <ChevronLeft className="h-4 w-4" />
           <span className="sr-only">Précédent</span>
         </Button>
@@ -150,7 +142,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
             {items.map((_, index) => (
                 <button 
                     key={index} 
-                    onClick={() => handleItemClick(index)}
+                    onClick={() => setActiveIndex(index)}
                     className={cn(
                         "w-2 h-2 rounded-full transition-all duration-300",
                         activeIndex === index ? 'bg-primary scale-125' : 'bg-muted-foreground/50'
@@ -158,7 +150,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
                 />
             ))}
         </div>
-        <Button onClick={() => { nextItem(); resetAutoplay(); }} variant="outline" size="icon">
+        <Button onClick={nextItem} variant="outline" size="icon">
           <ChevronRight className="h-4 w-4" />
           <span className="sr-only">Suivant</span>
         </Button>
@@ -166,3 +158,4 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
     </div>
   );
 }
+

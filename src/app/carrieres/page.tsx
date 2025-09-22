@@ -15,17 +15,15 @@ export const metadata = {
 };
 
 const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: { icon: React.ElementType, title: React.ReactNode, description: string, colorClass: string }) => (
-    <Card className="text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
-        <CardHeader className="items-center">
-            <div className={`p-4 bg-primary/10 rounded-full`}>
-                <Icon className={`h-8 w-8 ${colorClass}`} />
-            </div>
-            <CardTitle className="pt-4">{title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-    </Card>
+    <div className="bg-secondary/50 rounded-2xl p-6 flex flex-col items-start gap-4 h-full">
+        <div className={`p-2 bg-primary/10 rounded-full`}>
+            <Icon className={`h-6 w-6 ${colorClass}`} />
+        </div>
+        <div className="flex-grow">
+            <h3 className="font-semibold text-lg">{title}</h3>
+            <p className="text-muted-foreground mt-1">{description}</p>
+        </div>
+    </div>
 );
 
 export default function CarrieresPage() {

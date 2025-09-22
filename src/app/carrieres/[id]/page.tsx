@@ -160,10 +160,11 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                     </div>
 
                     <div className="text-xs text-muted-foreground space-y-3 p-4 border-l-2">
-                         <p>"En soumettant votre candidature, vous consentez à ce que votre CV soit conservé dans notre base de données..."</p>
-                         <p>"Veuillez noter que seules les candidatures rencontrant le profil du poste seront contactées..."</p>
-                         <p>"L'emploi du masculin est utilisé dans le seul but d'alléger le texte."</p>
-                         <p>"Le diplôme doit être reconnu par le ministère de l'Éducation..."</p>
+                        <p>Veuillez nous faire parvenir votre CV en format PDF dès maintenant à : <a href={`mailto:emploi@brokou.com?subject=Candidature: ${offer.title} (${offer.id})`} className="text-primary hover:underline">emploi@brokou.com</a> en précisant le titre et le numéro de l'offre.</p>
+                        <p>*En soumettant votre candidature, vous consentez à ce que votre CV soit conservé dans notre base de données et utilisé pour des opportunités d’emploi similaires dans les entreprises "BROKOU Inc." et "ÉQUIMAF".</p>
+                        <p>*Veuillez noter que seules les candidatures rencontrant le profil du poste seront contactées. Nous vous remercions de votre collaboration.</p>
+                        <p>*L’emploi du masculin est utilisé dans le seul but d’alléger le texte.</p>
+                        <p>*Le diplôme doit être reconnu par le ministère de l’Éducation. Pour les diplômes obtenus à l’extérieur du Canada, une copie de l’évaluation comparative délivrée par le ministère de l’Immigration, de la Diversité et de l’Inclusion (MIDI) doit être présentée.</p>
                     </div>
                 </aside>
             </div>

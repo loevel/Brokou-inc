@@ -46,7 +46,19 @@ export default function ServicesPage() {
       const sections = gsap.utils.toArray<HTMLElement>('.category-section');
       const colors = ['hsl(var(--background))', 'hsl(var(--chart-3))', 'hsl(var(--chart-1))', 'hsl(var(--chart-4))', 'hsl(var(--chart-2))'];
       const textColors = ['hsl(var(--foreground))', 'hsl(var(--primary-foreground))', 'hsl(var(--primary-foreground))', 'hsl(var(--accent-foreground))', 'hsl(var(--primary-foreground))'];
-      const headingColors = ['hsl(var(--foreground))', 'hsl(var(--primary-foreground))', 'hsl(var(--primary-foreground))', 'hsl(var(--accent-foreground))', 'hsl(var(--primary-foreground))'];
+      
+      ScrollTrigger.create({
+          trigger: mainRef.current,
+          start: 'top top',
+          end: 'bottom bottom',
+          onLeaveBack: () => {
+              gsap.to(mainRef.current, {
+                backgroundColor: 'hsl(var(--background))',
+                color: 'hsl(var(--foreground))',
+                overwrite: 'auto'
+              });
+          }
+      });
 
       sections.forEach((section, index) => {
         const colorIndex = (index + 1) % colors.length;
@@ -54,30 +66,17 @@ export default function ServicesPage() {
             trigger: section,
             start: 'top center',
             end: 'bottom center',
-            onEnter: () => gsap.to(mainRef.current, { 
-                backgroundColor: colors[colorIndex], 
-                color: textColors[colorIndex],
-                duration: 1,
-                ease: 'power1.inOut'
-            }),
-            onEnterBack: () => gsap.to(mainRef.current, { 
-                backgroundColor: colors[colorIndex], 
-                color: textColors[colorIndex],
-                duration: 1,
-                ease: 'power1.inOut'
-            }),
-            onLeave: () => gsap.to(mainRef.current, { 
-                backgroundColor: colors[(colorIndex + colors.length - 1) % colors.length],
-                color: textColors[(colorIndex + colors.length - 1) % colors.length],
-                duration: 1,
-                ease: 'power1.inOut'
-            }),
-            onLeaveBack: () => gsap.to(mainRef.current, { 
-                backgroundColor: colors[(colorIndex + colors.length - 1) % colors.length],
-                color: textColors[(colorIndex + colors.length - 1) % colors.length],
-                duration: 1,
-                ease: 'power1.inOut'
-            }),
+            onToggle: (self) => {
+                if (self.isActive) {
+                    gsap.to(mainRef.current, { 
+                        backgroundColor: colors[colorIndex], 
+                        color: textColors[colorIndex],
+                        duration: 1,
+                        ease: 'power1.inOut',
+                        overwrite: 'auto'
+                    });
+                }
+            },
         });
       });
 

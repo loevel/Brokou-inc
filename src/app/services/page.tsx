@@ -14,7 +14,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "services-header");
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLDivElement>(null);
 
   const categories = services.reduce((acc, service) => {
       const category = service.category || "Autres";
@@ -41,6 +42,46 @@ export default function ServicesPage() {
           },
         });
       });
+      
+      const sections = gsap.utils.toArray<HTMLElement>('.category-section');
+      const colors = ['hsl(var(--background))', 'hsl(var(--chart-3))', 'hsl(var(--chart-1))', 'hsl(var(--chart-4))', 'hsl(var(--chart-2))'];
+      const textColors = ['hsl(var(--foreground))', 'hsl(var(--primary-foreground))', 'hsl(var(--primary-foreground))', 'hsl(var(--accent-foreground))', 'hsl(var(--primary-foreground))'];
+      const headingColors = ['hsl(var(--foreground))', 'hsl(var(--primary-foreground))', 'hsl(var(--primary-foreground))', 'hsl(var(--accent-foreground))', 'hsl(var(--primary-foreground))'];
+
+      sections.forEach((section, index) => {
+        const colorIndex = (index + 1) % colors.length;
+        ScrollTrigger.create({
+            trigger: section,
+            start: 'top center',
+            end: 'bottom center',
+            onEnter: () => gsap.to(mainRef.current, { 
+                backgroundColor: colors[colorIndex], 
+                color: textColors[colorIndex],
+                duration: 1,
+                ease: 'power1.inOut'
+            }),
+            onEnterBack: () => gsap.to(mainRef.current, { 
+                backgroundColor: colors[colorIndex], 
+                color: textColors[colorIndex],
+                duration: 1,
+                ease: 'power1.inOut'
+            }),
+            onLeave: () => gsap.to(mainRef.current, { 
+                backgroundColor: colors[(colorIndex + colors.length - 1) % colors.length],
+                color: textColors[(colorIndex + colors.length - 1) % colors.length],
+                duration: 1,
+                ease: 'power1.inOut'
+            }),
+            onLeaveBack: () => gsap.to(mainRef.current, { 
+                backgroundColor: colors[(colorIndex + colors.length - 1) % colors.length],
+                color: textColors[(colorIndex + colors.length - 1) % colors.length],
+                duration: 1,
+                ease: 'power1.inOut'
+            }),
+        });
+      });
+
+
     }, containerRef);
 
     return () => ctx.revert();
@@ -72,40 +113,42 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24">
-        <div className="container mx-auto px-4 overflow-hidden">
-          {Object.entries(categories).map(([category, servicesInCategory]) => {
-            if (category === "Services pour portables & ordinateurs") {
-                const orgStructureItems = servicesInCategory.map(service => ({
-                    title: service.name,
-                    description: service.description_short,
-                    icon: service.icon
-                }));
-                return (
-                    <div key={category} className="mb-20">
-                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{category}</h2>
-                         </div>
-                        <OrganizationalStructure items={orgStructureItems} autoplay={true} />
-                    </div>
-                )
-            }
-            
-            return (
-                <div key={category} className="mb-20">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-12">{category}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {servicesInCategory.map((service) => (
-                    <div key={service.id} className="service-card-animate">
-                        <ServiceDetailCard service={service} />
-                    </div>
-                    ))}
-                </div>
-                </div>
-            )
-          })}
-        </div>
-      </section>
+      <div ref={mainRef} className="transition-colors duration-1000 ease-in-out">
+        {Object.entries(categories).map(([category, servicesInCategory], index) => {
+          if (category === "Services pour portables & ordinateurs") {
+              const orgStructureItems = servicesInCategory.map(service => ({
+                  title: service.name,
+                  description: service.description_short,
+                  icon: service.icon
+              }));
+              return (
+                  <section key={category} className="category-section py-20 lg:py-24" data-color-index={index+1}>
+                      <div className="container mx-auto px-4 overflow-hidden">
+                           <div className="text-center mb-12">
+                              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{category}</h2>
+                           </div>
+                          <OrganizationalStructure items={orgStructureItems} autoplay={true} />
+                      </div>
+                  </section>
+              )
+          }
+          
+          return (
+              <section key={category} className="category-section py-20 lg:py-24" data-color-index={index+1}>
+                  <div className="container mx-auto px-4 overflow-hidden">
+                      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-12">{category}</h2>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                          {servicesInCategory.map((service) => (
+                          <div key={service.id} className="service-card-animate">
+                              <ServiceDetailCard service={service} />
+                          </div>
+                          ))}
+                      </div>
+                  </div>
+              </section>
+          )
+        })}
+      </div>
     </div>
   );
 }

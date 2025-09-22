@@ -281,7 +281,7 @@ export const services: Service[] = [
   }
 ];
 
-export const featuredServices = services.slice(0, 3);
+export const featuredServices = services.filter(s => ["project-management", "risk-management", "security-management", "digital-transformation", "developpement-logiciel"].includes(s.id));
 
 export const jobOffers: JobOffer[] = [
   {

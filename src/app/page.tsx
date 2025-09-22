@@ -4,10 +4,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ServiceCard } from "@/components/ui/ServiceCard";
 import { featuredServices } from "@/lib/data";
 import { HeroSection } from "@/components/ui/HeroSection";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Plus } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import placeholderImages from "@/lib/placeholder-images.json";
 import clientImagesData from "@/lib/client-images.json";
@@ -21,7 +20,32 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import { Testimonials } from "@/components/ui/Testimonials";
 import { testimonials } from "@/lib/testimonials";
+import type { Service } from "@/lib/types";
 
+const FeaturedServiceCard = ({ service }: { service: Service }) => {
+  const serviceImage = placeholderImages.placeholderImages.find(p => p.id === service.imageId);
+
+  return (
+    <div className="bg-secondary rounded-2xl p-6 flex flex-col h-full relative">
+        <p className="text-sm font-semibold text-muted-foreground">{service.category}</p>
+        <h3 className="text-2xl font-bold mt-1 mb-4">{service.name}</h3>
+        {serviceImage && (
+            <div className="relative flex-grow min-h-[250px] mt-auto">
+                <Image
+                    src={serviceImage.imageUrl}
+                    alt={serviceImage.description}
+                    data-ai-hint={serviceImage.imageHint}
+                    fill
+                    className="object-contain"
+                />
+            </div>
+        )}
+        <Button size="icon" className="absolute bottom-4 right-4 rounded-full h-8 w-8 bg-black/50 backdrop-blur-sm text-white hover:bg-black/70">
+            <Plus className="h-4 w-4" />
+        </Button>
+    </div>
+  )
+}
 
 export default function Home() {
   const whyChooseUsImage = placeholderImages.placeholderImages.find(p => p.id === "why-choose-us");
@@ -34,24 +58,36 @@ export default function Home() {
     <div className="flex flex-col">
       <HeroSection />
 
-      <section id="services" className="py-20 lg:py-32">
+      <section id="services" className="py-20 lg:py-32 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Nos Services Phares
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+              Découvrez nos services
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Des solutions innovantes pour propulser votre entreprise vers de
-              nouveaux sommets.
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+              Des solutions sur mesure, conçues pour répondre aux défis complexes de votre entreprise et pour catalyser votre croissance.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredServices.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button asChild size="lg">
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {featuredServices.map((service) => (
+                <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
+                   <Link href={`/services/${service.id}`}>
+                      <FeaturedServiceCard service={service} />
+                   </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-[-50px] hidden md:inline-flex" />
+            <CarouselNext className="right-[-50px] hidden md:inline-flex" />
+          </Carousel>
+           <div className="text-center mt-16">
+            <Button asChild size="lg" variant="secondary">
               <Link href="/services">
                 Découvrir tous nos services <ArrowRight className="ml-2" />
               </Link>

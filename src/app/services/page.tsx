@@ -1,15 +1,20 @@
+
+"use client";
+
+import { useLayoutEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from "next/image";
 import { services } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { ServiceDetailCard } from "@/components/ui/ServiceDetailCard";
 
-export const metadata = {
-  title: "Nos Services - BROKOU INC",
-  description: "Découvrez la gamme complète de services que Brokou Inc. propose pour accompagner votre transformation numérique.",
-};
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "services-header");
+  const containerRef = useRef(null);
+
   const categories = services.reduce((acc, service) => {
       const category = service.category || "Autres";
       if (!acc[category]) {
@@ -19,9 +24,30 @@ export default function ServicesPage() {
       return acc;
     }, {} as Record<string, typeof services>);
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray('.service-card-animate');
+      cards.forEach((card: any) => {
+        gsap.from(card, {
+          y: 50,
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            toggleActions: 'play none none none',
+          },
+        });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
 
   return (
-    <div>
+    <div ref={containerRef}>
        <section className="relative py-24 md:py-32 bg-secondary">
         {headerImage && (
              <div className="absolute inset-0">
@@ -52,7 +78,9 @@ export default function ServicesPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-12">{category}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {servicesInCategory.map((service) => (
-                  <ServiceDetailCard key={service.id} service={service} />
+                  <div key={service.id} className="service-card-animate">
+                    <ServiceDetailCard service={service} />
+                  </div>
                 ))}
               </div>
             </div>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -22,7 +23,8 @@ import Autoplay from "embla-carousel-autoplay"
 
 export default function Home() {
   const whyChooseUsImage = placeholderImages.placeholderImages.find(p => p.id === "why-choose-us");
-  const partners = clientImagesData.clientImages;
+  const clients = clientImagesData.clientImages;
+  const partners = placeholderImages.placeholderImages.filter(p => p.id.startsWith("partner-"));
   const tools = placeholderImages.placeholderImages.filter(p => p.id.startsWith("tool-"));
 
 
@@ -118,11 +120,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="partners" className="py-20 lg:py-32">
+      <section id="clients" className="py-20 lg:py-32">
         <div className="container mx-auto px-4">
            <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Ils nous font confiance
+              Nos Clients
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
               Nous sommes fiers de collaborer avec des entreprises leaders de leur secteur.
@@ -142,12 +144,12 @@ export default function Home() {
             className="w-full max-w-6xl mx-auto"
           >
             <CarouselContent>
-              {partners.map((partner) => (
-                <CarouselItem key={partner.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
+              {clients.map((client) => (
+                <CarouselItem key={client.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
                   <div className="p-1">
                     <Image
-                      src={partner.src}
-                      alt={partner.alt}
+                      src={client.src}
+                      alt={client.alt}
                       width={80}
                       height={80}
                       className="object-contain"
@@ -230,6 +232,54 @@ export default function Home() {
           </Carousel>
         </div>
       </section>
+
+      <section id="partners" className="py-20 lg:py-32">
+        <div className="container mx-auto px-4">
+           <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Nos Partenaires
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Nous collaborons avec des partenaires de confiance pour offrir les meilleures solutions.
+            </p>
+          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2200,
+                stopOnInteraction: false,
+              }),
+            ]}
+            className="w-full max-w-6xl mx-auto"
+          >
+            <CarouselContent>
+              {partners.map((partner) => (
+                <CarouselItem key={partner.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
+                  <div className="p-1">
+                    <Image
+                      src={partner.imageUrl}
+                      alt={partner.description}
+                      data-ai-hint={partner.imageHint}
+                      width={80}
+                      height={80}
+                      className="object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
+
     </div>
   );
 }
+
+    

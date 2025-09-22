@@ -45,7 +45,8 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
   const handleManualInteraction = useCallback((action: () => void) => {
     stopAutoplay();
     action();
-    startAutoplay();
+    // Restart autoplay after a delay
+    setTimeout(startAutoplay, 5000);
   }, [stopAutoplay, startAutoplay]);
 
   const nextItem = useCallback(() => {
@@ -79,11 +80,13 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
         let scale = 1;
         let opacity = 1;
         let x = 0;
+        let rotationY = 0;
         
         if (distance !== 0) {
             scale = 0.8;
             opacity = 0.4;
             x = distance * 50 + (distance > 0 ? 30 : -30);
+            rotationY = distance > 0 ? -15 : 15;
         } else {
              zIndex = totalItems + 1;
         }
@@ -92,6 +95,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
             x: `${x}%`,
             scale: scale,
             opacity: opacity,
+            rotationY: rotationY,
             zIndex: zIndex,
             duration: 0.5,
             ease: 'power3.out',
@@ -123,7 +127,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
               <div className={cn(
                 "w-full h-full p-6 rounded-lg shadow-lg border transition-all duration-500 ease-in-out flex flex-col justify-between text-center bg-card text-card-foreground",
                 {
-                    'border-primary shadow-primary/20 scale-110': activeIndex === index
+                    'border-primary shadow-primary/20': activeIndex === index
                 }
               )}>
                 <div className="flex-grow flex flex-col items-center justify-center">

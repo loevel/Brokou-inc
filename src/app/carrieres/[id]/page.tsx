@@ -1,3 +1,4 @@
+
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { jobOffers } from "@/lib/data";
@@ -68,7 +69,7 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                         </div>
                     </div>
                     <div className="flex-shrink-0">
-                        <Button size="lg" asChild>
+                        <Button size="lg" asChild className="transition-transform duration-300 hover:scale-105">
                              <a href={`mailto:emploi@brokou.com?subject=Candidature: ${offer.title} (${offer.id})`}>
                                 <Mail className="mr-2 h-5 w-5" />
                                 Postuler
@@ -150,7 +151,7 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                                 </div>
                            </li>
                         </ul>
-                        <Button className="w-full mt-8" size="lg" asChild>
+                        <Button className="w-full mt-8 transition-transform duration-300 hover:scale-105" size="lg" asChild>
                             <a href={`mailto:emploi@brokou.com?subject=Candidature: ${offer.title} (${offer.id})`}>
                                 <Mail className="mr-2 h-5 w-5" />
                                 Postuler

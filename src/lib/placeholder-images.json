@@ -106,7 +106,7 @@
     {
       "id": "service-pc-support",
       "description": "Person providing remote IT support",
-      "imageUrl": "https://picsum.photos/seed/pcsupport/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1730602942862-f049461a8e3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8U291dGllbiUyMCVDMyVBMCUyMGRpc3RhbmNlfGVufDB8fHx8MTc1ODUwOTUyOXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "remote support"
     },
     {

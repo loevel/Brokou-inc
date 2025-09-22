@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { cn } from '@/lib/utils';
 import type { LucideIcon } from 'lucide-react';
@@ -27,40 +27,27 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
 
   const totalItems = items.length;
 
-  const nextItem = () => {
+  const nextItem = useCallback(() => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % totalItems);
-  };
+  }, [totalItems]);
 
   const prevItem = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
   };
-
-  const resetAutoplay = () => {
-    if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-    }
-    if (autoplay) {
-        intervalRef.current = setInterval(nextItem, 3000);
-    }
-  };
-
+  
   useEffect(() => {
     itemsRef.current = itemsRef.current.slice(0, totalItems);
   }, [totalItems]);
   
   useEffect(() => {
-    resetAutoplay();
-    return () => {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-        }
-    };
-  }, [activeIndex, autoplay, totalItems]);
+    if (autoplay) {
+      const interval = setInterval(nextItem, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [autoplay, nextItem]);
 
 
   useEffect(() => {
-    if (!containerRef.current) return;
-
     itemsRef.current.forEach((itemEl, index) => {
         if (!itemEl) return;
 
@@ -91,6 +78,10 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
 
   }, [activeIndex, totalItems]);
 
+  const handleManualInteraction = (action: () => void) => {
+    action();
+  }
+
   return (
     <div 
         className="w-full flex flex-col items-center"
@@ -108,7 +99,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
               ref={(el) => (itemsRef.current[index] = el)}
               className="absolute w-60 h-80 cursor-pointer"
               style={{ transformStyle: 'preserve-3d' }}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => handleManualInteraction(() => setActiveIndex(index))}
             >
               <div className={cn(
                 "w-full h-full p-6 rounded-lg shadow-lg border transition-all duration-500 ease-in-out flex flex-col justify-between text-center bg-card text-card-foreground",
@@ -134,7 +125,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
         })}
       </div>
        <div className="flex items-center gap-4 mt-8">
-        <Button onClick={prevItem} variant="outline" size="icon">
+        <Button onClick={() => handleManualInteraction(prevItem)} variant="outline" size="icon">
           <ChevronLeft className="h-4 w-4" />
           <span className="sr-only">Précédent</span>
         </Button>
@@ -142,7 +133,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
             {items.map((_, index) => (
                 <button 
                     key={index} 
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => handleManualInteraction(() => setActiveIndex(index))}
                     className={cn(
                         "w-2 h-2 rounded-full transition-all duration-300",
                         activeIndex === index ? 'bg-primary scale-125' : 'bg-muted-foreground/50'
@@ -150,7 +141,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
                 />
             ))}
         </div>
-        <Button onClick={nextItem} variant="outline" size="icon">
+        <Button onClick={() => handleManualInteraction(nextItem)} variant="outline" size="icon">
           <ChevronRight className="h-4 w-4" />
           <span className="sr-only">Suivant</span>
         </Button>
@@ -158,4 +149,3 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
     </div>
   );
 }
-

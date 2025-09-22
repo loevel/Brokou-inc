@@ -10,6 +10,7 @@ export type Service = {
   imageId: string;
   category?: string;
   details?: string[];
+  link?: string;
 };
 
 export type JobOffer = {

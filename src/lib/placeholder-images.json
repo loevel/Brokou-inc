@@ -80,6 +80,60 @@
       "imageHint": "smart home"
     },
     {
+      "id": "service-pc-config",
+      "description": "Computer setup and configuration",
+      "imageUrl": "https://picsum.photos/seed/pcconfig/600/400",
+      "imageHint": "computer setup"
+    },
+    {
+      "id": "service-pc-software",
+      "description": "Software installation on a laptop",
+      "imageUrl": "https://picsum.photos/seed/pcsoftware/600/400",
+      "imageHint": "software install"
+    },
+    {
+      "id": "service-pc-accessories",
+      "description": "Various computer accessories on a desk",
+      "imageUrl": "https://picsum.photos/seed/pcaccessories/600/400",
+      "imageHint": "computer accessories"
+    },
+    {
+      "id": "service-pc-transfer",
+      "description": "Data transfer between two laptops",
+      "imageUrl": "https://picsum.photos/seed/pctransfer/600/400",
+      "imageHint": "data transfer"
+    },
+    {
+      "id": "service-pc-support",
+      "description": "Person providing remote IT support",
+      "imageUrl": "https://picsum.photos/seed/pcsupport/600/400",
+      "imageHint": "remote support"
+    },
+    {
+      "id": "service-pc-sales",
+      "description": "Colorful bars representing sales charts",
+      "imageUrl": "https://picsum.photos/seed/pcsales/600/400",
+      "imageHint": "sales chart"
+    },
+    {
+      "id": "service-pc-repair",
+      "description": "Inside of a computer with glowing components",
+      "imageUrl": "https://picsum.photos/seed/pcrepair/600/400",
+      "imageHint": "computer repair"
+    },
+    {
+      "id": "service-pc-recovery",
+      "description": "Close-up of a hard drive platter",
+      "imageUrl": "https://picsum.photos/seed/pcrecovery/600/400",
+      "imageHint": "data recovery"
+    },
+    {
+      "id": "service-pc-update",
+      "description": "Close-up of a computer keyboard",
+      "imageUrl": "https://picsum.photos/seed/pcupdate/600/400",
+      "imageHint": "keyboard close-up"
+    },
+    {
       "id": "why-choose-us",
       "description": "Image for the 'Why Choose Us' section",
       "imageUrl": "https://picsum.photos/seed/8/800/600",

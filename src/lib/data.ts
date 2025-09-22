@@ -1,5 +1,5 @@
 import type { Service, JobOffer } from "@/lib/types";
-import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users, type LucideIcon, type LucideProps, ShieldCheck, FolderGit, ShieldAlert, Network, Phone, Router } from "lucide-react";
+import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users, type LucideIcon, type LucideProps, ShieldCheck, FolderGit, ShieldAlert, Network, Phone, Router, HardDrive, Settings, Smartphone, Download, LifeBuoy, ShoppingCart, Cpu, HardDriveUpload, Power } from "lucide-react";
 import React from 'react';
 
 const iconMap: { [key: string]: LucideIcon } = {
@@ -16,6 +16,15 @@ const iconMap: { [key: string]: LucideIcon } = {
     Network,
     Phone,
     Router,
+    HardDrive,
+    Settings,
+    Smartphone,
+    Download,
+    LifeBuoy,
+    ShoppingCart,
+    Cpu,
+    HardDriveUpload,
+    Power,
 };
 
 export const services: Service[] = [
@@ -164,6 +173,105 @@ export const services: Service[] = [
     description_long: "Intégrez l'Internet des Objets (IoT) dans votre stratégie d'entreprise. Nous vous aidons à déployer et gérer des parcs d'objets connectés pour collecter des données précieuses, automatiser des processus et créer de nouveaux services.",
     imageId: "service-iot",
     details: ["Conseil et stratégie IoT", "Déploiement de capteurs et appareils", "Plateforme de gestion et d'analyse des données"]
+  },
+  {
+    id: "config-install",
+    name: "Configuration et installation",
+    iconName: "Settings",
+    icon: Settings,
+    category: "Services pour portables & ordinateurs",
+    description_short: "Nous vous aidons à configurer votre nouvel équipement informatique afin qu'il fonctionne avec une performance optimale.",
+    description_long: "Nous vous aidons à configurer votre nouvel équipement informatique afin qu'il fonctionne avec une performance optimale.",
+    imageId: "service-pc-config",
+    details: []
+  },
+  {
+    id: "software-install",
+    name: "Installation de logiciel",
+    iconName: "Download",
+    icon: Download,
+    category: "Services pour portables & ordinateurs",
+    description_short: "Évitez les casses-têtes et laissez-nous installer vos nouveaux logiciels sur votre équipement.",
+    description_long: "Évitez les casses-têtes et laissez-nous installer vos nouveaux logiciels sur votre équipement.",
+    imageId: "service-pc-software",
+    details: []
+  },
+  {
+    id: "accessories-install",
+    name: "Installation d'accessoires",
+    iconName: "Power",
+    icon: Power,
+    category: "Services pour portables & ordinateurs",
+    description_short: "Installation d'imprimante, numériseur, clavier, ou disque dur externe sur votre équipement.",
+    description_long: "Ayez l'esprit tranquille en laissant un de nos techniciens s'occuper de l'installation de votre dernière pièce de matériel comme une imprimante, un numériseur, un clavier, ou un disque dur externe sur votre équipement.",
+    imageId: "service-pc-accessories",
+    details: []
+  },
+  {
+    id: "data-transfer",
+    name: "Transfert de données",
+    iconName: "Smartphone",
+    icon: Smartphone,
+    category: "Services pour portables & ordinateurs",
+    description_short: "Nos techniciens sauvegarderont ou transféreront vos données entre deux équipements.",
+    description_long: "Vous passez à un nouvel ordinateur? Nos techniciens peuvent vous aider. Nos techniciens sauvegarderont ou transféreront vos données entre deux équipements, en s'assurant de conserver la même structure de dossiers que sur l'équipement précédent.",
+    imageId: "service-pc-transfer",
+    details: []
+  },
+  {
+    id: "remote-support",
+    name: "Soutien à distance",
+    iconName: "LifeBuoy",
+    icon: LifeBuoy,
+    category: "Services pour portables & ordinateurs",
+    description_short: "Obtenez du soutien à distance par téléphone ou visioconférence dans la langue de votre choix.",
+    description_long: "Obtenez du soutien à distance par téléphone ou visioconférence dans la langue de votre choix.",
+    imageId: "service-pc-support",
+    details: []
+  },
+  {
+    id: "equipment-sales",
+    name: "Ventes d'équipements",
+    iconName: "ShoppingCart",
+    icon: ShoppingCart,
+    category: "Services pour portables & ordinateurs",
+    description_short: "Visitez notre site internet de ventes de d'équipements et de matériels informatiques.",
+    description_long: "Visitez notre site internet de ventes de d'équipements et de matériels informatiques. www.equimaf.ca",
+    imageId: "service-pc-sales",
+    details: []
+  },
+  {
+    id: "pc-repair",
+    name: "Diagnostic et réparation",
+    iconName: "Cpu",
+    icon: Cpu,
+    category: "Services pour portables & ordinateurs",
+    description_short: "Nous vous aidons à configurer votre nouvel équipement informatique afin qu'il fonctionne avec une performance optimale.",
+    description_long: "Nous vous aidons à configurer votre nouvel équipement informatique afin qu'il fonctionne avec une performance optimale.",
+    imageId: "service-pc-repair",
+    details: []
+  },
+  {
+    id: "data-recovery",
+    name: "Récupération de données",
+    iconName: "HardDrive",
+    icon: HardDrive,
+    category: "Services pour portables & ordinateurs",
+    description_short: "Vous avez subitement perdu vos photos souvenirs, des documents financiers et d'autres données importantes? Nos techniciens peuvent vous aider.",
+    description_long: "Vous avez subitement perdu vos photos souvenirs, des documents financiers et d'autres données importantes? Nos techniciens peuvent vous aider.",
+    imageId: "service-pc-recovery",
+    details: []
+  },
+  {
+    id: "system-update",
+    name: "Mise au point du système",
+    iconName: "HardDriveUpload",
+    icon: HardDriveUpload,
+    category: "Services pour portables & ordinateurs",
+    description_short: "Maintenez vos équipements et logiciels à jours pour un fonctionnement optimal.",
+    description_long: "Maintenez vos équipements et logiciels à jours pour un fonctionnement optimal.",
+    imageId: "service-pc-update",
+    details: []
   }
 ];
 

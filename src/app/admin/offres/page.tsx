@@ -19,6 +19,10 @@ export default function GestionOffresPage() {
         prevOffers.map(offer => offer.id === updatedOffer.id ? updatedOffer : offer)
     );
   };
+  
+  const handleOfferDeleted = (offerId: string) => {
+    setJobOffers((prevOffers) => prevOffers.filter(offer => offer.id !== offerId));
+  }
 
   return (
     <div>
@@ -27,6 +31,7 @@ export default function GestionOffresPage() {
         data={jobOffers} 
         onOfferAdded={handleOfferAdded}
         onOfferUpdated={handleOfferUpdated}
+        onOfferDeleted={handleOfferDeleted}
        />
     </div>
   );

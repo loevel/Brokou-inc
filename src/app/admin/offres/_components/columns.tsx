@@ -18,30 +18,56 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
+
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { EditOfferForm } from "./edit-offer-form";
+import { useToast } from "@/hooks/use-toast";
 
 declare module '@tanstack/react-table' {
   interface TableMeta<TData> {
     onOfferUpdated: (updatedOffer: TData) => void;
+    onOfferDeleted: (offerId: string) => void;
   }
 }
 
 const ActionsCell = ({ row, table }: { row: Row<JobOffer>, table: Table<JobOffer> }) => {
   const offer = row.original;
+  const { toast } = useToast();
   const [isEditDialogOpen, setIsEditDialogOpen] = React.useState(false);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
+
 
   const handleOfferUpdated = (updatedOffer: JobOffer) => {
     table.options.meta?.onOfferUpdated(updatedOffer);
     setIsEditDialogOpen(false);
   };
+
+  const handleOfferDeleted = () => {
+    table.options.meta?.onOfferDeleted(offer.id);
+     toast({
+      title: "Offre supprimée !",
+      description: "L'offre a été supprimée avec succès.",
+      variant: 'destructive'
+    });
+    setIsDeleteDialogOpen(false);
+  }
   
   return (
     <>
     <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Modifier l'offre d'emploi</DialogTitle>
           <DialogDescription>
@@ -51,6 +77,22 @@ const ActionsCell = ({ row, table }: { row: Row<JobOffer>, table: Table<JobOffer
         <EditOfferForm offer={offer} onOfferUpdated={handleOfferUpdated} />
       </DialogContent>
     </Dialog>
+
+    <AlertDialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
+        <AlertDialogContent>
+            <AlertDialogHeader>
+            <AlertDialogTitle>Êtes-vous sûr de vouloir supprimer cette offre ?</AlertDialogTitle>
+            <AlertDialogDescription>
+                Cette action est irréversible. L'offre "{offer.title}" sera définitivement supprimée.
+            </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+            <AlertDialogCancel>Annuler</AlertDialogCancel>
+            <AlertDialogAction onClick={handleOfferDeleted} className="bg-destructive hover:bg-destructive/90">Supprimer</AlertDialogAction>
+            </AlertDialogFooter>
+        </AlertDialogContent>
+    </AlertDialog>
+
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="h-8 w-8 p-0">
@@ -65,7 +107,7 @@ const ActionsCell = ({ row, table }: { row: Row<JobOffer>, table: Table<JobOffer
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => setIsEditDialogOpen(true)}>Modifier</DropdownMenuItem>
-        <DropdownMenuItem className="text-destructive">Supprimer</DropdownMenuItem>
+        <DropdownMenuItem className="text-destructive" onClick={() => setIsDeleteDialogOpen(true)}>Supprimer</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
     </>
@@ -98,6 +140,10 @@ export const columns: ColumnDef<JobOffer>[] = [
         const type = row.original.type;
         return <Badge variant={type === 'Temps plein' ? 'default' : 'secondary'}>{type}</Badge>;
     }
+  },
+  {
+    accessorKey: "validityDate",
+    header: "Date de fin",
   },
   {
     id: "actions",

@@ -37,13 +37,15 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
   onOfferAdded: (newOffer: JobOffer) => void;
   onOfferUpdated: (updatedOffer: JobOffer) => void;
+  onOfferDeleted: (offerId: string) => void;
 }
 
 export function DataTable<TData extends JobOffer, TValue>({
   columns,
   data,
   onOfferAdded,
-  onOfferUpdated
+  onOfferUpdated,
+  onOfferDeleted,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [isAddDialogOpen, setIsAddDialogOpen] = React.useState(false);
@@ -61,6 +63,9 @@ export function DataTable<TData extends JobOffer, TValue>({
     meta: {
       onOfferUpdated: (updatedOffer: JobOffer) => {
         onOfferUpdated(updatedOffer);
+      },
+      onOfferDeleted: (offerId: string) => {
+        onOfferDeleted(offerId);
       }
     }
   });
@@ -84,7 +89,7 @@ export function DataTable<TData extends JobOffer, TValue>({
                     Ajouter une offre
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[425px]">
+              <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle>Ajouter une nouvelle offre</DialogTitle>
                   <DialogDescription>

@@ -8,6 +8,7 @@ import Image from "next/image";
 import { services } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { ServiceDetailCard } from "@/components/ui/ServiceDetailCard";
+import { OrganizationalStructure } from '@/components/ui/OrganizationalStructure';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,19 +73,37 @@ export default function ServicesPage() {
       </section>
 
       <section className="py-20 lg:py-24">
-        <div className="container mx-auto px-4">
-          {Object.entries(categories).map(([category, servicesInCategory]) => (
-            <div key={category} className="mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-12">{category}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {servicesInCategory.map((service) => (
-                  <div key={service.id} className="service-card-animate">
-                    <ServiceDetailCard service={service} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="container mx-auto px-4 overflow-hidden">
+          {Object.entries(categories).map(([category, servicesInCategory]) => {
+            if (category === "Services pour portables & ordinateurs") {
+                const orgStructureItems = servicesInCategory.map(service => ({
+                    title: service.name,
+                    description: service.description_short,
+                    icon: service.icon
+                }));
+                return (
+                    <div key={category} className="mb-20">
+                         <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{category}</h2>
+                         </div>
+                        <OrganizationalStructure items={orgStructureItems} />
+                    </div>
+                )
+            }
+            
+            return (
+                <div key={category} className="mb-20">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-12">{category}</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {servicesInCategory.map((service) => (
+                    <div key={service.id} className="service-card-animate">
+                        <ServiceDetailCard service={service} />
+                    </div>
+                    ))}
+                </div>
+                </div>
+            )
+          })}
         </div>
       </section>
     </div>

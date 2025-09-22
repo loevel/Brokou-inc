@@ -1,18 +1,24 @@
 
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useMemo } from "react";
 import { JobOfferCard } from "@/components/ui/JobOfferCard";
 import { jobOffers } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight } from "lucide-react";
+import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-
-export const metadata = {
-  title: "Carrières - BROKOU INC",
-  description: "Rejoignez notre équipe d'innovateurs et façonnez l'avenir du numérique. Découvrez nos offres d'emploi actuelles.",
-};
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import type { JobOffer } from "@/lib/types";
 
 const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: { icon: React.ElementType, title: React.ReactNode, description: string, colorClass: string }) => (
     <div className="bg-secondary/50 rounded-2xl p-6 flex flex-col items-start gap-4 h-full">
@@ -29,6 +35,22 @@ const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: {
 export default function CarrieresPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "careers-header");
   const ctaImage = placeholderImages.placeholderImages.find(p => p.id === "careers-cta-background");
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [locationFilter, setLocationFilter] = useState("all");
+  const [typeFilter, setTypeFilter] = useState<JobOffer["type"] | "all">("all");
+
+  const locations = useMemo(() => ["all", ...Array.from(new Set(jobOffers.map(o => o.location)))], []);
+  const types: (JobOffer["type"] | "all")[] = ["all", "Temps plein", "Temps partiel", "Contrat"];
+
+  const filteredOffers = useMemo(() => {
+    return jobOffers.filter(offer => {
+      const matchesSearch = searchTerm === "" || offer.title.toLowerCase().includes(searchTerm.toLowerCase()) || offer.description.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesLocation = locationFilter === "all" || offer.location === locationFilter;
+      const matchesType = typeFilter === "all" || offer.type === typeFilter;
+      return matchesSearch && matchesLocation && matchesType;
+    });
+  }, [searchTerm, locationFilter, typeFilter]);
 
   return (
     <div>
@@ -58,18 +80,59 @@ export default function CarrieresPage() {
       <section className="py-20 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-center mb-6">
               Offres d'Emploi Actuelles
             </h2>
+            
+            {/* Filter Section */}
+            <Card className="mb-10 p-4 shadow-sm">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="relative md:col-span-3">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Rechercher par mot-clé..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10"
+                  />
+                </div>
+                <Select value={locationFilter} onValueChange={setLocationFilter}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Lieu" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {locations.map(location => (
+                      <SelectItem key={location} value={location}>
+                        {location === "all" ? "Tous les lieux" : location}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <Select value={typeFilter} onValueChange={(value) => setTypeFilter(value as JobOffer["type"] | "all")}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Type de contrat" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {types.map(type => (
+                      <SelectItem key={type} value={type}>
+                        {type === "all" ? "Tous les types" : type}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </Card>
+
+
             <div className="space-y-8">
-              {jobOffers.map((offer) => (
+              {filteredOffers.map((offer) => (
                 <JobOfferCard key={offer.id} offer={offer} />
               ))}
             </div>
-             {jobOffers.length === 0 && (
-              <div className="text-center py-12 border rounded-lg">
-                <p className="text-muted-foreground">Aucune offre d'emploi pour le moment.</p>
-                <p className="text-muted-foreground">Revenez bientôt ou envoyez-nous une candidature spontanée !</p>
+             {filteredOffers.length === 0 && (
+              <div className="text-center py-12 border rounded-lg bg-card">
+                <p className="text-lg font-semibold">Aucune offre ne correspond à votre recherche.</p>
+                <p className="text-muted-foreground mt-2">Essayez d'ajuster vos filtres ou revenez bientôt !</p>
               </div>
             )}
           </div>

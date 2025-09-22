@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { jobOffers } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle, Calendar, Clock, MapPin, Briefcase, Target, ListChecks, Award, BriefcaseBusiness, Mail } from "lucide-react";
+import { ArrowLeft, CheckCircle, Calendar, Clock, MapPin, Briefcase, Target, ListChecks, Award, BriefcaseBusiness, Mail, AlertTriangle } from "lucide-react";
 import ReactMarkdown from 'react-markdown';
 import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 type JobOfferPageProps = {
   params: {
@@ -98,7 +99,7 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                             {offer.activities.map((activity, index) => (
                                 <li key={index} className="flex items-start gap-3">
                                     <Target className="h-6 w-6 text-chart-2 mt-1 flex-shrink-0" />
-                                    <ReactMarkdown className="text-muted-foreground">{activity}</ReactMarkdown>
+                                    <div className="prose prose-stone dark:prose-invert max-w-none text-muted-foreground"><ReactMarkdown>{activity}</ReactMarkdown></div>
                                 </li>
                             ))}
                         </ul>
@@ -110,7 +111,7 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                             {offer.deliverables.map((item, index) => (
                                 <li key={index} className="flex items-start gap-3">
                                     <ListChecks className="h-6 w-6 text-chart-4 mt-1 flex-shrink-0" />
-                                    <ReactMarkdown className="text-muted-foreground">{item}</ReactMarkdown>
+                                    <div className="prose prose-stone dark:prose-invert max-w-none text-muted-foreground"><ReactMarkdown>{item}</ReactMarkdown></div>
                                 </li>
                             ))}
                         </ul>
@@ -122,7 +123,7 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                             {offer.requirements.map((req, index) => (
                                 <li key={index} className="flex items-start gap-3">
                                     <Award className="h-6 w-6 text-chart-1 mt-1 flex-shrink-0" />
-                                    <ReactMarkdown className="text-muted-foreground">{req}</ReactMarkdown>
+                                    <div className="prose prose-stone dark:prose-invert max-w-none text-muted-foreground"><ReactMarkdown>{req}</ReactMarkdown></div>
                                 </li>
                             ))}
                         </ul>
@@ -159,13 +160,17 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                         </Button>
                     </div>
 
-                    <div className="text-xs text-muted-foreground space-y-3 p-4 border-l-2">
-                        <p>Veuillez nous faire parvenir votre CV en format PDF dès maintenant à : <a href={`mailto:emploi@brokou.com?subject=Candidature: ${offer.title} (${offer.id})`} className="text-primary hover:underline">emploi@brokou.com</a> en précisant le titre et le numéro de l'offre.</p>
-                        <p>*En soumettant votre candidature, vous consentez à ce que votre CV soit conservé dans notre base de données et utilisé pour des opportunités d’emploi similaires dans les entreprises "BROKOU Inc." et "ÉQUIMAF".</p>
-                        <p>*Veuillez noter que seules les candidatures rencontrant le profil du poste seront contactées. Nous vous remercions de votre collaboration.</p>
-                        <p>*L’emploi du masculin est utilisé dans le seul but d’alléger le texte.</p>
-                        <p>*Le diplôme doit être reconnu par le ministère de l’Éducation. Pour les diplômes obtenus à l’extérieur du Canada, une copie de l’évaluation comparative délivrée par le ministère de l’Immigration, de la Diversité et de l’Inclusion (MIDI) doit être présentée.</p>
-                    </div>
+                    <Alert>
+                        <AlertTriangle className="h-4 w-4" />
+                        <AlertTitle>Note importante</AlertTitle>
+                        <AlertDescription className="space-y-3">
+                            <p>Veuillez nous faire parvenir votre CV en format PDF dès maintenant à : <a href={`mailto:emploi@brokou.com?subject=Candidature: ${offer.title} (${offer.id})`} className="font-semibold text-primary hover:underline">emploi@brokou.com</a> en précisant le titre et le numéro de l'offre.</p>
+                            <p className="text-xs">*En soumettant votre candidature, vous consentez à ce que votre CV soit conservé dans notre base de données et utilisé pour des opportunités d’emploi similaires dans les entreprises "BROKOU Inc." et "ÉQUIMAF".</p>
+                            <p className="text-xs">*Veuillez noter que seules les candidatures rencontrant le profil du poste seront contactées. Nous vous remercions de votre collaboration.</p>
+                            <p className="text-xs">*L’emploi du masculin est utilisé dans le seul but d’alléger le texte.</p>
+                            <p className="text-xs">*Le diplôme doit être reconnu par le ministère de l’Éducation. Pour les diplômes obtenus à l’extérieur du Canada, une copie de l’évaluation comparative délivrée par le ministère de l’Immigration, de la Diversité et de l’Inclusion (MIDI) doit être présentée.</p>
+                        </AlertDescription>
+                    </Alert>
                 </aside>
             </div>
         </section>

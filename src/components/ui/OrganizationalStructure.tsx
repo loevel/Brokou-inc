@@ -21,31 +21,53 @@ interface OrganizationalStructureProps {
 
 export function OrganizationalStructure({ items, autoplay = false }: OrganizationalStructureProps) {
   const [activeIndex, setActiveIndex] = useState(Math.floor(items.length / 2));
-  const containerRef = useRef<HTMLDivElement>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const totalItems = items.length;
 
-  const nextItem = useCallback(() => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % totalItems);
-  }, [totalItems]);
+  const stopAutoplay = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
 
-  const prevItem = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
-  };
-  
+  const startAutoplay = useCallback(() => {
+    if (autoplay) {
+      stopAutoplay();
+      intervalRef.current = setInterval(() => {
+        setActiveIndex((prev) => (prev + 1) % totalItems);
+      }, 3000);
+    }
+  }, [autoplay, totalItems, stopAutoplay]);
+
+  const handleManualInteraction = useCallback((action: () => void) => {
+    stopAutoplay();
+    action();
+    startAutoplay();
+  }, [stopAutoplay, startAutoplay]);
+
+  const nextItem = useCallback(() => {
+    handleManualInteraction(() => setActiveIndex((prev) => (prev + 1) % totalItems));
+  }, [handleManualInteraction, totalItems]);
+
+  const prevItem = useCallback(() => {
+    handleManualInteraction(() => setActiveIndex((prev) => (prev - 1 + totalItems) % totalItems));
+  }, [handleManualInteraction, totalItems]);
+
+  const selectItem = useCallback((index: number) => {
+    handleManualInteraction(() => setActiveIndex(index));
+  }, [handleManualInteraction]);
+
   useEffect(() => {
     itemsRef.current = itemsRef.current.slice(0, totalItems);
   }, [totalItems]);
   
   useEffect(() => {
-    if (autoplay) {
-      const interval = setInterval(nextItem, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [autoplay, nextItem]);
-
+    startAutoplay();
+    return () => stopAutoplay();
+  }, [startAutoplay, stopAutoplay]);
 
   useEffect(() => {
     itemsRef.current.forEach((itemEl, index) => {
@@ -78,18 +100,15 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
 
   }, [activeIndex, totalItems]);
 
-  const handleManualInteraction = (action: () => void) => {
-    action();
-  }
-
   return (
     <div 
         className="w-full flex flex-col items-center"
     >
       <div 
-        ref={containerRef} 
         className="relative w-full h-[350px] flex justify-center items-center overflow-visible"
         style={{ perspective: '1200px' }}
+        onMouseEnter={stopAutoplay}
+        onMouseLeave={startAutoplay}
       >
         {items.map((item, index) => {
           const Icon = item.icon;
@@ -99,7 +118,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
               ref={(el) => (itemsRef.current[index] = el)}
               className="absolute w-60 h-80 cursor-pointer"
               style={{ transformStyle: 'preserve-3d' }}
-              onClick={() => handleManualInteraction(() => setActiveIndex(index))}
+              onClick={() => selectItem(index)}
             >
               <div className={cn(
                 "w-full h-full p-6 rounded-lg shadow-lg border transition-all duration-500 ease-in-out flex flex-col justify-between text-center bg-card text-card-foreground",
@@ -125,7 +144,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
         })}
       </div>
        <div className="flex items-center gap-4 mt-8">
-        <Button onClick={() => handleManualInteraction(prevItem)} variant="outline" size="icon">
+        <Button onClick={prevItem} variant="outline" size="icon">
           <ChevronLeft className="h-4 w-4" />
           <span className="sr-only">Précédent</span>
         </Button>
@@ -133,7 +152,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
             {items.map((_, index) => (
                 <button 
                     key={index} 
-                    onClick={() => handleManualInteraction(() => setActiveIndex(index))}
+                    onClick={() => selectItem(index)}
                     className={cn(
                         "w-2 h-2 rounded-full transition-all duration-300",
                         activeIndex === index ? 'bg-primary scale-125' : 'bg-muted-foreground/50'
@@ -141,7 +160,7 @@ export function OrganizationalStructure({ items, autoplay = false }: Organizatio
                 />
             ))}
         </div>
-        <Button onClick={() => handleManualInteraction(nextItem)} variant="outline" size="icon">
+        <Button onClick={nextItem} variant="outline" size="icon">
           <ChevronRight className="h-4 w-4" />
           <span className="sr-only">Suivant</span>
         </Button>

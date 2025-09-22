@@ -97,6 +97,12 @@
       "imageHint": "team meeting"
     },
     {
+      "id": "careers-cta-background",
+      "description": "Background for the careers call to action section",
+      "imageUrl": "https://picsum.photos/seed/careercta/1600/600",
+      "imageHint": "office team"
+    },
+    {
       "id": "partner-1",
       "description": "Partner 1 Logo",
       "imageUrl": "https://picsum.photos/seed/p1/60/60",

@@ -1,10 +1,13 @@
 
 import Image from "next/image";
+import Link from "next/link";
 import { JobOfferCard } from "@/components/ui/JobOfferCard";
 import { jobOffers } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale, HeartHandshake, ShieldCheck } from "lucide-react";
+import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 
 export const metadata = {
   title: "Carrières - BROKOU INC",
@@ -27,6 +30,7 @@ const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: {
 
 export default function CarrieresPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "careers-header");
+  const ctaImage = placeholderImages.placeholderImages.find(p => p.id === "careers-cta-background");
 
   return (
     <div>
@@ -104,6 +108,43 @@ export default function CarrieresPage() {
               colorClass="text-chart-3"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="relative py-20 lg:py-24">
+        {ctaImage && (
+            <div className="absolute inset-0">
+                <Image 
+                    src={ctaImage.imageUrl} 
+                    alt={ctaImage.description}
+                    data-ai-hint={ctaImage.imageHint}
+                    fill 
+                    className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/60"></div>
+            </div>
+        )}
+        <div className="container mx-auto px-4 relative z-10 text-center text-white">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Devenez un de nos consulants</h2>
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div className="flex flex-col items-center">
+                    <ThumbsUp className="h-10 w-10 text-primary mb-4" />
+                    <p className="font-semibold">Faites un voyage avec nous !</p>
+                </div>
+                <div className="flex flex-col items-center">
+                    <ThumbsUp className="h-10 w-10 text-primary mb-4" />
+                    <p className="font-semibold">Un lieu de travail inclusif est un meilleur lieu de travail</p>
+                </div>
+                <div className="flex flex-col items-center">
+                    <ThumbsUp className="h-10 w-10 text-primary mb-4" />
+                    <p className="font-semibold">Chez BROKOU, nous avons mis au point un processus de recrutement qui nous aide à trouver les bonnes personnes</p>
+                </div>
+            </div>
+            <div className="mt-12">
+                <Button size="lg" variant="secondary" asChild>
+                    <Link href="/contact">Venez nous voir <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                </Button>
+            </div>
         </div>
       </section>
     </div>

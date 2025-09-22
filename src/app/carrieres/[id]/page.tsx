@@ -160,11 +160,11 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                         </Button>
                     </div>
 
-                    <Alert className="bg-accent/10 border-accent/50">
-                        <AlertTriangle className="h-4 w-4 text-accent-foreground" />
-                        <AlertTitle className="text-accent-foreground">Note importante</AlertTitle>
-                        <AlertDescription className="space-y-3 text-accent-foreground/80">
-                            <p>Veuillez nous faire parvenir votre CV en format PDF dès maintenant à : <a href={`mailto:emploi@brokou.com?subject=Candidature: ${offer.title} (${offer.id})`} className="font-semibold text-accent-foreground hover:underline">emploi@brokou.com</a> en précisant le titre et le numéro de l'offre.</p>
+                    <Alert>
+                        <AlertTriangle className="h-4 w-4" />
+                        <AlertTitle>Note importante</AlertTitle>
+                        <AlertDescription className="space-y-3">
+                            <p>Veuillez nous faire parvenir votre CV en format PDF dès maintenant à : <a href={`mailto:emploi@brokou.com?subject=Candidature: ${offer.title} (${offer.id})`} className="font-semibold text-primary hover:underline">emploi@brokou.com</a> en précisant le titre et le numéro de l'offre.</p>
                             <p className="text-xs">*En soumettant votre candidature, vous consentez à ce que votre CV soit conservé dans notre base de données et utilisé pour des opportunités d’emploi similaires dans les entreprises "BROKOU Inc." et "ÉQUIMAF".</p>
                             <p className="text-xs">*Veuillez noter que seules les candidatures rencontrant le profil du poste seront contactées. Nous vous remercions de votre collaboration.</p>
                             <p className="text-xs">*L’emploi du masculin est utilisé dans le seul but d’alléger le texte.</p>

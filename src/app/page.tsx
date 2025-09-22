@@ -19,6 +19,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import { Testimonials } from "@/components/ui/Testimonials";
+import { testimonials } from "@/lib/testimonials";
 
 
 export default function Home() {
@@ -277,6 +279,8 @@ export default function Home() {
           </Carousel>
         </div>
       </section>
+
+      <Testimonials data={testimonials} />
 
     </div>
   );

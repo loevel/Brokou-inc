@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from "lucide-react";
 
 export type Service = {
@@ -26,4 +27,13 @@ export type JobOffer = {
   status: string;
   startDate: string;
   socialBenefits: boolean;
+};
+
+export type Testimonial = {
+  id: string;
+  name: string;
+  role: string;
+  quote: string;
+  avatarImageId: string;
+  rating: number;
 };

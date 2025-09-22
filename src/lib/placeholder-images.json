@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -197,6 +198,48 @@
       "description": "Tool 8 Logo",
       "imageUrl": "https://picsum.photos/seed/t8/60/60",
       "imageHint": "tech logo"
+    },
+    {
+      "id": "testimonial-avatar-1",
+      "description": "Avatar of Sophie L.",
+      "imageUrl": "https://picsum.photos/seed/ta1/80/80",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-avatar-2",
+      "description": "Avatar of Jean D.",
+      "imageUrl": "https://picsum.photos/seed/ta2/80/80",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-avatar-3",
+      "description": "Avatar of Marie C.",
+      "imageUrl": "https://picsum.photos/seed/ta3/80/80",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-avatar-4",
+      "description": "Decorative avatar 1",
+      "imageUrl": "https://picsum.photos/seed/td1/60/60",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-avatar-5",
+      "description": "Decorative avatar 2",
+      "imageUrl": "https://picsum.photos/seed/td2/50/50",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-avatar-6",
+      "description": "Decorative avatar 3",
+      "imageUrl": "https://picsum.photos/seed/td3/70/70",
+      "imageHint": "person portrait"
+    },
+     {
+      "id": "testimonial-avatar-7",
+      "description": "Decorative avatar 4",
+      "imageUrl": "https://picsum.photos/seed/td4/40/40",
+      "imageHint": "person portrait"
     }
   ]
 }

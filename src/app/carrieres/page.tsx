@@ -1,18 +1,28 @@
+
 import Image from "next/image";
 import { JobOfferCard } from "@/components/ui/JobOfferCard";
 import { jobOffers } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Scale, HeartHandshake, ShieldCheck } from "lucide-react";
 
 export const metadata = {
   title: "Carrières - BROKOU INC",
   description: "Rejoignez notre équipe d'innovateurs et façonnez l'avenir du numérique. Découvrez nos offres d'emploi actuelles.",
 };
 
-const CitizenCompanyFeature = ({ title, description }: { title: React.ReactNode, description: string }) => (
-  <div className="text-center md:text-left">
-    <h3 className="text-xl font-bold mb-2">{title}</h3>
-    <p className="text-muted-foreground">{description}</p>
-  </div>
+const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: { icon: React.ElementType, title: React.ReactNode, description: string, colorClass: string }) => (
+    <Card className="text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+        <CardHeader className="items-center">
+            <div className={`p-4 bg-primary/10 rounded-full`}>
+                <Icon className={`h-8 w-8 ${colorClass}`} />
+            </div>
+            <CardTitle className="pt-4">{title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+    </Card>
 );
 
 export default function CarrieresPage() {
@@ -70,37 +80,28 @@ export default function CarrieresPage() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
               Travailler pour une entreprise citoyenne
             </h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+              Nous croyons en un environnement de travail qui valorise chaque individu, promeut le bien-être et s'engage pour un avenir durable.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <CitizenCompanyFeature
-              title={
-                <>
-                  <span className="text-chart-1">Égalité, diversité</span>
-                  <br />
-                  <span className="text-chart-3">et inclusion</span>
-                </>
-              }
-              description="Chez BROKOU, vous êtes les bienvenus, peu importe votre origine, vos croyances, votre apparence, votre genre, votre âge, votre race."
+              icon={Scale}
+              title="Égalité & Inclusion"
+              description="Chez BROKOU, vous êtes les bienvenus, peu importe votre origine, vos croyances, votre apparence, votre genre, votre âge, ou votre race."
+              colorClass="text-chart-1"
             />
             <CitizenCompanyFeature
-              title={
-                <>
-                  Développement
-                  <br />
-                  <span className="text-chart-2">durable</span>
-                </>
-              }
-              description="Nous avons pris une responsabilité de réduire notre empreinte sur le climat avec la façon dont nous nous déployont jusqu'aux produits et services que nous proposons à nos clients."
+              icon={ShieldCheck}
+              title="Développement Durable"
+              description="Nous prenons la responsabilité de réduire notre empreinte climatique, de nos opérations quotidiennes jusqu'aux solutions que nous proposons à nos clients."
+              colorClass="text-chart-2"
             />
              <CitizenCompanyFeature
-              title={
-                <>
-                  Conditions de travail
-                  <br />
-                  <span className="text-chart-3">exceptionnelles</span>
-                </>
-              }
+              icon={HeartHandshake}
+              title="Bien-être au travail"
               description="Viens vivre une expérience de travail inédite chez nous. C'est l'humain qui compte dans toutes les circonstances."
+              colorClass="text-chart-3"
             />
           </div>
         </div>

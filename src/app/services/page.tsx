@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { ServiceCard } from "@/components/ui/ServiceCard";
 import { services } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
+import { ServiceDetailCard } from "@/components/ui/ServiceDetailCard";
 
 export const metadata = {
   title: "Nos Services - BROKOU INC",
@@ -10,6 +10,16 @@ export const metadata = {
 
 export default function ServicesPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "services-header");
+  const categories = services.reduce((acc, service) => {
+      const category = service.category || "Autres";
+      if (!acc[category]) {
+        acc[category] = [];
+      }
+      acc[category].push(service);
+      return acc;
+    }, {} as Record<string, typeof services>);
+
+
   return (
     <div>
        <section className="relative py-24 md:py-32 bg-secondary">
@@ -37,11 +47,16 @@ export default function ServicesPage() {
 
       <section className="py-20 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
-          </div>
+          {Object.entries(categories).map(([category, servicesInCategory]) => (
+            <div key={category} className="mb-20">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-12">{category}</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {servicesInCategory.map((service) => (
+                  <ServiceDetailCard key={service.id} service={service} />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>

@@ -1,5 +1,5 @@
 import type { Service, JobOffer } from "@/lib/types";
-import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users, type LucideIcon, type LucideProps } from "lucide-react";
+import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users, type LucideIcon, type LucideProps, ShieldCheck, FolderGit, ShieldAlert } from "lucide-react";
 import React from 'react';
 
 const iconMap: { [key: string]: LucideIcon } = {
@@ -9,10 +9,96 @@ const iconMap: { [key: string]: LucideIcon } = {
     Megaphone,
     Code,
     Cloud,
-    Users
+    Users,
+    FolderGit,
+    ShieldAlert,
+    ShieldCheck,
 };
 
 export const services: Service[] = [
+  {
+    id: "project-management",
+    name: "Gestion des projets",
+    iconName: "FolderGit",
+    icon: FolderGit,
+    category: "Gouvernance, audit et sécurité des TI",
+    description_short: "Alignez votre stratégie informatique sur la stratégie économique.",
+    description_long: "Nous assurons la réalisation de programmes produisant des bénéfices, dans les délais et les budgets et répondant aux exigences et aux normes de qualité.",
+    details: [
+        "Aligner la stratégie informatique sur la stratégie économique",
+        "Réaliser des bénéfices à partir des investissements informatiques et du portefeuille de services",
+        "Assurer la réalisation de programmes produisant des bénéfices, dans les délais et les budgets et répondant aux exigences et aux normes de qualité",
+    ],
+    imageId: "service-projects",
+  },
+  {
+    id: "risk-management",
+    name: "Gestion des risques",
+    iconName: "ShieldAlert",
+    icon: ShieldAlert,
+    category: "Gouvernance, audit et sécurité des TI",
+    description_short: "Accompagner les équipes dans les initiatives de conformité.",
+    description_long: "Nous aidons à accompagner les équipes dans les initiatives de conformité et de soutien de l'informatique au respect de la réglementation externe à l'entreprise.",
+     details: [
+        "Accompagner les équipes dans les initiatives de conformité et de soutien de l'informatique au respect de la réglementation externe à l'entreprise",
+        "Assurer la réalisation de programmes produisant des bénéfices, dans les délais et les budgets et répondant aux exigences et aux normes de qualité",
+    ],
+    imageId: "service-risk",
+  },
+  {
+    id: "security-management",
+    name: "Gestion de la sécurité",
+    iconName: "ShieldCheck",
+    icon: ShieldCheck,
+    category: "Gouvernance, audit et sécurité des TI",
+    description_short: "Mettre en œuvre de nouveaux mécanismes de gestion de la sécurité.",
+    description_long: "Nous aidons à accompagner les équipes internes dans les pratiques de plus en plus complexes et évolutives en matière de gouvernance et gestion de la sécurité de l'information.",
+     details: [
+        "Accompagner les équipes internes dans les pratiques de plus en plus complexes et évolutives en matière de gouvernance et gestion de la sécurité de l'information",
+        "Mettre en œuvre de nouveaux mécanismes de gestion de la sécurité et de nouveaux cadres de références",
+        "Accompagner les équipes internes dans la prise en charge de la sécurité dans les projets et initiatives de l'organisation",
+    ],
+    imageId: "service-security",
+  },
+  {
+    id: "digital-transformation",
+    name: "Transformation numérique",
+    iconName: "Briefcase",
+    icon: Briefcase,
+    category: "Solutions d'affaires",
+    description_short: "Développer une nouvelle offre dans le cadre de la transformation digitale du modèle d'affaires.",
+    description_long: "La transformation numérique est essentielle pour rester compétitif. Nous vous aidons à moderniser vos processus, à adopter de nouvelles technologies et à améliorer l'expérience client. Nos solutions couvrent l'automatisation des processus, l'intégration de systèmes et la mise en œuvre de plateformes cloud pour une agilité et une efficacité accrues.",
+    details: [
+        "Développer une nouvelle offre dans le cadre de la transformation digitale du modèle d'affaires"
+    ],
+    imageId: "service-digital",
+  },
+   {
+    id: "developpement-logiciel",
+    name: "Développement logiciel",
+    iconName: "Code",
+    icon: Code,
+    category: "Solutions d'affaires",
+    description_short: "Des solutions logicielles sur mesure pour répondre à vos besoins.",
+    description_long: "Nous développons des applications web et mobiles robustes, évolutives et sécurisées. Notre équipe de développeurs expérimentés utilise les dernières technologies pour créer des solutions qui répondent précisément à vos exigences métier et offrent une expérience utilisateur exceptionnelle.",
+     details: [
+        "Bâtir des applications informatiques fiables et performantes qui va de l'étude du besoin du client, en passant par la conception, la mise en œuvre jusqu'à la maintenance"
+    ],
+    imageId: "service-dev"
+  },
+  {
+    id: "data-analytics",
+    name: "Intelligence d'affaires",
+    iconName: "BarChart",
+    icon: BarChart,
+    category: "Solutions d'affaires",
+    description_short: "Transformez vos données en informations exploitables.",
+    description_long: "Libérez le potentiel de vos données avec nos services d'analyse et de business intelligence. Nous vous aidons à collecter, analyser et visualiser vos données pour prendre des décisions plus éclairées. De la mise en place de tableaux de bord interactifs à l'analyse prédictive, nous vous donnons les outils pour comprendre votre entreprise en profondeur.",
+    details: [
+        "Transformer ses données internes et externes en de l'information de gestion utile à la prise de décision et à la découverte de nouvelles opportunités grâce à un ensemble de stratégie et de processus"
+    ],
+    imageId: "service-data",
+  },
   {
     id: "consulting",
     name: "Conseil Stratégique",
@@ -21,24 +107,7 @@ export const services: Service[] = [
     description_short: "Alignez votre technologie avec vos objectifs commerciaux.",
     description_long: "Nous offrons des services de conseil stratégique pour aider les entreprises à naviguer dans le paysage numérique complexe. Nos experts travaillent avec vous pour développer une feuille de route informatique qui soutient et accélère vos objectifs commerciaux. De l'évaluation de l'infrastructure à la planification de la transformation numérique, nous sommes votre partenaire de confiance.",
     imageId: "service-consulting",
-  },
-  {
-    id: "digital-transformation",
-    name: "Transformation Numérique",
-    iconName: "Briefcase",
-    icon: Briefcase,
-    description_short: "Modernisez vos opérations et améliorez l'expérience client.",
-    description_long: "La transformation numérique est essentielle pour rester compétitif. Nous vous aidons à moderniser vos processus, à adopter de nouvelles technologies et à améliorer l'expérience client. Nos solutions couvrent l'automatisation des processus, l'intégration de systèmes et la mise en œuvre de plateformes cloud pour une agilité et une efficacité accrues.",
-    imageId: "service-digital",
-  },
-  {
-    id: "data-analytics",
-    name: "Analyse de Données & BI",
-    iconName: "BarChart",
-    icon: BarChart,
-    description_short: "Transformez vos données en informations exploitables.",
-    description_long: "Libérez le potentiel de vos données avec nos services d'analyse et de business intelligence. Nous vous aidons à collecter, analyser et visualiser vos données pour prendre des décisions plus éclairées. De la mise en place de tableaux de bord interactifs à l'analyse prédictive, nous vous donnons les outils pour comprendre votre entreprise en profondeur.",
-    imageId: "service-data",
+    category: "Gouvernance, audit et sécurité des TI"
   },
   {
     id: "marketing-digital",
@@ -46,17 +115,9 @@ export const services: Service[] = [
     iconName: "Megaphone",
     icon: Megaphone,
     description_short: "Augmentez votre visibilité et engagez votre audience cible.",
-    description_long: "Nos stratégies de marketing digital sont conçées pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
-    imageId: "service-marketing"
-  },
-  {
-    id: "developpement-logiciel",
-    name: "Développement Logiciel",
-    iconName: "Code",
-    icon: Code,
-    description_short: "Des solutions logicielles sur mesure pour répondre à vos besoins.",
-    description_long: "Nous développons des applications web et mobiles robustes, évolutives et sécurisées. Notre équipe de développeurs expérimentés utilise les dernières technologies pour créer des solutions qui répondent précisément à vos exigences métier et offrent une expérience utilisateur exceptionnelle.",
-    imageId: "service-dev"
+    description_long: "Nos stratégies de marketing digital sont conçues pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
+    imageId: "service-marketing",
+    category: "Solutions d'affaires"
   },
   {
     id: "solutions-cloud",
@@ -65,7 +126,8 @@ export const services: Service[] = [
     icon: Cloud,
     description_short: "Migrez vers le cloud pour plus de flexibilité et de scalabilité.",
     description_long: "Tirez parti de la puissance du cloud avec nos services de migration, d'optimisation et de gestion. Que vous soyez sur AWS, Azure ou Google Cloud, nous vous aidons à construire une infrastructure cloud sécurisée, performante et rentable.",
-    imageId: "service-cloud"
+    imageId: "service-cloud",
+    category: "Solutions d'affaires"
   }
 ];
 
@@ -129,7 +191,7 @@ export const jobOffers: JobOffer[] = [
     ],
     remuneration: "Selon profil",
     status: "Permanent",
-    startDate: "Dès que possible",
+startDate: "Dès que possible",
     socialBenefits: true
   },
   {

@@ -43,6 +43,24 @@
       "imageUrl": "https://picsum.photos/seed/7/600/400",
       "imageHint": "server room"
     },
+     {
+      "id": "service-projects",
+      "description": "Image for project management service",
+      "imageUrl": "https://picsum.photos/seed/13/600/400",
+      "imageHint": "project management"
+    },
+    {
+      "id": "service-risk",
+      "description": "Image for risk management service",
+      "imageUrl": "https://picsum.photos/seed/14/600/400",
+      "imageHint": "risk assessment"
+    },
+    {
+      "id": "service-security",
+      "description": "Image for security management service",
+      "imageUrl": "https://picsum.photos/seed/15/600/400",
+      "imageHint": "cyber security"
+    },
     {
       "id": "why-choose-us",
       "description": "Image for the 'Why Choose Us' section",

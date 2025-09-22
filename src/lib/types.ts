@@ -4,11 +4,13 @@ import type { LucideIcon } from "lucide-react";
 export type Service = {
   id: string;
   name: string;
-  iconName: string; // Changed from icon: LucideIcon
-  icon: LucideIcon; // Kept for places where we can use it directly on the server
+  iconName: string; 
+  icon: LucideIcon;
   description_short: string;
   description_long: string;
   imageId: string;
+  category?: string;
+  details?: string[];
 };
 
 export type JobOffer = {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { jobOffers } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle2, Calendar, Clock, MapPin, Briefcase } from "lucide-react";
+import ReactMarkdown from 'react-markdown';
 
 type JobOfferPageProps = {
   params: {
@@ -68,33 +69,23 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                            <span>Fin de validité: {offer.validityDate}</span>
                         </div>
                     </div>
+                    
+                    <div className="prose prose-stone dark:prose-invert max-w-none">
+                        <ReactMarkdown>{offer.description}</ReactMarkdown>
 
-                    <p className="mb-8">{offer.introduction}</p>
-
-                    <div className="space-y-6">
-                        <div>
-                            <h3 className="font-semibold text-lg mb-2">Activités à réaliser :</h3>
-                            <ul className="space-y-2 list-disc list-inside text-muted-foreground">
-                                {offer.activities.map((activity, index) => (
-                                    <li key={index}>{activity}</li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-lg mb-2">Biens livrables :</h3>
-                             <ul className="space-y-2 list-disc list-inside text-muted-foreground">
-                                {offer.deliverables.map((item, index) => (
-                                    <li key={index}>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="font-semibold text-lg mb-2">Exigences :</h3>
-                             <ul className="space-y-2 list-disc list-inside text-muted-foreground">
-                                {offer.requirements.map((item, index) => (
-                                    <li key={index}>{item}</li>
-                                ))}
-                            </ul>
+                        <div className="space-y-6 mt-8">
+                            <div>
+                                <h3 className="font-semibold text-lg mb-2">Activités à réaliser :</h3>
+                                <ReactMarkdown className="text-muted-foreground">{offer.activities.join('\n')}</ReactMarkdown>
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-lg mb-2">Biens livrables :</h3>
+                                <ReactMarkdown className="text-muted-foreground">{offer.deliverables.join('\n')}</ReactMarkdown>
+                            </div>
+                            <div>
+                                <h3 className="font-semibold text-lg mb-2">Exigences :</h3>
+                                <ReactMarkdown className="text-muted-foreground">{offer.requirements.join('\n')}</ReactMarkdown>
+                            </div>
                         </div>
                     </div>
                 </div>

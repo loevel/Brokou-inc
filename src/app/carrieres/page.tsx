@@ -8,6 +8,13 @@ export const metadata = {
   description: "Rejoignez notre équipe d'innovateurs et façonnez l'avenir du numérique. Découvrez nos offres d'emploi actuelles.",
 };
 
+const CitizenCompanyFeature = ({ title, description }: { title: React.ReactNode, description: string }) => (
+  <div className="text-center md:text-left">
+    <h3 className="text-xl font-bold mb-2">{title}</h3>
+    <p className="text-muted-foreground">{description}</p>
+  </div>
+);
+
 export default function CarrieresPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "careers-header");
 
@@ -53,6 +60,48 @@ export default function CarrieresPage() {
                 <p className="text-muted-foreground">Revenez bientôt ou envoyez-nous une candidature spontanée !</p>
               </div>
             )}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Travailler pour une entreprise citoyenne
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <CitizenCompanyFeature
+              title={
+                <>
+                  <span className="text-chart-1">Égalité, diversité</span>
+                  <br />
+                  <span className="text-chart-3">et inclusion</span>
+                </>
+              }
+              description="Chez BROKOU, vous êtes les bienvenus, peu importe votre origine, vos croyances, votre apparence, votre genre, votre âge, votre race."
+            />
+            <CitizenCompanyFeature
+              title={
+                <>
+                  Développement
+                  <br />
+                  <span className="text-chart-2">durable</span>
+                </>
+              }
+              description="Nous avons pris une responsabilité de réduire notre empreinte sur le climat avec la façon dont nous nous déployont jusqu'aux produits et services que nous proposons à nos clients."
+            />
+             <CitizenCompanyFeature
+              title={
+                <>
+                  Conditions de travail
+                  <br />
+                  <span className="text-chart-3">exceptionnelles</span>
+                </>
+              }
+              description="Viens vivre une expérience de travail inédite chez nous. C'est l'humain qui compte dans toutes les circonstances."
+            />
           </div>
         </div>
       </section>

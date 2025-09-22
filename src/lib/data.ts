@@ -1,5 +1,5 @@
 import type { Service, JobOffer } from "@/lib/types";
-import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users, type LucideIcon, type LucideProps, ShieldCheck, FolderGit, ShieldAlert, Network, Phone, Router, HardDrive, Settings, Smartphone, Download, LifeBuoy, ShoppingCart, Cpu, HardDriveUpload, Power } from "lucide-react";
+import { BarChart, Briefcase, Cloud, Code, Megaphone, Lightbulb, Users, type LucideIcon, type LucideProps, ShieldCheck, FolderGit, ShieldAlert, Network, Phone, Router, HardDrive, Settings, Smartphone, Download, LifeBuoy, ShoppingCart, Cpu, HardDriveUpload, Power, FolderGit2, Wrench, Lock, BadgeCheck, Users2, Flag } from "lucide-react";
 import React from 'react';
 
 const iconMap: { [key: string]: LucideIcon } = {
@@ -25,6 +25,12 @@ const iconMap: { [key: string]: LucideIcon } = {
     Cpu,
     HardDriveUpload,
     Power,
+    FolderGit2,
+    Wrench,
+    Lock,
+    BadgeCheck,
+    Users2,
+    Flag,
 };
 
 export const services: Service[] = [
@@ -127,7 +133,7 @@ export const services: Service[] = [
     iconName: "Megaphone",
     icon: Megaphone,
     description_short: "Augmentez votre visibilité et engagez votre audience cible.",
-    description_long: "Nos stratégies de marketing digital sont conçées pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
+    description_long: "Nos stratégies de marketing digital sont conçues pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
     imageId: "service-marketing",
     category: "Solutions d'affaires"
   },

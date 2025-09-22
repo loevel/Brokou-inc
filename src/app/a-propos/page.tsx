@@ -169,15 +169,6 @@ export default function AProposPage() {
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4 py-16 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
-              <h2 className="text-2xl md:text-3xl font-bold">NOUS VISONS LE MÊME BUT : <br/>VOTRE TRANQUILLITÉ D'ESPRIT.</h2>
-              <Button variant="secondary" asChild>
-                  <Link href="/contact">Contactez-nous <ArrowRight className="ml-2 h-5 w-5" /></Link>
-              </Button>
-          </div>
-      </section>
-
       <section className="py-20 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4 overflow-hidden">
           <div className="text-center mb-12">
@@ -189,6 +180,16 @@ export default function AProposPage() {
           <OrganizationalStructure items={orgStructure} />
         </div>
       </section>
+      
+      <section className="bg-primary text-primary-foreground">
+          <div className="container mx-auto px-4 py-16 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+              <h2 className="text-2xl md:text-3xl font-bold">NOUS VISONS LE MÊME BUT : <br/>VOTRE TRANQUILLITÉ D'ESPRIT.</h2>
+              <Button variant="secondary" asChild>
+                  <Link href="/contact">Contactez-nous <ArrowRight className="ml-2 h-5 w-5" /></Link>
+              </Button>
+          </div>
+      </section>
+
     </div>
   );
 }

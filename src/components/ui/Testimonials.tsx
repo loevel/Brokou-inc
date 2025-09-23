@@ -70,17 +70,15 @@ export function Testimonials({ data }: TestimonialsProps) {
 
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
-          <div className="lg:w-1/3 text-center lg:text-left mb-8 lg:mb-0">
-            <Badge variant="outline" className="mb-4 bg-background">Témoignages</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Ce qu'ils disent de <span className="text-primary">BROKOU INC.</span>
+        <div className="text-center max-w-3xl mx-auto">
+             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              Ce qu'ils disent de nous
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              Découvrez les retours d'expérience de nos clients & partenaires.
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Découvrez les retours d'expérience de nos clients & partenaires qui nous font confiance.
             </p>
-          </div>
-          <div className="lg:w-2/3">
+        </div>
+        <div className="mt-16">
             <Carousel 
                 setApi={setApi} 
                 className="w-full" 
@@ -92,19 +90,18 @@ export function Testimonials({ data }: TestimonialsProps) {
                     })
                 ]}
             >
-              <CarouselContent>
+              <CarouselContent className="-ml-8">
                 {data.map((testimonial) => {
                   const avatar = placeholderImages.placeholderImages.find(p => p.id === testimonial.avatarImageId);
                   return (
-                    <CarouselItem key={testimonial.id}>
-                      <div className="p-1">
-                        <Card>
-                          <CardContent className="p-8 text-center md:text-left">
-                            <StarRating rating={testimonial.rating} className="mb-4 justify-center md:justify-start" />
-                            <blockquote className="text-lg text-muted-foreground mb-6">
+                    <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 pl-8">
+                      <Card className="h-full">
+                          <CardContent className="p-8 flex flex-col items-center justify-center text-center h-full">
+                            <StarRating rating={testimonial.rating} className="mb-4" />
+                            <blockquote className="text-lg text-muted-foreground mb-6 flex-grow">
                               "{testimonial.quote}"
                             </blockquote>
-                            <div className="flex items-center justify-center md:justify-start gap-4">
+                            <div className="flex flex-col items-center gap-2">
                               {avatar && (
                                 <Image
                                   src={avatar.imageUrl}
@@ -124,18 +121,16 @@ export function Testimonials({ data }: TestimonialsProps) {
                             </div>
                           </CardContent>
                         </Card>
-                      </div>
                     </CarouselItem>
                   );
                 })}
               </CarouselContent>
-              <div className="mt-6 flex justify-center md:justify-start gap-2">
-                <CarouselPrevious variant="outline" />
-                <CarouselNext variant="outline" />
+              <div className="mt-8 flex justify-center gap-2">
+                <CarouselPrevious variant="outline" className="static translate-y-0" />
+                <CarouselNext variant="outline" className="static translate-y-0" />
               </div>
             </Carousel>
           </div>
-        </div>
       </div>
     </section>
   );

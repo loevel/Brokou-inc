@@ -1,15 +1,24 @@
+
 "use client";
 
-import { useState, useActionState } from 'react';
+import { useState, useActionState, useTransition } from 'react';
 import { useFormStatus } from 'react-dom';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Briefcase, Bot, Loader2, ChevronsUpDown } from 'lucide-react';
+import { MapPin, Briefcase, Bot, Loader2, ChevronsUpDown, Info } from 'lucide-react';
 import type { JobOffer } from '@/lib/types';
 import { summarizeJobDescription } from '@/ai/flows/summarize-job-descriptions';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Alert, AlertDescription, AlertTitle } from './alert';
 
 interface JobOfferCardProps {
   offer: JobOffer;
@@ -23,16 +32,16 @@ const initialState = {
 function SummaryButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" variant="secondary" size="sm" disabled={pending}>
+    <Button type="submit" variant="secondary" className="w-full" disabled={pending}>
       {pending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Génération...
+          Génération du résumé...
         </>
       ) : (
         <>
           <Bot className="mr-2 h-4 w-4" />
-          Résumer avec l'IA
+          Générer un résumé avec l'IA
         </>
       )}
     </Button>
@@ -40,6 +49,7 @@ function SummaryButton() {
 }
 
 export function JobOfferCard({ offer }: JobOfferCardProps) {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [state, formAction] = useActionState(async (prevState: any, formData: FormData) => {
     try {
       const result = await summarizeJobDescription({ jobDescription: offer.description });
@@ -50,64 +60,67 @@ export function JobOfferCard({ offer }: JobOfferCardProps) {
   }, initialState);
 
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <div className="flex justify-between items-start">
-            <CardTitle className="text-xl mb-2">{offer.title}</CardTitle>
-            <Badge variant={offer.type === 'Temps plein' ? 'default' : 'secondary'}>{offer.type}</Badge>
-        </div>
-        <CardDescription asChild>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-            <div className="flex items-center gap-2">
-              <Briefcase className="h-4 w-4" />
-              <span>Brokou Inc.</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
-              <span>{offer.location}</span>
-            </div>
-          </div>
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger>
-              <div className="flex items-center gap-2 text-primary">
-                Voir la description et le résumé IA
-                <ChevronsUpDown className="h-4 w-4" />
+    <>
+      <Card className="w-full flex flex-col md:flex-row transition-all hover:shadow-lg">
+        <CardHeader className="flex-1 p-6">
+          <Badge variant={offer.type === 'Temps plein' ? 'default' : 'secondary'} className="w-fit mb-2">{offer.type}</Badge>
+          <CardTitle className="text-xl mb-2">{offer.title}</CardTitle>
+          <CardDescription asChild>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm">
+              <div className="flex items-center gap-2">
+                <Briefcase className="h-4 w-4" />
+                <span>Brokou Inc.</span>
               </div>
-            </AccordionTrigger>
-            <AccordionContent className="space-y-4 pt-4">
-              <h4 className="font-semibold">Description complète</h4>
-              <p className="text-muted-foreground whitespace-pre-wrap">{offer.description}</p>
-              <Separator />
-              <div className="space-y-2">
-                <h4 className="font-semibold">Résumé par l'IA</h4>
-                {state.summary ? (
-                  <p className="text-muted-foreground p-4 bg-secondary rounded-md border">{state.summary}</p>
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4" />
+                <span>{offer.location}</span>
+              </div>
+            </div>
+          </CardDescription>
+        </CardHeader>
+        <CardFooter className="p-6 border-t md:border-t-0 md:border-l bg-secondary/50 md:w-auto flex flex-col justify-center items-center gap-4">
+           <Button asChild className="w-full">
+            <Link href={`/carrieres/${offer.id}`}>Voir les détails</Link>
+          </Button>
+          <DialogTrigger asChild>
+            <Button variant="outline" className="w-full" onClick={() => setIsDialogOpen(true)}>
+                <Info className="mr-2 h-4 w-4" />
+                <span>Résumé IA</span>
+            </Button>
+          </DialogTrigger>
+        </CardFooter>
+      </Card>
+      
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogContent>
+            <DialogHeader>
+                <DialogTitle>Résumé de l'offre par l'IA</DialogTitle>
+                <DialogDescription>
+                    Obtenez un aperçu rapide du poste de "{offer.title}" grâce à l'intelligence artificielle.
+                </DialogDescription>
+            </DialogHeader>
+            <div className="mt-4 space-y-6">
+                 {state.summary ? (
+                    <Alert>
+                        <Bot className="h-4 w-4" />
+                        <AlertTitle>Résumé</AlertTitle>
+                        <AlertDescription>{state.summary}</AlertDescription>
+                    </Alert>
                 ) : state.error ? (
-                  <p className="text-destructive">{state.error}</p>
+                  <Alert variant="destructive">
+                     <Bot className="h-4 w-4" />
+                    <AlertTitle>Erreur</AlertTitle>
+                    <AlertDescription>{state.error}</AlertDescription>
+                  </Alert>
                 ) : (
-                  <p className="text-sm text-muted-foreground">Cliquez sur le bouton pour générer un résumé.</p>
+                  <p className="text-sm text-center text-muted-foreground py-4">Cliquez sur le bouton ci-dessous pour générer un résumé.</p>
                 )}
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </CardContent>
-      <CardFooter className="flex justify-between items-center">
-        <form action={formAction}>
-          <SummaryButton />
-        </form>
-        <Button asChild>
-          <Link href={`/carrieres/${offer.id}`}>Postuler</Link>
-        </Button>
-      </CardFooter>
-    </Card>
+                <form action={formAction}>
+                    <SummaryButton />
+                </form>
+            </div>
+          </DialogContent>
+      </Dialog>
+    </>
   );
-}
-
-function Separator() {
-    return <div className="bg-border h-[1px] w-full my-4" />
 }

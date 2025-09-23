@@ -31,6 +31,7 @@ import { gsap } from "gsap";
 import { AboutSection } from "@/components/ui/AboutSection";
 import { JobsSection } from "@/components/ui/JobsSection";
 import { HeroSection } from "@/components/ui/HeroSection";
+import { LogoSection } from "@/components/ui/LogoSection";
 
 export default function Home() {
   const whyChooseUsImage = placeholderImages.placeholderImages.find(p => p.id === "why-choose-us");
@@ -69,6 +70,7 @@ export default function Home() {
   return (
     <div ref={mainRef} className="flex flex-col">
       <HeroSection />
+      <LogoSection />
       <ServicesSection />
       <AboutSection />
 

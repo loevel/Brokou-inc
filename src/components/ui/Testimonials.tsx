@@ -18,6 +18,7 @@ import placeholderImages from "@/lib/placeholder-images.json";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { cn } from "@/lib/utils";
+import Autoplay from "embla-carousel-autoplay";
 
 interface TestimonialsProps {
   data: Testimonial[];
@@ -80,7 +81,17 @@ export function Testimonials({ data }: TestimonialsProps) {
             </p>
           </div>
           <div className="lg:w-2/3">
-            <Carousel setApi={setApi} className="w-full" opts={{loop: true}}>
+            <Carousel 
+                setApi={setApi} 
+                className="w-full" 
+                opts={{loop: true}}
+                plugins={[
+                    Autoplay({
+                        delay: 3000,
+                        stopOnInteraction: true,
+                    })
+                ]}
+            >
               <CarouselContent>
                 {data.map((testimonial) => {
                   const avatar = placeholderImages.placeholderImages.find(p => p.id === testimonial.avatarImageId);

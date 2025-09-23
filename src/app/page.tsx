@@ -58,6 +58,7 @@ export default function Home() {
   
   const whyUsSectionRef = useRef(null);
   const whyUsBackgroundRef = useRef(null);
+  const ctaCardRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -85,6 +86,18 @@ export default function Home() {
               });
           }
       });
+
+      // CTA Card Animation
+      if (ctaCardRef.current) {
+        gsap.to(ctaCardRef.current, {
+            '--gradient-angle': '360deg',
+            duration: 10,
+            ease: 'linear',
+            repeat: -1,
+        });
+      }
+
+
     }, whyUsSectionRef);
 
     return () => ctx.revert();
@@ -206,8 +219,14 @@ export default function Home() {
 
       <section id="cta" className="py-20 lg:py-32">
         <div className="container mx-auto px-4 text-center">
-          <Card className="relative overflow-hidden max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary via-chart-1 to-accent opacity-80"></div>
+          <Card 
+            ref={ctaCardRef}
+            className="relative overflow-hidden max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl"
+            style={{
+                '--gradient-angle': '0deg',
+                backgroundImage: `linear-gradient(var(--gradient-angle), hsl(var(--primary)), hsl(var(--chart-1)), hsl(var(--accent)))`
+            } as React.CSSProperties}
+          >
             <CardContent className="p-0 relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold">
                 Prêt à transformer votre entreprise ?
@@ -324,5 +343,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     

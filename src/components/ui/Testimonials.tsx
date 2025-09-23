@@ -23,11 +23,29 @@ interface TestimonialsProps {
   data: Testimonial[];
 }
 
-const DecorativeAvatar = ({ id, className }: { id: string; className: string }) => {
+const DecorativeAvatar = ({ id, className, delay = 0 }: { id: string; className: string, delay?: number }) => {
     const image = placeholderImages.placeholderImages.find(p => p.id === id);
+    const el = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.to(el.current, {
+                y: "random(-20, 20)",
+                x: "random(-10, 10)",
+                rotate: "random(-30, 30)",
+                duration: 4,
+                ease: "sine.inOut",
+                repeat: -1,
+                yoyo: true,
+                delay,
+            });
+        }, el);
+        return () => ctx.revert();
+    }, [delay]);
+
     if (!image) return null;
     return (
-        <div className={cn("absolute rounded-full overflow-hidden shadow-lg", className)}>
+        <div ref={el} className={cn("absolute rounded-full overflow-hidden shadow-lg", className)}>
             <Image
                 src={image.imageUrl}
                 alt={image.description}
@@ -41,35 +59,13 @@ const DecorativeAvatar = ({ id, className }: { id: string; className: string }) 
 
 export function Testimonials({ data }: TestimonialsProps) {
     const [api, setApi] = useState<CarouselApi>();
-    const avatarsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-    useEffect(() => {
-        if (!api) return;
-
-        const handleScroll = () => {
-            const scrollProgress = api.scrollProgress();
-            avatarsRef.current.forEach((avatar, index) => {
-                if (!avatar) return;
-                gsap.to(avatar, {
-                    rotate: scrollProgress * 360 * (index % 2 === 0 ? 1 : -1),
-                    ease: "none"
-                });
-            });
-        };
-
-        api.on("scroll", handleScroll);
-
-        return () => {
-            api.off("scroll", handleScroll);
-        };
-    }, [api]);
     
   return (
     <section className="bg-secondary py-20 lg:py-32 relative overflow-hidden">
-       <DecorativeAvatar id="testimonial-avatar-4" className="w-16 h-16 top-1/4 left-[5%]" ref={el => avatarsRef.current[0] = el} />
-       <DecorativeAvatar id="testimonial-avatar-5" className="w-12 h-12 top-[15%] right-[8%]" ref={el => avatarsRef.current[1] = el} />
-       <DecorativeAvatar id="testimonial-avatar-6" className="w-20 h-20 bottom-[10%] left-[15%]" ref={el => avatarsRef.current[2] = el} />
-       <DecorativeAvatar id="testimonial-avatar-7" className="w-10 h-10 bottom-[20%] right-[12%]" ref={el => avatarsRef.current[3] = el} />
+       <DecorativeAvatar id="testimonial-avatar-4" className="w-16 h-16 top-1/4 left-[5%]" delay={0} />
+       <DecorativeAvatar id="testimonial-avatar-5" className="w-12 h-12 top-[15%] right-[8%]" delay={1} />
+       <DecorativeAvatar id="testimonial-avatar-6" className="w-20 h-20 bottom-[10%] left-[15%]" delay={0.5} />
+       <DecorativeAvatar id="testimonial-avatar-7" className="w-10 h-10 bottom-[20%] right-[12%]" delay={1.5} />
 
 
       <div className="container mx-auto px-4 relative z-10">
@@ -134,3 +130,4 @@ export function Testimonials({ data }: TestimonialsProps) {
   );
 }
 
+    

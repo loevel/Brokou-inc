@@ -79,63 +79,80 @@ export default function CarrieresPage() {
 
       <section className="py-20 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight text-center mb-6">
-              Offres d'Emploi Actuelles
-            </h2>
-            
-            {/* Filter Section */}
-            <Card className="mb-10 p-4 shadow-sm">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="relative md:col-span-3">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    placeholder="Rechercher par mot-clé..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10"
-                  />
-                </div>
-                <Select value={locationFilter} onValueChange={setLocationFilter}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Lieu" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {locations.map(location => (
-                      <SelectItem key={location} value={location}>
-                        {location === "all" ? "Tous les lieux" : location}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <Select value={typeFilter} onValueChange={(value) => setTypeFilter(value as JobOffer["type"] | "all")}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Type de contrat" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {types.map(type => (
-                      <SelectItem key={type} value={type}>
-                        {type === "all" ? "Tous les types" : type}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </Card>
-
-
-            <div className="space-y-8">
-              {filteredOffers.map((offer) => (
-                <JobOfferCard key={offer.id} offer={offer} />
-              ))}
+            <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold tracking-tight">
+                Offres d'Emploi Actuelles
+                </h2>
             </div>
-             {filteredOffers.length === 0 && (
-              <div className="text-center py-12 border rounded-lg bg-card">
-                <p className="text-lg font-semibold">Aucune offre ne correspond à votre recherche.</p>
-                <p className="text-muted-foreground mt-2">Essayez d'ajuster vos filtres ou revenez bientôt !</p>
-              </div>
-            )}
-          </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                {/* Filter Section */}
+                <aside className="lg:col-span-1">
+                    <div className="sticky top-24 space-y-6">
+                        <h3 className="text-xl font-semibold">Filtres</h3>
+                        <div className="space-y-4">
+                            <div>
+                                <label htmlFor="search-input" className="text-sm font-medium text-muted-foreground">Recherche</label>
+                                <div className="relative mt-1">
+                                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                                    <Input
+                                        id="search-input"
+                                        placeholder="Mot-clé..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        className="pl-10"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label htmlFor="location-select" className="text-sm font-medium text-muted-foreground">Lieu</label>
+                                <Select value={locationFilter} onValueChange={setLocationFilter}>
+                                    <SelectTrigger id="location-select" className="mt-1">
+                                        <SelectValue placeholder="Lieu" />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        {locations.map(location => (
+                                        <SelectItem key={location} value={location}>
+                                            {location === "all" ? "Tous les lieux" : location}
+                                        </SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                            <div>
+                                <label htmlFor="type-select" className="text-sm font-medium text-muted-foreground">Type de contrat</label>
+                                <Select value={typeFilter} onValueChange={(value) => setTypeFilter(value as JobOffer["type"] | "all")}>
+                                <SelectTrigger id="type-select" className="mt-1">
+                                    <SelectValue placeholder="Type de contrat" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {types.map(type => (
+                                    <SelectItem key={type} value={type}>
+                                        {type === "all" ? "Tous les types" : type}
+                                    </SelectItem>
+                                    ))}
+                                </SelectContent>
+                                </Select>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                {/* Job Offers List */}
+                <main className="lg:col-span-3">
+                    <div className="space-y-6">
+                    {filteredOffers.map((offer) => (
+                        <JobOfferCard key={offer.id} offer={offer} />
+                    ))}
+                    </div>
+                    {filteredOffers.length === 0 && (
+                    <div className="text-center py-16 border rounded-lg bg-card mt-6">
+                        <p className="text-lg font-semibold">Aucune offre ne correspond à votre recherche.</p>
+                        <p className="text-muted-foreground mt-2">Essayez d'ajuster vos filtres ou revenez bientôt !</p>
+                    </div>
+                    )}
+                </main>
+            </div>
         </div>
       </section>
 

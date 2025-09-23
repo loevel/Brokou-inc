@@ -39,18 +39,21 @@ export default function CarrieresPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
   const [typeFilter, setTypeFilter] = useState<JobOffer["type"] | "all">("all");
+  const [modeFilter, setModeFilter] = useState("all");
 
   const locations = useMemo(() => ["all", ...Array.from(new Set(jobOffers.map(o => o.location)))], []);
   const types: (JobOffer["type"] | "all")[] = ["all", "Temps plein", "Temps partiel", "Contrat"];
+  const modes = useMemo(() => ["all", ...Array.from(new Set(jobOffers.map(o => o.mode)))], []);
 
   const filteredOffers = useMemo(() => {
     return jobOffers.filter(offer => {
       const matchesSearch = searchTerm === "" || offer.title.toLowerCase().includes(searchTerm.toLowerCase()) || offer.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesLocation = locationFilter === "all" || offer.location === locationFilter;
       const matchesType = typeFilter === "all" || offer.type === typeFilter;
-      return matchesSearch && matchesLocation && matchesType;
+      const matchesMode = modeFilter === "all" || offer.mode === modeFilter;
+      return matchesSearch && matchesLocation && matchesType && matchesMode;
     });
-  }, [searchTerm, locationFilter, typeFilter]);
+  }, [searchTerm, locationFilter, typeFilter, modeFilter]);
 
   return (
     <div>
@@ -129,6 +132,21 @@ export default function CarrieresPage() {
                                     {types.map(type => (
                                     <SelectItem key={type} value={type}>
                                         {type === "all" ? "Tous les types" : type}
+                                    </SelectItem>
+                                    ))}
+                                </SelectContent>
+                                </Select>
+                            </div>
+                             <div>
+                                <label htmlFor="mode-select" className="text-sm font-medium text-muted-foreground">Mode de travail</label>
+                                <Select value={modeFilter} onValueChange={setModeFilter}>
+                                <SelectTrigger id="mode-select" className="mt-1">
+                                    <SelectValue placeholder="Mode de travail" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    {modes.map(mode => (
+                                    <SelectItem key={mode} value={mode}>
+                                        {mode === "all" ? "Tous les modes" : mode}
                                     </SelectItem>
                                     ))}
                                 </SelectContent>

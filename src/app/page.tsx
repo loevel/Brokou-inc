@@ -82,9 +82,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroSection />
-
       <ServicesSection />
-      
       <AboutSection />
 
       <section id="why-us" ref={whyUsSectionRef} className="relative min-h-[95vh] flex flex-col justify-center overflow-hidden">

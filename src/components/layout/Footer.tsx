@@ -4,11 +4,16 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone, Twitter, Linkedin, Github } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export function Footer() {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState(new Date().getFullYear());
   const address = "3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada";
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
   
   return (
     <footer className="bg-zinc-900 text-zinc-300 border-t border-zinc-800">
@@ -63,7 +68,7 @@ export function Footer() {
             </div>
 
             <div className="mt-8 pt-8 border-t border-white/20 text-center text-sm text-zinc-400">
-              <p>&copy; {new Date().getFullYear()} Brokou Inc. Tous droits réservés.</p>
+              <p>&copy; {year} Brokou Inc. Tous droits réservés.</p>
             </div>
         </div>
     </footer>

@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { Mail, MapPin, Phone, Printer, Building2 } from "lucide-react";
@@ -15,7 +16,7 @@ export default function ContactPage() {
 
   return (
     <div>
-      <section className="relative py-24 md:py-32 bg-secondary">
+      <section className="relative flex items-center justify-center min-h-[95vh] bg-secondary">
         {headerImage && (
              <div className="absolute inset-0">
                 <Image 

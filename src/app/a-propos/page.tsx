@@ -66,7 +66,7 @@ export default function AProposPage() {
 
   return (
     <div ref={mainRef}>
-      <section className="relative py-24 md:py-32 bg-secondary">
+      <section className="relative flex items-center justify-center min-h-[95vh] bg-secondary">
         {headerImage && (
              <div className="absolute inset-0">
                 <Image 

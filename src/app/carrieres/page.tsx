@@ -22,7 +22,7 @@ import type { JobOffer } from "@/lib/types";
 import { gsap } from "gsap";
 
 const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: { icon: React.ElementType, title: React.ReactNode, description: string, colorClass: string }) => (
-    <div className="bg-secondary/50 rounded-2xl p-6 flex flex-col items-start gap-4 h-full">
+    <div className="bg-secondary/50 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-start gap-4 h-full">
         <div className={`p-2 bg-primary/10 rounded-full`}>
             <Icon className={`h-6 w-6 ${colorClass}`} />
         </div>

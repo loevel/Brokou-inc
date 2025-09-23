@@ -43,22 +43,22 @@ export function HeroSection() {
             });
 
              const colors = {
-                color1: 'hsl(221, 83%, 53%)', // primary
-                color2: 'hsl(45, 100%, 51%)', // accent
-                color3: 'hsl(0, 72%, 51%)', // chart-1
-                color4: 'hsl(88, 57%, 50%)', // chart-2
+                color1: 'hsl(210, 40%, 96.1%)', // secondary
+                color2: 'hsl(221, 83%, 53%)', // primary
+                color3: 'hsl(0, 0%, 100%)',   // card
+                color4: 'hsl(210, 100%, 98%)' // background
             };
 
             gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 8, ease: "sine.inOut" } })
-                .to(colors, { color1: 'hsl(45, 100%, 51%)' })
-                .to(colors, { color2: 'hsl(0, 72%, 51%)' }, "<")
-                .to(colors, { color3: 'hsl(88, 57%, 50%)' }, "<")
-                .to(colors, { color4: 'hsl(221, 83%, 53%)' }, "<");
+                .to(colors, { color1: 'hsl(221, 83%, 63%)' })
+                .to(colors, { color2: 'hsl(210, 40%, 98%)' }, "<")
+                .to(colors, { color3: 'hsl(210, 40%, 96.1%)' }, "<")
+                .to(colors, { color4: 'hsl(0, 0%, 100%)' }, "<");
 
             gsap.ticker.add(() => {
                 if (backgroundRef.current) {
                     gsap.set(backgroundRef.current, {
-                        backgroundImage: `radial-gradient(circle at top left, ${colors.color1}, transparent 40%), radial-gradient(circle at bottom right, ${colors.color2}, transparent 40%), radial-gradient(circle at top right, ${colors.color3}, transparent 30%), radial-gradient(circle at bottom left, ${colors.color4}, transparent 50%)`
+                        backgroundImage: `radial-gradient(circle at 20% 20%, ${colors.color1}, transparent 40%), radial-gradient(circle at 80% 80%, ${colors.color2}, transparent 40%), radial-gradient(circle at 50% 50%, ${colors.color3}, transparent 30%), radial-gradient(circle at 10% 90%, ${colors.color4}, transparent 50%)`
                     });
                 }
             });
@@ -71,7 +71,7 @@ export function HeroSection() {
 
     return (
         <section ref={comp} className="relative bg-background text-foreground min-h-[95vh] flex flex-col justify-center overflow-hidden">
-            <div ref={backgroundRef} className="absolute inset-0 bg-background z-0 opacity-70"></div>
+            <div ref={backgroundRef} className="absolute inset-0 bg-background z-0"></div>
             <div className="container mx-auto px-4 text-center relative z-10">
                 <p id="intro-text" className="text-primary font-semibold mb-2">BROKOU INC.</p>
                 <h1 id="title" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 max-w-4xl mx-auto">

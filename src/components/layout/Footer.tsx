@@ -30,7 +30,7 @@ export function Footer() {
         gsap.ticker.add(() => {
             if (backgroundRef.current) {
                 gsap.set(backgroundRef.current, {
-                    backgroundImage: `radial-gradient(circle at 70% 20%, ${colors.color1}, transparent 40%), radial-gradient(circle at 30% 80%, ${colors.color2}, transparent 40%)`
+                    backgroundImage: `linear-gradient(to left, ${colors.color1}, ${colors.color2}, ${colors.color1})`
                 });
             }
         });

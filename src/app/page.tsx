@@ -22,6 +22,8 @@ import { Testimonials } from "@/components/ui/Testimonials";
 import { testimonials } from "@/lib/testimonials";
 import type { Service } from "@/lib/types";
 import { ServicesSection } from "@/components/ui/ServicesSection";
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const FeaturedServiceCard = ({ service }: { service: Service }) => {
   const serviceImage = placeholderImages.placeholderImages.find(p => p.id === service.imageId);
@@ -53,6 +55,40 @@ export default function Home() {
   const clients = clientImagesData.clientImages;
   const partners = placeholderImages.placeholderImages.filter(p => p.id.startsWith("partner-"));
   const tools = placeholderImages.placeholderImages.filter(p => p.id.startsWith("tool-"));
+  
+  const whyUsSectionRef = useRef(null);
+  const whyUsBackgroundRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const colors = {
+          color1: 'hsl(210, 40%, 96.1%)', // secondary
+          color2: 'hsl(221, 83%, 53%)', // primary
+          color3: 'hsl(0, 0%, 100%)',   // card
+          color4: 'hsl(210, 100%, 98%)' // background
+      };
+
+      gsap.timeline({
+          repeat: -1,
+          yoyo: true,
+          defaults: { duration: 8, ease: "sine.inOut" }
+      })
+      .to(colors, { color1: 'hsl(221, 83%, 63%)' })
+      .to(colors, { color2: 'hsl(210, 40%, 98%)' }, "<")
+      .to(colors, { color3: 'hsl(210, 40%, 96.1%)' }, "<")
+      .to(colors, { color4: 'hsl(0, 0%, 100%)' }, "<");
+
+      gsap.ticker.add(() => {
+          if (whyUsBackgroundRef.current) {
+              gsap.set(whyUsBackgroundRef.current, {
+                  backgroundImage: `radial-gradient(circle at 20% 20%, ${colors.color1}, transparent 40%), radial-gradient(circle at 80% 80%, ${colors.color2}, transparent 40%), radial-gradient(circle at 50% 50%, ${colors.color3}, transparent 30%), radial-gradient(circle at 10% 90%, ${colors.color4}, transparent 50%)`
+              });
+          }
+      });
+    }, whyUsSectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
 
   return (
@@ -61,8 +97,9 @@ export default function Home() {
 
       <ServicesSection />
 
-      <section id="why-us" className="bg-secondary py-20 lg:py-32">
-        <div className="container mx-auto px-4">
+      <section id="why-us" ref={whyUsSectionRef} className="relative bg-secondary py-20 lg:py-32 overflow-hidden">
+        <div ref={whyUsBackgroundRef} className="absolute inset-0 z-0"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -287,3 +324,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

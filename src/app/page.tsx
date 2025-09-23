@@ -21,6 +21,7 @@ import Autoplay from "embla-carousel-autoplay"
 import { Testimonials } from "@/components/ui/Testimonials";
 import { testimonials } from "@/lib/testimonials";
 import type { Service } from "@/lib/types";
+import { ServicesSection } from "@/components/ui/ServicesSection";
 
 const FeaturedServiceCard = ({ service }: { service: Service }) => {
   const serviceImage = placeholderImages.placeholderImages.find(p => p.id === service.imageId);
@@ -58,43 +59,7 @@ export default function Home() {
     <div className="flex flex-col">
       <HeroSection />
 
-      <section id="services" className="py-20 lg:py-32 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Découvrez nos services
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-              Des solutions sur mesure, conçues pour répondre aux défis complexes de votre entreprise et pour catalyser votre croissance.
-            </p>
-          </div>
-          <Carousel
-            opts={{
-              align: "start",
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {featuredServices.map((service) => (
-                <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                   <Link href={`/services/${service.id}`}>
-                      <FeaturedServiceCard service={service} />
-                   </Link>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-[-50px] hidden md:inline-flex" />
-            <CarouselNext className="right-[-50px] hidden md:inline-flex" />
-          </Carousel>
-           <div className="text-center mt-16">
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/services">
-                Découvrir tous nos services <ArrowRight className="ml-2" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ServicesSection />
 
       <section id="why-us" className="bg-secondary py-20 lg:py-32">
         <div className="container mx-auto px-4">
@@ -322,5 +287,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

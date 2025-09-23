@@ -26,8 +26,7 @@ import Autoplay from "embla-carousel-autoplay"
 import { Testimonials } from "@/components/ui/Testimonials";
 import { testimonials } from "@/lib/testimonials";
 import { ServicesSection } from "@/components/ui/ServicesSection";
-import { useLayoutEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useRef } from "react";
 import { AboutSection } from "@/components/ui/AboutSection";
 import { JobsSection } from "@/components/ui/JobsSection";
 import { HeroSection } from "@/components/ui/HeroSection";

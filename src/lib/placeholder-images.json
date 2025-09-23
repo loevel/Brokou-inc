@@ -140,6 +140,12 @@
       "imageHint": "team collaboration"
     },
     {
+      "id": "home-about-us",
+      "description": "Image for the 'About Us' section on the homepage",
+      "imageUrl": "https://picsum.photos/seed/homeabout/800/600",
+      "imageHint": "office teamwork"
+    },
+    {
       "id": "about-us-header",
       "description": "Header image for the About Us page",
       "imageUrl": "https://picsum.photos/seed/9/1600/600",

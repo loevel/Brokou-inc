@@ -4,9 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { featuredServices } from "@/lib/data";
-import { HeroSection } from "@/components/ui/HeroSection";
-import { ArrowRight, CheckCircle, Plus } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import placeholderImages from "@/lib/placeholder-images.json";
 import clientImagesData from "@/lib/client-images.json";
@@ -20,35 +18,12 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import { Testimonials } from "@/components/ui/Testimonials";
 import { testimonials } from "@/lib/testimonials";
-import type { Service } from "@/lib/types";
 import { ServicesSection } from "@/components/ui/ServicesSection";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
-
-const FeaturedServiceCard = ({ service }: { service: Service }) => {
-  const serviceImage = placeholderImages.placeholderImages.find(p => p.id === service.imageId);
-
-  return (
-    <div className="bg-secondary rounded-2xl p-6 flex flex-col h-full relative">
-        <p className="text-sm font-semibold text-muted-foreground">{service.category}</p>
-        <h3 className="text-2xl font-bold mt-1 mb-4">{service.name}</h3>
-        {serviceImage && (
-            <div className="relative flex-grow min-h-[250px] mt-auto">
-                <Image
-                    src={serviceImage.imageUrl}
-                    alt={serviceImage.description}
-                    data-ai-hint={serviceImage.imageHint}
-                    fill
-                    className="object-contain"
-                />
-            </div>
-        )}
-        <Button size="icon" className="absolute bottom-4 right-4 rounded-full h-8 w-8 bg-black/50 backdrop-blur-sm text-white hover:bg-black/70">
-            <Plus className="h-4 w-4" />
-        </Button>
-    </div>
-  )
-}
+import { AboutSection } from "@/components/ui/AboutSection";
+import { JobsSection } from "@/components/ui/JobsSection";
+import { HeroSection } from "@/components/ui/HeroSection";
 
 export default function Home() {
   const whyChooseUsImage = placeholderImages.placeholderImages.find(p => p.id === "why-choose-us");
@@ -109,9 +84,11 @@ export default function Home() {
       <HeroSection />
 
       <ServicesSection />
+      
+      <AboutSection />
 
-      <section id="why-us" ref={whyUsSectionRef} className="relative bg-secondary py-20 lg:py-32 overflow-hidden">
-        <div ref={whyUsBackgroundRef} className="absolute inset-0 z-0"></div>
+      <section id="why-us" ref={whyUsSectionRef} className="relative py-20 lg:py-32 overflow-hidden">
+        <div ref={whyUsBackgroundRef} className="absolute inset-0 z-0 bg-background"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -173,7 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="clients" className="py-20 lg:py-32">
+      <section id="clients" className="py-20 lg:py-24">
         <div className="container mx-auto px-4">
            <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -217,7 +194,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="cta" className="py-20 lg:py-32">
+      <section id="cta" className="py-20 lg:py-24">
         <div className="container mx-auto px-4 text-center">
           <Card 
             ref={ctaCardRef}
@@ -247,8 +224,10 @@ export default function Home() {
           </Card>
         </div>
       </section>
+      
+      <JobsSection />
 
-      <section id="tools" className="bg-secondary py-20 lg:py-32">
+      <section id="tools" className="py-20 lg:py-24">
         <div className="container mx-auto px-4">
            <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -293,7 +272,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="partners" className="py-20 lg:py-32">
+      <section id="partners" className="py-20 lg:py-24">
         <div className="container mx-auto px-4">
            <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -343,7 +322,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    

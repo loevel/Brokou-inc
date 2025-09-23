@@ -1,13 +1,13 @@
 
 "use client";
 
-import { useState, useActionState, useTransition } from 'react';
+import { useState, useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Briefcase, Bot, Loader2, ChevronsUpDown, Info } from 'lucide-react';
+import { MapPin, Briefcase, Bot, Loader2, Info } from 'lucide-react';
 import type { JobOffer } from '@/lib/types';
 import { summarizeJobDescription } from '@/ai/flows/summarize-job-descriptions';
 import {
@@ -49,7 +49,6 @@ function SummaryButton() {
 }
 
 export function JobOfferCard({ offer }: JobOfferCardProps) {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [state, formAction] = useActionState(async (prevState: any, formData: FormData) => {
     try {
       const result = await summarizeJobDescription({ jobDescription: offer.description });
@@ -60,7 +59,7 @@ export function JobOfferCard({ offer }: JobOfferCardProps) {
   }, initialState);
 
   return (
-    <>
+    <Dialog>
       <Card className="w-full flex flex-col md:flex-row transition-all hover:shadow-lg">
         <CardHeader className="flex-1 p-6">
           <Badge variant={offer.type === 'Temps plein' ? 'default' : 'secondary'} className="w-fit mb-2">{offer.type}</Badge>
@@ -83,7 +82,7 @@ export function JobOfferCard({ offer }: JobOfferCardProps) {
             <Link href={`/carrieres/${offer.id}`}>Voir les détails</Link>
           </Button>
           <DialogTrigger asChild>
-            <Button variant="outline" className="w-full" onClick={() => setIsDialogOpen(true)}>
+            <Button variant="outline" className="w-full">
                 <Info className="mr-2 h-4 w-4" />
                 <span>Résumé IA</span>
             </Button>
@@ -91,36 +90,34 @@ export function JobOfferCard({ offer }: JobOfferCardProps) {
         </CardFooter>
       </Card>
       
-      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogContent>
-            <DialogHeader>
-                <DialogTitle>Résumé de l'offre par l'IA</DialogTitle>
-                <DialogDescription>
-                    Obtenez un aperçu rapide du poste de "{offer.title}" grâce à l'intelligence artificielle.
-                </DialogDescription>
-            </DialogHeader>
-            <div className="mt-4 space-y-6">
-                 {state.summary ? (
-                    <Alert>
-                        <Bot className="h-4 w-4" />
-                        <AlertTitle>Résumé</AlertTitle>
-                        <AlertDescription>{state.summary}</AlertDescription>
-                    </Alert>
-                ) : state.error ? (
-                  <Alert variant="destructive">
-                     <Bot className="h-4 w-4" />
-                    <AlertTitle>Erreur</AlertTitle>
-                    <AlertDescription>{state.error}</AlertDescription>
-                  </Alert>
-                ) : (
-                  <p className="text-sm text-center text-muted-foreground py-4">Cliquez sur le bouton ci-dessous pour générer un résumé.</p>
-                )}
-                <form action={formAction}>
-                    <SummaryButton />
-                </form>
-            </div>
-          </DialogContent>
-      </Dialog>
-    </>
+      <DialogContent>
+        <DialogHeader>
+            <DialogTitle>Résumé de l'offre par l'IA</DialogTitle>
+            <DialogDescription>
+                Obtenez un aperçu rapide du poste de "{offer.title}" grâce à l'intelligence artificielle.
+            </DialogDescription>
+        </DialogHeader>
+        <div className="mt-4 space-y-6">
+              {state.summary ? (
+                <Alert>
+                    <Bot className="h-4 w-4" />
+                    <AlertTitle>Résumé</AlertTitle>
+                    <AlertDescription>{state.summary}</AlertDescription>
+                </Alert>
+            ) : state.error ? (
+              <Alert variant="destructive">
+                  <Bot className="h-4 w-4" />
+                <AlertTitle>Erreur</AlertTitle>
+                <AlertDescription>{state.error}</AlertDescription>
+              </Alert>
+            ) : (
+              <p className="text-sm text-center text-muted-foreground py-4">Cliquez sur le bouton ci-dessous pour générer un résumé.</p>
+            )}
+            <form action={formAction}>
+                <SummaryButton />
+            </form>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }

@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { jobOffers } from "@/lib/data";
 import { JobOfferCard } from "@/components/ui/JobOfferCard";
 import { ArrowRight } from "lucide-react";
-import { Dialog } from "@/components/ui/dialog";
 
 export function JobsSection() {
     const featuredJobs = jobOffers.slice(0, 2);
@@ -22,13 +21,13 @@ export function JobsSection() {
                         Nous sommes toujours à la recherche de talents passionnés pour nous aider à innover. Découvrez nos opportunités.
                     </p>
                 </div>
-                <Dialog>
-                    <div className="max-w-4xl mx-auto space-y-4">
-                        {featuredJobs.map(offer => (
-                            <JobOfferCard key={offer.id} offer={offer} />
-                        ))}
-                    </div>
-                </Dialog>
+
+                <div className="max-w-4xl mx-auto space-y-4">
+                    {featuredJobs.map(offer => (
+                        <JobOfferCard key={offer.id} offer={offer} />
+                    ))}
+                </div>
+                
                 <div className="text-center mt-12">
                     <Button asChild size="lg" className="rounded-full">
                         <Link href="/carrieres">

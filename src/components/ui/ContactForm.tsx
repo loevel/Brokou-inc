@@ -64,15 +64,15 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nom</FormLabel>
+              <FormLabel className="text-base">Nom</FormLabel>
               <FormControl>
-                <Input placeholder="Votre nom" {...field} />
+                <Input placeholder="Votre nom" {...field} className="h-12 text-base" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -83,9 +83,9 @@ export function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-base">Email</FormLabel>
               <FormControl>
-                <Input placeholder="Votre email" {...field} />
+                <Input placeholder="Votre email" {...field} className="h-12 text-base" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -96,9 +96,9 @@ export function ContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Sujet</FormLabel>
+              <FormLabel className="text-base">Sujet</FormLabel>
               <FormControl>
-                <Input placeholder="Sujet de votre message" {...field} />
+                <Input placeholder="Sujet de votre message" {...field} className="h-12 text-base" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -109,15 +109,15 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel className="text-base">Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="Votre message..." className="min-h-[120px]" {...field} />
+                <Textarea placeholder="Votre message..." className="min-h-[150px] text-base" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button type="submit" size="lg" className="w-full text-base" disabled={isSubmitting}>
           {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Envoyer le message
         </Button>

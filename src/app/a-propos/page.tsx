@@ -9,6 +9,11 @@ import { ValuesChart } from "@/components/ui/ValuesChart";
 import { Scale, Recycle, Users, Share, ArrowRight, Flag, ShieldCheck, FolderGit2, Code, Network, Wrench, Lock, BadgeCheck, Users2, Megaphone, Target } from "lucide-react";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { OrganizationalStructure } from "@/components/ui/OrganizationalStructure";
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const orgStructure = [
     { title: "Direction Générale", description: "Définit la vision stratégique et assure le leadership global de l'entreprise.", icon: Flag },
@@ -37,8 +42,30 @@ export default function AProposPage() {
   const missionImage = placeholderImages.placeholderImages.find(p => p.id === "mission-image");
   const engagementImage = placeholderImages.placeholderImages.find(p => p.id === "engagement-image");
 
+  const mainRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+        const sections = gsap.utils.toArray<HTMLElement>('.animated-section');
+        sections.forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none',
+                }
+            });
+        });
+    }, mainRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div>
+    <div ref={mainRef}>
       <section className="relative py-24 md:py-32 bg-secondary">
         {headerImage && (
              <div className="absolute inset-0">
@@ -62,7 +89,7 @@ export default function AProposPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-24 animated-section">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
             {companyImage && (
                 <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
@@ -84,7 +111,7 @@ export default function AProposPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24 bg-secondary">
+      <section className="py-20 lg:py-24 bg-secondary animated-section">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
              <div>
                  <h2 className="text-3xl font-bold tracking-tight">Notre vision</h2>
@@ -106,7 +133,7 @@ export default function AProposPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-24 animated-section">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
              {missionImage && (
                 <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
@@ -128,7 +155,7 @@ export default function AProposPage() {
         </div>
       </section>
       
-      <section className="py-20 lg:py-24 bg-secondary">
+      <section className="py-20 lg:py-24 bg-secondary animated-section">
           <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold tracking-tight">Nos valeurs</h2>
@@ -142,7 +169,7 @@ export default function AProposPage() {
           </div>
       </section>
 
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-24 animated-section">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
             {engagementImage && (
                 <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
@@ -169,7 +196,7 @@ export default function AProposPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24 bg-secondary">
+      <section className="py-20 lg:py-24 bg-secondary animated-section">
         <div className="container mx-auto px-4 overflow-hidden">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Structure organisationnelle</h2>

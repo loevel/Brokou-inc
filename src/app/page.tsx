@@ -87,7 +87,7 @@ export default function Home() {
       
       <AboutSection />
 
-      <section id="why-us" ref={whyUsSectionRef} className="relative py-20 lg:py-32 overflow-hidden">
+      <section id="why-us" ref={whyUsSectionRef} className="relative min-h-[95vh] flex flex-col justify-center overflow-hidden">
         <div ref={whyUsBackgroundRef} className="absolute inset-0 z-0 bg-background"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -150,7 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="clients" className="py-20 lg:py-24">
+      <section id="clients" className="py-20 lg:py-24 min-h-[95vh] flex flex-col justify-center">
         <div className="container mx-auto px-4">
            <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -194,7 +194,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="cta" className="py-20 lg:py-24">
+      <section id="cta" className="min-h-[95vh] flex flex-col justify-center">
         <div className="container mx-auto px-4 text-center">
           <Card 
             ref={ctaCardRef}
@@ -227,7 +227,7 @@ export default function Home() {
       
       <JobsSection />
 
-      <section id="tools" className="py-20 lg:py-24">
+      <section id="tools" className="min-h-[95vh] flex flex-col justify-center">
         <div className="container mx-auto px-4">
            <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -272,7 +272,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="partners" className="py-20 lg:py-24">
+      <section id="partners" className="min-h-[95vh] flex flex-col justify-center">
         <div className="container mx-auto px-4">
            <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">

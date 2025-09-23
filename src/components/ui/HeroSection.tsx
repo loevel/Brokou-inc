@@ -70,7 +70,7 @@ export function HeroSection() {
     }, []);
 
     return (
-        <section ref={comp} className="relative bg-background text-foreground py-20 md:py-32 lg:py-40 overflow-hidden">
+        <section ref={comp} className="relative bg-background text-foreground min-h-[95vh] flex flex-col justify-center overflow-hidden">
             <div ref={backgroundRef} className="absolute inset-0 bg-background z-0 opacity-70"></div>
             <div className="container mx-auto px-4 text-center relative z-10">
                 <p id="intro-text" className="text-primary font-semibold mb-2">BROKOU INC.</p>

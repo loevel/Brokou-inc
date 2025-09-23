@@ -18,7 +18,7 @@ export function AboutSection() {
     ];
 
     return (
-        <section id="about-us-home" className="py-20 lg:py-32 bg-secondary">
+        <section id="about-us-home" className="bg-secondary min-h-[95vh] flex flex-col justify-center">
             <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="relative w-full h-80 lg:h-[450px] rounded-lg overflow-hidden shadow-xl">

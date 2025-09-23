@@ -11,7 +11,7 @@ export function JobsSection() {
     const featuredJobs = jobOffers.slice(0, 2);
 
     return (
-        <section id="jobs-home" className="py-20 lg:py-32 bg-secondary">
+        <section id="jobs-home" className="bg-secondary min-h-[95vh] flex flex-col justify-center">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight">

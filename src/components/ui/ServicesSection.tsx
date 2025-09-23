@@ -52,10 +52,10 @@ export function ServicesSection() {
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const colors = {
-                color1: 'hsl(221, 83%, 53%)', // primary
-                color2: 'hsl(45, 100%, 51%)', // accent
-                color3: 'hsl(0, 72%, 51%)', // chart-1
-                color4: 'hsl(88, 57%, 50%)', // chart-2
+                color1: 'hsl(210, 40%, 96.1%)',
+                color2: 'hsl(221, 83%, 53%)',
+                color3: 'hsl(0, 0%, 100%)',
+                color4: 'hsl(210, 100%, 98%)',
             };
 
             gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 10, ease: "sine.inOut" } })
@@ -75,7 +75,7 @@ export function ServicesSection() {
     }, []);
 
     return (
-        <section id="services" ref={sectionRef} className="relative py-20 lg:py-32 bg-background overflow-hidden">
+        <section id="services" ref={sectionRef} className="relative bg-background min-h-[95vh] flex flex-col justify-center overflow-hidden">
             <div ref={backgroundRef} className="absolute inset-0 z-0 bg-gray-900 opacity-80"></div>
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">

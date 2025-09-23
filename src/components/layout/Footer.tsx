@@ -20,12 +20,12 @@ export function Footer() {
     let ctx = gsap.context(() => {
         const colors = {
             color1: 'hsl(0, 72%, 51%)', // chart-1 (red)
-            color2: 'hsl(45, 100%, 51%)', // accent (yellow)
+            color2: 'hsl(0, 84%, 60%)', // destructive (vibrant red)
         };
 
         gsap.timeline({ repeat: -1, yoyo: true })
-            .to(colors, { color1: 'hsl(25, 95%, 53%)', duration: 7, ease: "sine.inOut" }) // Orange
-            .to(colors, { color2: 'hsl(0, 84%, 60%)', duration: 7, ease: "sine.inOut" }, "<"); // Vibrant Red
+            .to(colors, { color1: 'hsl(0, 80%, 55%)', duration: 7, ease: "sine.inOut" })
+            .to(colors, { color2: 'hsl(0, 60%, 45%)', duration: 7, ease: "sine.inOut" }, "<");
 
         gsap.ticker.add(() => {
             if (backgroundRef.current) {

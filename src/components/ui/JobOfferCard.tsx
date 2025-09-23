@@ -1,8 +1,7 @@
 
 "use client";
 
-import { useState, useActionState } from 'react';
-import { useFormStatus } from 'react-dom';
+import { useState, useActionState, useFormStatus } from 'react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -49,18 +48,19 @@ function SummaryButton() {
 }
 
 export function JobOfferCard({ offer }: JobOfferCardProps) {
-  const [state, formAction] = useActionState(async (prevState: any, formData: FormData) => {
-    try {
-      const result = await summarizeJobDescription({ jobDescription: offer.description });
-      return { summary: result.summary, error: '' };
-    } catch (e: any) {
-      return { summary: '', error: e.message || 'Une erreur est survenue.' };
-    }
-  }, initialState);
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [state, formAction] = useActionState(async (prevState: any, formData: FormData) => {
+        try {
+        const result = await summarizeJobDescription({ jobDescription: offer.description });
+        return { summary: result.summary, error: '' };
+        } catch (e: any) {
+        return { summary: '', error: e.message || 'Une erreur est survenue.' };
+        }
+    }, initialState);
 
   return (
-    <Dialog>
-      <Card className="w-full flex flex-col md:flex-row transition-all hover:shadow-lg">
+    <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+      <Card className="w-full flex flex-col md:flex-row transition-all hover:shadow-lg rounded-2xl">
         <CardHeader className="flex-1 p-6">
           <Badge variant={offer.type === 'Temps plein' ? 'default' : 'secondary'} className="w-fit mb-2">{offer.type}</Badge>
           <CardTitle className="text-xl mb-2">{offer.title}</CardTitle>

@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from "next/image";
@@ -123,9 +124,9 @@ export default function Home() {
 
       <JobsSection />
 
-      <section className="bg-background py-20 lg:py-24">
+      <section id="clients" className="bg-background min-h-[95vh] flex flex-col justify-center">
         <div className="container mx-auto px-4 space-y-24">
-          <div id="clients">
+          <div>
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
                 Nos Clients
@@ -157,7 +158,11 @@ export default function Home() {
             </Carousel>
           </div>
 
-          <div id="tools">
+        </div>
+      </section>
+
+      <section id="tools" className="bg-secondary min-h-[95vh] flex flex-col justify-center">
+         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
                 Nos Outils de Prédilection
@@ -189,8 +194,10 @@ export default function Home() {
               </CarouselContent>
             </Carousel>
           </div>
+      </section>
 
-          <div id="partners">
+      <section id="partners" className="bg-background min-h-[95vh] flex flex-col justify-center">
+          <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
                 Nos Partenaires
@@ -222,7 +229,6 @@ export default function Home() {
               </CarouselContent>
             </Carousel>
           </div>
-        </div>
       </section>
 
       <section id="cta" className="min-h-[95vh] flex flex-col justify-center">

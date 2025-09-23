@@ -36,8 +36,10 @@ const FeaturedServiceCard = ({ service }: { service: Service }) => {
                 />
             </div>
         )}
-        <Button size="icon" className="absolute bottom-4 right-4 rounded-full h-8 w-8 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-colors">
-            <Plus className="h-4 w-4" />
+        <Button size="icon" asChild className="absolute bottom-4 right-4 rounded-full h-8 w-8 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-colors">
+            <Link href={`/services/${service.id}`}>
+              <Plus className="h-4 w-4" />
+            </Link>
         </Button>
     </div>
   )
@@ -56,11 +58,9 @@ export function ServicesSection() {
                 color4: 'hsl(88, 57%, 50%)', // chart-2
             };
 
-            gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 8, ease: "sine.inOut" } })
-                .to(colors, { color1: 'hsl(45, 100%, 51%)' })
-                .to(colors, { color2: 'hsl(0, 72%, 51%)' }, "<")
-                .to(colors, { color3: 'hsl(88, 57%, 50%)' }, "<")
-                .to(colors, { color4: 'hsl(221, 83%, 53%)' }, "<");
+            gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 10, ease: "sine.inOut" } })
+                .to(colors, { color1: 'hsl(0, 72%, 51%)', color2: 'hsl(221, 83%, 53%)', color3: 'hsl(88, 57%, 50%)', color4: 'hsl(45, 100%, 51%)' })
+                .to(colors, { color1: 'hsl(88, 57%, 50%)', color2: 'hsl(0, 72%, 51%)', color3: 'hsl(45, 100%, 51%)', color4: 'hsl(221, 83%, 53%)' }, '+=2');
 
             gsap.ticker.add(() => {
                 if (backgroundRef.current) {

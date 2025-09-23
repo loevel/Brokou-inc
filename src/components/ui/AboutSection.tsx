@@ -40,7 +40,7 @@ export function AboutSection() {
                         Chez BROKOU INC., nous combinons expertise technique et vision stratégique pour transformer vos défis en opportunités. Notre mission est de vous accompagner avec des solutions innovantes et responsables.
                     </p>
                     <div className="mt-10">
-                        <Button asChild size="lg">
+                        <Button asChild size="lg" className="rounded-full">
                             <Link href="/a-propos">
                                 En savoir plus sur nous <ArrowRight className="ml-2" />
                             </Link>

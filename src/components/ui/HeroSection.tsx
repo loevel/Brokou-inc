@@ -49,21 +49,6 @@ export function HeroSection() {
                 color4: 'hsl(210, 100%, 98%)' // background
             };
 
-            gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 8, ease: "sine.inOut" } })
-                .to(colors, { color1: 'hsl(221, 83%, 63%)' })
-                .to(colors, { color2: 'hsl(210, 40%, 98%)' }, "<")
-                .to(colors, { color3: 'hsl(210, 40%, 96.1%)' }, "<")
-                .to(colors, { color4: 'hsl(0, 0%, 100%)' }, "<");
-
-            gsap.ticker.add(() => {
-                if (backgroundRef.current) {
-                    gsap.set(backgroundRef.current, {
-                        backgroundImage: `radial-gradient(circle at 20% 20%, ${colors.color1}, transparent 40%), radial-gradient(circle at 80% 80%, ${colors.color2}, transparent 40%), radial-gradient(circle at 50% 50%, ${colors.color3}, transparent 30%), radial-gradient(circle at 10% 90%, ${colors.color4}, transparent 50%)`
-                    });
-                }
-            });
-
-
         }, comp);
         
         return () => ctx.revert();
@@ -81,7 +66,7 @@ export function HeroSection() {
                     Nous transformons les défis en opportunités grâce à des solutions technologiques de pointe et un partenariat stratégique.
                 </p>
                 <div id="cta-button">
-                    <Button size="lg" asChild>
+                    <Button size="lg" asChild className="rounded-full">
                         <Link href="/contact">
                             Commencer un projet <ArrowRight className="ml-2 h-5 w-5" />
                         </Link>

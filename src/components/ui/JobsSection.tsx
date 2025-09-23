@@ -30,7 +30,7 @@ export function JobsSection() {
                     </div>
                 </Dialog>
                 <div className="text-center mt-12">
-                    <Button asChild size="lg">
+                    <Button asChild size="lg" className="rounded-full">
                         <Link href="/carrieres">
                             Voir toutes les offres <ArrowRight className="ml-2" />
                         </Link>

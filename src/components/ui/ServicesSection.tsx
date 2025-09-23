@@ -75,7 +75,7 @@ export function ServicesSection() {
                     <CarouselNext className="right-[-50px] hidden md:inline-flex" />
                 </Carousel>
                 <div className="text-center mt-16">
-                    <Button asChild size="lg">
+                    <Button asChild size="lg" className="rounded-full">
                         <Link href="/services">
                             Découvrir tous nos services <ArrowRight className="ml-2" />
                         </Link>

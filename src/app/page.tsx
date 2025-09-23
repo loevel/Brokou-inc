@@ -245,7 +245,7 @@ export default function Home() {
                 objectifs.
               </p>
               <div className="mt-8">
-                <Button variant="secondary" size="lg" asChild>
+                <Button variant="secondary" size="lg" asChild className="rounded-full">
                   <Link href="/contact">
                     Contactez-nous
                   </Link>

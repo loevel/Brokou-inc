@@ -67,9 +67,7 @@ export function ServicesSection() {
                     <CarouselContent className="-ml-4">
                         {featuredServices.map((service) => (
                             <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                                <Link href={`/services/${service.id}`} className="block h-full">
-                                    <FeaturedServiceCard service={service} />
-                                </Link>
+                                <FeaturedServiceCard service={service} />
                             </CarouselItem>
                         ))}
                     </CarouselContent>

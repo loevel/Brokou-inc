@@ -26,12 +26,10 @@ import Autoplay from "embla-carousel-autoplay"
 import { Testimonials } from "@/components/ui/Testimonials";
 import { testimonials } from "@/lib/testimonials";
 import { ServicesSection } from "@/components/ui/ServicesSection";
-import { useRef, useLayoutEffect } from "react";
+
 import { AboutSection } from "@/components/ui/AboutSection";
 import { JobsSection } from "@/components/ui/JobsSection";
 import { HeroSection } from "@/components/ui/HeroSection";
-import { gsap } from 'gsap';
-import { LogoSection } from "@/components/ui/LogoSection";
 
 
 export default function HomePage() {
@@ -49,8 +47,7 @@ export default function HomePage() {
   return (
     <div>
       <HeroSection />
-
-      <LogoSection />
+     
 
       <section className="py-20 lg:py-24">
         <div className="container mx-auto px-4">

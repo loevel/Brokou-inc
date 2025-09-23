@@ -12,6 +12,8 @@ export function Footer() {
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
   useEffect(() => {
+    // This effect runs only on the client, ensuring the year is updated
+    // after the initial server render, preventing a hydration mismatch.
     setYear(new Date().getFullYear());
   }, []);
   

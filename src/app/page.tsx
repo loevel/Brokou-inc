@@ -16,6 +16,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
 import Autoplay from "embla-carousel-autoplay"
 import { Testimonials } from "@/components/ui/Testimonials";
 import { testimonials } from "@/lib/testimonials";
@@ -32,33 +38,41 @@ export default function Home() {
   const partners = placeholderImages.placeholderImages.filter(p => p.id.startsWith("partner-"));
   const tools = placeholderImages.placeholderImages.filter(p => p.id.startsWith("tool-"));
   
-  const whyUsSectionRef = useRef(null);
-  const ctaCardRef = useRef(null);
+  const mainRef = useRef(null);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      // CTA Card Animation
-      if (ctaCardRef.current) {
-        gsap.to(ctaCardRef.current, {
-            '--gradient-angle': '360deg',
-            duration: 10,
-            ease: 'linear',
-            repeat: -1,
-        });
-      }
-    }, whyUsSectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const LogoCarousel = ({ items, delay }: { items: {id: string, src?: string, imageUrl?: string, alt?: string, description?: string, imageHint?: string}[], delay: number }) => (
+    <Carousel
+        opts={{ align: "start", loop: true }}
+        plugins={[Autoplay({ delay, stopOnInteraction: false })]}
+        className="w-full max-w-6xl mx-auto"
+    >
+        <CarouselContent>
+            {items.map((item) => (
+                <CarouselItem key={item.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
+                    <div className="p-1 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+                        <Image
+                            src={item.src || item.imageUrl!}
+                            alt={item.alt || item.description!}
+                            data-ai-hint={item.imageHint}
+                            width={80}
+                            height={80}
+                            className="object-contain"
+                        />
+                    </div>
+                </CarouselItem>
+            ))}
+        </CarouselContent>
+    </Carousel>
+);
 
 
   return (
-    <div className="flex flex-col">
+    <div ref={mainRef} className="flex flex-col">
       <HeroSection />
       <ServicesSection />
       <AboutSection />
 
-      <section id="why-us" ref={whyUsSectionRef} className="relative bg-secondary min-h-[95vh] flex flex-col justify-center overflow-hidden">
+      <section id="why-us" className="relative bg-secondary min-h-[95vh] flex flex-col justify-center overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -124,134 +138,43 @@ export default function Home() {
 
       <JobsSection />
 
-      <section id="clients" className="bg-background min-h-[95vh] flex flex-col justify-center">
-        <div className="container mx-auto px-4 space-y-24">
-          <div>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Nos Clients
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Nous sommes fiers de collaborer avec des entreprises leaders de leur secteur.
-              </p>
-            </div>
-            <Carousel
-              opts={{ align: "start", loop: true }}
-              plugins={[Autoplay({ delay: 2000, stopOnInteraction: false })]}
-              className="w-full max-w-6xl mx-auto"
-            >
-              <CarouselContent>
-                {clients.map((client) => (
-                  <CarouselItem key={client.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
-                    <div className="p-1">
-                      <Image
-                        src={client.src}
-                        alt={client.alt}
-                        width={80}
-                        height={80}
-                        className="object-contain"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="tools" className="bg-secondary min-h-[95vh] flex flex-col justify-center">
-         <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Nos Outils de Prédilection
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Nous utilisons les meilleures technologies pour construire des solutions performantes.
-              </p>
-            </div>
-            <Carousel
-              opts={{ align: "start", loop: true }}
-              plugins={[Autoplay({ delay: 2500, stopOnInteraction: false })]}
-              className="w-full max-w-6xl mx-auto"
-            >
-              <CarouselContent>
-                {tools.map((tool) => (
-                  <CarouselItem key={tool.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
-                    <div className="p-1">
-                      <Image
-                        src={tool.imageUrl}
-                        alt={tool.description}
-                        data-ai-hint={tool.imageHint}
-                        width={60}
-                        height={60}
-                        className="object-contain"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
-          </div>
-      </section>
-
-      <section id="partners" className="bg-background min-h-[95vh] flex flex-col justify-center">
+      <section id="ecosystem" className="bg-background min-h-[95vh] flex flex-col justify-center">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-                Nos Partenaires
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Nous collaborons avec des partenaires de confiance pour offrir les meilleures solutions.
-              </p>
-            </div>
-            <Carousel
-              opts={{ align: "start", loop: true, }}
-              plugins={[Autoplay({ delay: 2200, stopOnInteraction: false, }),]}
-              className="w-full max-w-6xl mx-auto"
-            >
-              <CarouselContent>
-                {partners.map((partner) => (
-                  <CarouselItem key={partner.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
-                    <div className="p-1">
-                      <Image
-                        src={partner.imageUrl}
-                        alt={partner.description}
-                        data-ai-hint={partner.imageHint}
-                        width={80}
-                        height={80}
-                        className="object-contain"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+              <Tabs defaultValue="clients" className="w-full">
+                  <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto">
+                      <TabsTrigger value="clients">Nos Clients</TabsTrigger>
+                      <TabsTrigger value="tools">Nos Outils</TabsTrigger>
+                      <TabsTrigger value="partners">Nos Partenaires</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="clients" className="pt-16">
+                      <LogoCarousel items={clients} delay={2000} />
+                  </TabsContent>
+                  <TabsContent value="tools" className="pt-16">
+                       <LogoCarousel items={tools} delay={2500} />
+                  </TabsContent>
+                  <TabsContent value="partners" className="pt-16">
+                      <LogoCarousel items={partners} delay={2200} />
+                  </TabsContent>
+              </Tabs>
           </div>
       </section>
 
-      <section id="cta" className="min-h-[95vh] flex flex-col justify-center">
+      <section id="cta" className="min-h-[95vh] flex flex-col justify-center bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <Card 
-            ref={ctaCardRef}
-            className="relative overflow-hidden max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl"
-            style={{
-                '--gradient-angle': '0deg',
-                backgroundImage: `linear-gradient(var(--gradient-angle), hsl(var(--primary)), hsl(var(--chart-1)), hsl(var(--accent)))`
-            } as React.CSSProperties}
+            className="relative overflow-hidden max-w-4xl mx-auto bg-card text-card-foreground p-8 md:p-12 shadow-2xl rounded-3xl"
           >
             <CardContent className="p-0 relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold">
                 Prêt à transformer votre entreprise ?
               </h2>
-              <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                 Contactez-nous dès aujourd'hui pour discuter de votre projet et
                 découvrir comment nous pouvons vous aider à atteindre vos
                 objectifs.
               </p>
               <div className="mt-8">
-                <Button variant="secondary" size="lg" asChild className="rounded-full">
+                <Button variant="default" size="lg" asChild className="rounded-full">
                   <Link href="/contact">
                     Contactez-nous
                   </Link>

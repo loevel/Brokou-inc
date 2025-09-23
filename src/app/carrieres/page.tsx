@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useLayoutEffect, useRef } from "react";
 import { JobOfferCard } from "@/components/ui/JobOfferCard";
 import { jobOffers } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
@@ -19,6 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import type { JobOffer } from "@/lib/types";
+import { gsap } from "gsap";
 
 const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: { icon: React.ElementType, title: React.ReactNode, description: string, colorClass: string }) => (
     <div className="bg-secondary/50 rounded-2xl p-6 flex flex-col items-start gap-4 h-full">
@@ -54,9 +55,33 @@ export default function CarrieresPage() {
       return matchesSearch && matchesLocation && matchesType && matchesMode;
     });
   }, [searchTerm, locationFilter, typeFilter, modeFilter]);
+  
+  const comp = useRef(null);
+
+   useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            const tl = gsap.timeline();
+            tl.from("#title", {
+                opacity: 0,
+                y: '+=30',
+                duration: 1,
+                ease: 'power3.out'
+            })
+            .from("#subtitle", {
+                opacity: 0,
+                y: '+=30',
+                duration: 1,
+                delay: -0.8,
+                ease: 'power3.out'
+            });
+
+        }, comp);
+        
+        return () => ctx.revert();
+    }, []);
 
   return (
-    <div>
+    <div ref={comp}>
       <section className="relative flex items-center justify-center min-h-[95vh] bg-secondary">
         {headerImage && (
              <div className="absolute inset-0">
@@ -71,10 +96,10 @@ export default function CarrieresPage() {
              </div>
         )}
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+          <h1 id="title" className="text-4xl md:text-5xl font-bold tracking-tight text-white">
             Rejoignez Notre Équipe
           </h1>
-          <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
+          <p id="subtitle" className="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
             Nous sommes toujours à la recherche de talents passionnés pour nous aider à innover.
           </p>
         </div>

@@ -95,7 +95,7 @@ export function Testimonials({ data }: TestimonialsProps) {
                   const avatar = placeholderImages.placeholderImages.find(p => p.id === testimonial.avatarImageId);
                   return (
                     <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 pl-8">
-                      <Card className="h-full">
+                      <Card className="h-full rounded-2xl">
                           <CardContent className="p-8 flex flex-col items-center justify-center text-center h-full">
                             <StarRating rating={testimonial.rating} className="mb-4" />
                             <blockquote className="text-lg text-muted-foreground mb-6 flex-grow">

@@ -1,7 +1,9 @@
 
 "use client";
 
-// This is a placeholder file to resolve a build error.
-export default function LogoSection() {
+import React from 'react';
+
+// This is a placeholder component to resolve a build error.
+export function LogoSection() {
   return null;
 }

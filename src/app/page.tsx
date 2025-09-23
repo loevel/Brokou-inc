@@ -150,7 +150,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="clients" className="py-20 lg:py-24 min-h-[95vh] flex flex-col justify-center">
+      <Testimonials data={testimonials} />
+
+      <JobsSection />
+
+      <section id="clients" className="min-h-[95vh] flex flex-col justify-center">
         <div className="container mx-auto px-4">
            <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -193,39 +197,6 @@ export default function Home() {
           </Carousel>
         </div>
       </section>
-
-      <section id="cta" className="min-h-[95vh] flex flex-col justify-center">
-        <div className="container mx-auto px-4 text-center">
-          <Card 
-            ref={ctaCardRef}
-            className="relative overflow-hidden max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl"
-            style={{
-                '--gradient-angle': '0deg',
-                backgroundImage: `linear-gradient(var(--gradient-angle), hsl(var(--primary)), hsl(var(--chart-1)), hsl(var(--accent)))`
-            } as React.CSSProperties}
-          >
-            <CardContent className="p-0 relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                Prêt à transformer votre entreprise ?
-              </h2>
-              <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-                Contactez-nous dès aujourd'hui pour discuter de votre projet et
-                découvrir comment nous pouvons vous aider à atteindre vos
-                objectifs.
-              </p>
-              <div className="mt-8">
-                <Button variant="secondary" size="lg" asChild>
-                  <Link href="/contact">
-                    Contactez-nous
-                  </Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-      
-      <JobsSection />
 
       <section id="tools" className="min-h-[95vh] flex flex-col justify-center">
         <div className="container mx-auto px-4">
@@ -317,8 +288,37 @@ export default function Home() {
         </div>
       </section>
 
-      <Testimonials data={testimonials} />
-
+      <section id="cta" className="min-h-[95vh] flex flex-col justify-center">
+        <div className="container mx-auto px-4 text-center">
+          <Card 
+            ref={ctaCardRef}
+            className="relative overflow-hidden max-w-4xl mx-auto bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl"
+            style={{
+                '--gradient-angle': '0deg',
+                backgroundImage: `linear-gradient(var(--gradient-angle), hsl(var(--primary)), hsl(var(--chart-1)), hsl(var(--accent)))`
+            } as React.CSSProperties}
+          >
+            <CardContent className="p-0 relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Prêt à transformer votre entreprise ?
+              </h2>
+              <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
+                Contactez-nous dès aujourd'hui pour discuter de votre projet et
+                découvrir comment nous pouvons vous aider à atteindre vos
+                objectifs.
+              </p>
+              <div className="mt-8">
+                <Button variant="secondary" size="lg" asChild>
+                  <Link href="/contact">
+                    Contactez-nous
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      
     </div>
   );
 }

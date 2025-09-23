@@ -49,11 +49,11 @@ export function HeroSection() {
                 color4: 'hsl(88, 57%, 50%)', // chart-2
             };
 
-            gsap.timeline({ repeat: -1, yoyo: true })
-                .to(colors, { color1: 'hsl(45, 100%, 51%)', duration: 5, ease: "sine.inOut" })
-                .to(colors, { color2: 'hsl(0, 72%, 51%)', duration: 5, ease: "sine.inOut" }, "<")
-                .to(colors, { color3: 'hsl(88, 57%, 50%)', duration: 5, ease: "sine.inOut" }, "<")
-                .to(colors, { color4: 'hsl(221, 83%, 53%)', duration: 5, ease: "sine.inOut" }, "<");
+            gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 8, ease: "sine.inOut" } })
+                .to(colors, { color1: 'hsl(45, 100%, 51%)' })
+                .to(colors, { color2: 'hsl(0, 72%, 51%)' }, "<")
+                .to(colors, { color3: 'hsl(88, 57%, 50%)' }, "<")
+                .to(colors, { color4: 'hsl(221, 83%, 53%)' }, "<");
 
             gsap.ticker.add(() => {
                 if (backgroundRef.current) {
@@ -71,7 +71,7 @@ export function HeroSection() {
 
     return (
         <section ref={comp} className="relative bg-background text-foreground py-20 md:py-32 lg:py-40 overflow-hidden">
-            <div ref={backgroundRef} className="absolute inset-0 bg-background z-0"></div>
+            <div ref={backgroundRef} className="absolute inset-0 bg-background z-0 opacity-70"></div>
             <div className="container mx-auto px-4 text-center relative z-10">
                 <p id="intro-text" className="text-primary font-semibold mb-2">BROKOU INC.</p>
                 <h1 id="title" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mb-6 max-w-4xl mx-auto">

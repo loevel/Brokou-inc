@@ -22,7 +22,7 @@ const FeaturedServiceCard = ({ service }: { service: Service }) => {
   const serviceImage = placeholderImages.placeholderImages.find(p => p.id === service.imageId);
 
   return (
-    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 flex flex-col h-full relative text-white">
+    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 flex flex-col h-full relative text-white transition-all duration-300 hover:bg-white/20">
         <p className="text-sm font-semibold text-white/70">{service.category}</p>
         <h3 className="text-2xl font-bold mt-1 mb-4">{service.name}</h3>
         {serviceImage && (
@@ -36,7 +36,7 @@ const FeaturedServiceCard = ({ service }: { service: Service }) => {
                 />
             </div>
         )}
-        <Button size="icon" className="absolute bottom-4 right-4 rounded-full h-8 w-8 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30">
+        <Button size="icon" className="absolute bottom-4 right-4 rounded-full h-8 w-8 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-colors">
             <Plus className="h-4 w-4" />
         </Button>
     </div>
@@ -56,11 +56,11 @@ export function ServicesSection() {
                 color4: 'hsl(88, 57%, 50%)', // chart-2
             };
 
-            gsap.timeline({ repeat: -1, yoyo: true })
-                .to(colors, { color1: 'hsl(45, 100%, 51%)', duration: 7, ease: "sine.inOut" })
-                .to(colors, { color2: 'hsl(0, 72%, 51%)', duration: 7, ease: "sine.inOut" }, "<")
-                .to(colors, { color3: 'hsl(88, 57%, 50%)', duration: 7, ease: "sine.inOut" }, "<")
-                .to(colors, { color4: 'hsl(221, 83%, 53%)', duration: 7, ease: "sine.inOut" }, "<");
+            gsap.timeline({ repeat: -1, yoyo: true, defaults: { duration: 8, ease: "sine.inOut" } })
+                .to(colors, { color1: 'hsl(45, 100%, 51%)' })
+                .to(colors, { color2: 'hsl(0, 72%, 51%)' }, "<")
+                .to(colors, { color3: 'hsl(88, 57%, 50%)' }, "<")
+                .to(colors, { color4: 'hsl(221, 83%, 53%)' }, "<");
 
             gsap.ticker.add(() => {
                 if (backgroundRef.current) {
@@ -76,7 +76,7 @@ export function ServicesSection() {
 
     return (
         <section id="services" ref={sectionRef} className="relative py-20 lg:py-32 bg-background overflow-hidden">
-            <div ref={backgroundRef} className="absolute inset-0 z-0 bg-gray-900"></div>
+            <div ref={backgroundRef} className="absolute inset-0 z-0 bg-gray-900 opacity-80"></div>
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
@@ -95,7 +95,7 @@ export function ServicesSection() {
                     <CarouselContent className="-ml-4">
                         {featuredServices.map((service) => (
                             <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                                <Link href={`/services/${service.id}`}>
+                                <Link href={`/services/${service.id}`} className="block h-full">
                                     <FeaturedServiceCard service={service} />
                                 </Link>
                             </CarouselItem>

@@ -57,7 +57,7 @@
     {
       "id": "service-security",
       "description": "Image for security management service",
-      "imageUrl": "https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjeWJlciUyMHNlY3VyaXR5fGVufDB8fHx8MTc1ODU4MDg4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjeWJlciUyMHNlY3VyaXR5fGVufDB8fHx8fDE3NTg1ODA4ODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "cyber security"
     },
     {
@@ -303,7 +303,7 @@
     {
       "id": "testimonial-avatar-2",
       "description": "Portrait of a smiling man",
-      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMG1hbnxlbnwwfHx8fDE3NTg1NDc0ODl8MA&ixlib-rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMG1hbnxlbnwwfHx8fDE3NTg1NDc0ODl8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "man portrait"
     },
     {
@@ -315,25 +315,25 @@
     {
       "id": "testimonial-avatar-4",
       "description": "Another portrait of a smiling person",
-      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib-rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-avatar-5",
       "description": "Another portrait of a smiling person",
-      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib-rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-avatar-6",
       "description": "Another portrait of a smiling person",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib-rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-avatar-7",
       "description": "Another portrait of a smiling person",
-      "imageUrl": "https://images.unsplash.com/photo-1504593811423-6dd665756598?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib-rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://images.unsplash.com/photo-1504593811423-6dd665756598?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
@@ -369,7 +369,7 @@
     {
       "id": "eco-waste",
       "description": "Colorful recycling bins",
-      "imageUrl": "https://images.unsplash.com/photo-1574974671999-d5b95b754a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZWN5Y2xpbmclMjBiaW5zfGVufDB8fHx8fDE3NTkwNDIwNzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1719399924262-ebb6f2a8de80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8cmVjeWNsYWdlc3xlbnwwfHx8fDE3NTg3MjgyMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "recycling bins"
     },
     {

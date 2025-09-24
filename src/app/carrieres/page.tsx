@@ -8,7 +8,7 @@ import { JobOfferCard } from "@/components/ui/JobOfferCard";
 import { jobOffers } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search, Mail, Mailbox, Send, Check } from "lucide-react";
+import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search, Mail, Mailbox, Send, Check, Phone, Laptop, ClipboardList, PenSquare, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -38,6 +38,14 @@ const demandedJobs = [
     { title: "Développeur ou développeuse TI", link: "/carrieres/dev-fullstack" },
     { title: "Chef de projet", link: "/carrieres/chef-projet" },
     { title: "Conseiller ou conseillère en service à la clientèle", link: "#job-offers" },
+];
+
+const recruitmentProcess = [
+    { title: "Dépôt de votre CV", icon: FileText, description: "Via notre portail carrière" },
+    { title: "Entrevue téléphonique", icon: Phone, description: "Présélection" },
+    { title: "Entrevue de sélection", icon: Laptop, description: "Par conférence vidéo" },
+    { title: "Suivi de votre candidature", icon: ClipboardList, description: "Nous vous tenons informé" },
+    { title: "Offre d'embauche", icon: PenSquare, description: "Bienvenue dans l'équipe !" }
 ];
 
 export default function CarrieresPage() {
@@ -215,7 +223,32 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section id="job-offers" className="py-20 lg:py-24 bg-background">
+      <section className="py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold tracking-tight text-center mb-12">Comment postuler?</h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-5xl mx-auto items-start">
+            {recruitmentProcess.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                    <div key={index} className="flex flex-col items-center text-center">
+                        <div className="bg-primary/10 p-4 rounded-full mb-4">
+                            <Icon className="h-8 w-8 text-primary" />
+                        </div>
+                        <p className="font-semibold text-sm">{index + 1}. {step.title}</p>
+                        <p className="text-xs text-muted-foreground">{step.description}</p>
+                    </div>
+                )
+            })}
+          </div>
+           <div className="text-center mt-8">
+                <Button variant="link" asChild>
+                    <Link href="#">Voir le processus de recrutement <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                </Button>
+            </div>
+        </div>
+      </section>
+
+      <section id="job-offers" className="py-20 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold tracking-tight">
@@ -309,7 +342,7 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24 bg-secondary">
+      <section className="py-20 lg:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -342,7 +375,7 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section className="relative py-20 lg:py-24 bg-background">
+      <section className="relative py-20 lg:py-24 bg-secondary">
         {ctaImage && (
             <div className="absolute inset-0">
                 <Image 
@@ -381,8 +414,3 @@ export default function CarrieresPage() {
     </div>
   );
 }
-
-    
-
-    
-

@@ -23,7 +23,7 @@ const faqData = [
   },
   {
     question: "Est-ce que je vais recevoir un courriel de confirmation après avoir soumis ma candidature ?",
-    answer: "Oui, vous recevrez une confirmation automatique par courriel après avoir soumis votre candidature. Si vous ne la voyez pas, vérifiez votre dossier de courrier indésirable.",
+    answer: "Oui, vous recevrez une confirmation de l'équipe emploie par courriel après avoir soumis votre candidature. Si vous ne la voyez pas, vérifiez votre dossier de courrier indésirable.",
   },
   {
     question: "Comment est-ce que je peux suivre l'avancement de ma candidature?",

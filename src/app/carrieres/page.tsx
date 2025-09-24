@@ -73,6 +73,13 @@ export default function CarrieresPage() {
                 duration: 1,
                 delay: -0.8,
                 ease: 'power3.out'
+            })
+            .from("#cta-button", {
+                opacity: 0,
+                y: '+=30',
+                duration: 1,
+                delay: -0.8,
+                ease: 'power3.out'
             });
 
         }, comp);
@@ -97,15 +104,22 @@ export default function CarrieresPage() {
         )}
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 id="title" className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-            Rejoignez Notre Équipe
+            Trouver un emploi chez BROKOU INC.
           </h1>
-          <p id="subtitle" className="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
-            Nous sommes toujours à la recherche de talents passionnés pour nous aider à innover.
+          <p id="subtitle" className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
+            Nous sommes le plus grand groupe financier coopératif en Amérique du Nord et nous avons à cœur d'être un employeur de choix depuis 125 ans. Réalisez vos ambitions et trouvez votre prochain défi parmi plus de 800 types d’emplois dans plusieurs domaines au-delà de la finance comme l'éducation, les technologies de l’information et les communications.
           </p>
+           <div id="cta-button" className="mt-8">
+                <Button size="lg" asChild>
+                    <Link href="#job-offers">
+                        Voir les offres d'emploi
+                    </Link>
+                </Button>
+            </div>
         </div>
       </section>
 
-      <section className="py-20 lg:py-24">
+      <section id="job-offers" className="py-20 lg:py-24">
         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold tracking-tight">
@@ -271,3 +285,5 @@ export default function CarrieresPage() {
     </div>
   );
 }
+
+    

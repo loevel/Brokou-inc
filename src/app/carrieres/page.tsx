@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/select";
 import type { JobOffer } from "@/lib/types";
 import { gsap } from "gsap";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: { icon: React.ElementType, title: React.ReactNode, description: string, colorClass: string }) => (
     <div className="bg-secondary/50 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-start gap-4 h-full">
@@ -247,6 +248,8 @@ export default function CarrieresPage() {
             </div>
         </div>
       </section>
+
+      <FaqSection />
 
       <section id="job-offers" className="py-20 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4">

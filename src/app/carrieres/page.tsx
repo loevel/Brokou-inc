@@ -8,7 +8,7 @@ import { JobOfferCard } from "@/components/ui/JobOfferCard";
 import { jobOffers } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search } from "lucide-react";
+import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search, Mail, Mailbox, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -33,9 +33,17 @@ const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: {
     </div>
 );
 
+const demandedJobs = [
+    { title: "Directeur ou directrice de comptes", link: "#job-offers" },
+    { title: "Développeur ou développeuse TI", link: "/carrieres/dev-fullstack" },
+    { title: "Chef de projet", link: "/carrieres/chef-projet" },
+    { title: "Conseiller ou conseillère en service à la clientèle", link: "#job-offers" },
+];
+
 export default function CarrieresPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "careers-header");
   const ctaImage = placeholderImages.placeholderImages.find(p => p.id === "careers-cta-background");
+  const forbesImage = placeholderImages.placeholderImages.find(p => p.id === "forbes-badge");
 
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
@@ -119,7 +127,59 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section id="job-offers" className="py-20 lg:py-24">
+      <section className="py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 className="text-3xl font-bold tracking-tight">Emplois en demande</h2>
+                    <p className="mt-2 text-muted-foreground">
+                        Nous recrutons en continu pour ces postes clés. Postulez pour faire partie de notre banque de candidatures et ne rater aucune offre.
+                    </p>
+                    <div className="mt-6 space-y-3">
+                        {demandedJobs.map(job => (
+                            <Button key={job.title} variant="outline" asChild className="w-full justify-between h-12 text-base">
+                                <Link href={job.link}>
+                                    <span>{job.title}</span>
+                                    <ArrowRight className="h-4 w-4" />
+                                </Link>
+                            </Button>
+                        ))}
+                    </div>
+                </div>
+                <div className="space-y-6">
+                    <Card className="bg-primary/5 border-primary/20 p-8 text-center flex flex-col items-center">
+                        <div className="p-3 bg-primary/10 rounded-full mb-4">
+                           <Mailbox className="h-8 w-8 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-bold">Candidature spontanée</h3>
+                        <p className="mt-2 text-muted-foreground flex-grow">
+                           Vous voulez travailler chez BROKOU INC., mais vous ne trouvez pas d'offre qui correspond à votre profil? Faites-vous connaître en nous envoyant votre CV.
+                        </p>
+                        <Button asChild className="mt-6">
+                            <a href="mailto:emploi@brokou.com?subject=Candidature%20spontanée">
+                                <Send className="mr-2 h-4 w-4"/>
+                                Soumettre une candidature
+                            </a>
+                        </Button>
+                    </Card>
+                    {forbesImage && (
+                        <div className="flex justify-center">
+                             <Image
+                                src={forbesImage.imageUrl}
+                                alt={forbesImage.description}
+                                data-ai-hint={forbesImage.imageHint}
+                                width={120}
+                                height={120}
+                                className="object-contain"
+                            />
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id="job-offers" className="py-20 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold tracking-tight">
@@ -213,7 +273,7 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24 bg-secondary">
+      <section className="py-20 lg:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -246,7 +306,7 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section className="relative py-20 lg:py-24">
+      <section className="relative py-20 lg:py-24 bg-secondary">
         {ctaImage && (
             <div className="absolute inset-0">
                 <Image 

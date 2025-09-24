@@ -37,7 +37,7 @@ export default function ConditionsUtilisationPage() {
       
       <section className="py-20 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="prose dark:prose-invert max-w-4xl mx-auto">
+          <div className="prose dark:prose-invert max-w-4xl mx-auto font-body">
             <h2>Préambule</h2>
             <p>
               Sous réserve de votre acceptation des présentes conditions d’utilisation (les « Conditions d’utilisation ») régissant votre utilisation du site Web appartenant à BROKOU INC. (« BROKOU », « nous », « notre ») accessible via le lien suivant : www.brokou.com (le « Site Web »), BROKOU vous autorise à utiliser le Site Web en tant qu’utilisateur (« Utilisateur, « vous » « votre »). Si vous n’acceptez pas les Conditions d’utilisation, veuillez ne pas utiliser le Site Web.

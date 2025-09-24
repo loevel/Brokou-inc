@@ -51,7 +51,7 @@
     {
       "id": "service-risk",
       "description": "Image for risk management service",
-      "imageUrl": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cmlzayUyMGFzc2Vzc21lbnR8ZW58MHx8fHwxNzU4NTgwODg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1517984922331-8dbaa8ffa9c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyaXNxdWV8ZW58MHx8fHwxNzU4NzM0MjMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "risk assessment"
     },
     {
@@ -75,7 +75,7 @@
     {
       "id": "service-iot",
       "description": "Connected devices on a shelf",
-      "imageUrl": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzbWFydCUyMGhvbWV8ZW58MHx8fHwxNzU4NzA2OTE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzbWFydCUyMGhvbWV8ZW58MHx8fHwxNzU4NzA2OTE0fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "smart home"
     },
     {
@@ -87,7 +87,7 @@
     {
       "id": "service-pc-software",
       "description": "Software installation on a laptop",
-      "imageUrl": "https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c29mdHdhcmUlMjBpbnN0YWxsfGVufDB8fHx8MTc1ODcyNDc3OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c29mdHdhcmUlMjBpbnN0YWxsfGVufDB8fHx8MTc1ODcyNDc3OXww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "software install"
     },
     {
@@ -309,13 +309,13 @@
     {
       "id": "testimonial-avatar-3",
       "description": "Portrait of another smiling woman",
-      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTc1ODU0NzQ4OXww&ixlib=rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTc1ODU0NzQ4OXww&ixlib-rb-4.1.0&q=80&w=200",
       "imageHint": "woman portrait"
     },
     {
       "id": "testimonial-avatar-4",
       "description": "Another portrait of a smiling person",
-      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib-rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
@@ -369,7 +369,7 @@
     {
       "id": "eco-waste",
       "description": "Colorful recycling bins",
-      "imageUrl": "https://images.unsplash.com/photo-1719399924262-ebb6f2a8de80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8cmVjeWNsYWdlc3xlbnwwfHx8fDE3NTg3MjgyMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1719399924262-ebb6f2a8de80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8cmVjeWNsYWdlc3xlbnwwfHx8fDE3NTg3MjgyMTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "recycling bins"
     },
     {

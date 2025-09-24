@@ -1,49 +1,48 @@
-
 {
   "placeholderImages": [
     {
       "id": "hero-background",
       "description": "Abstract background for hero section",
-      "imageUrl": "https://picsum.photos/seed/1/1920/1080",
+      "imageUrl": "https://images.unsplash.com/photo-1627704442358-61c8e05c7bf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YWJzdHJhY3QlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc1ODY5NjYwMHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "abstract background"
     },
     {
       "id": "service-consulting",
       "description": "Image for strategic consulting service",
-      "imageUrl": "https://picsum.photos/seed/2/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1616587656977-ac36a5a430bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzU4NjkwNzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "business meeting"
     },
     {
       "id": "service-digital",
       "description": "Image for digital transformation service",
-      "imageUrl": "https://picsum.photos/seed/3/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1720933017801-f9c93807cfc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkYXRhJTIwbmV0d29ya3xlbnwwfHx8fDE3NTg3MjEwNjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "data network"
     },
     {
       "id": "service-data",
       "description": "Image for data analysis service",
-      "imageUrl": "https://picsum.photos/seed/4/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1701099153647-bf447f0a855a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkYXNoYm9hcmQlMjBjaGFydHxlbnwwfHx8fDE3NTg3MTgwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dashboard chart"
     },
     {
       "id": "service-marketing",
       "description": "Image for marketing service",
-      "imageUrl": "https://picsum.photos/seed/5/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYXJrZXRpbmclMjBzdHJhdGVneXxlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "marketing strategy"
     },
     {
       "id": "service-dev",
       "description": "Image for software development service",
-      "imageUrl": "https://picsum.photos/seed/6/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1742072593996-ebdc5d605a54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29kaW5nJTIwc2NyZWVufGVufDB8fHx8MTc1ODYxOTc2OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "coding screen"
     },
     {
       "id": "service-cloud",
       "description": "Image for cloud solutions service",
-      "imageUrl": "https://picsum.photos/seed/7/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZXJ2ZXIlMjByb29tfGVufDB8fHx8MTc1ODY4ODI3OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "server room"
     },
-     {
+    {
       "id": "service-projects",
       "description": "Image for project management service",
       "imageUrl": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9qZWN0JTIwbWFuYWdlbWVudHxlbnwwfHx8fDE3NTg1ODA4ODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -64,43 +63,43 @@
     {
       "id": "service-fibre",
       "description": "Workers installing fiber optic cables",
-      "imageUrl": "https://picsum.photos/seed/fibre/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1607723619497-98a79f01ba90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmliZXIlMjBvcHRpY3xlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fiber optic"
     },
     {
       "id": "service-telephonie",
       "description": "IP phone patch panel",
-      "imageUrl": "https://picsum.photos/seed/telephonie/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1691435828932-911a7801adfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bmV0d29yayUyMGNhYmxlc3xlbnwwfHx8fDE3NTg2NDMwMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "network cables"
     },
     {
       "id": "service-iot",
       "description": "Connected devices on a shelf",
-      "imageUrl": "https://picsum.photos/seed/iot/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzbWFydCUyMGhvbWV8ZW58MHx8fHwxNzU4NzA2OTE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "smart home"
     },
     {
       "id": "service-pc-config",
       "description": "Computer setup and configuration",
-      "imageUrl": "https://picsum.photos/seed/pcconfig/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1589875703627-f2eea568229a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wdXRlciUyMHNldHVwfGVufDB8fHx8MTc1ODcwMjY5MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "computer setup"
     },
     {
       "id": "service-pc-software",
       "description": "Software installation on a laptop",
-      "imageUrl": "https://picsum.photos/seed/pcsoftware/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c29mdHdhcmUlMjBpbnN0YWxsfGVufDB8fHx8MTc1ODcyNDc3OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "software install"
     },
     {
       "id": "service-pc-accessories",
       "description": "Various computer accessories on a desk",
-      "imageUrl": "https://picsum.photos/seed/pcaccessories/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1720767020329-200c8ee4ffa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21wdXRlciUyMGFjY2Vzc29yaWVzfGVufDB8fHx8MTc1ODY3MTU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "computer accessories"
     },
     {
       "id": "service-pc-transfer",
       "description": "Data transfer between two laptops",
-      "imageUrl": "https://picsum.photos/seed/pctransfer/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1531492746076-161ca9bcad58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMHRyYW5zZmVyfGVufDB8fHx8MTc1ODcyNDc3OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "data transfer"
     },
     {
@@ -112,31 +111,31 @@
     {
       "id": "service-pc-sales",
       "description": "Colorful bars representing sales charts",
-      "imageUrl": "https://picsum.photos/seed/pcsales/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1728044849321-4cbffc50cc1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWxlcyUyMGNoYXJ0fGVufDB8fHx8MTc1ODY4OTM4OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "sales chart"
     },
     {
       "id": "service-pc-repair",
       "description": "Inside of a computer with glowing components",
-      "imageUrl": "https://picsum.photos/seed/pcrepair/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wdXRlciUyMHJlcGFpcnxlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "computer repair"
     },
     {
       "id": "service-pc-recovery",
       "description": "Close-up of a hard drive platter",
-      "imageUrl": "https://picsum.photos/seed/pcrecovery/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkYXRhJTIwcmVjb3Zlcnl8ZW58MHx8fHwxNzU4NzI0NzgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "data recovery"
     },
     {
       "id": "service-pc-update",
       "description": "Close-up of a computer keyboard",
-      "imageUrl": "https://picsum.photos/seed/pcupdate/600/400",
+      "imageUrl": "https://images.unsplash.com/photo-1698080054260-8fdebd0e3cdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxrZXlib2FyZCUyMGNsb3NlLXVwfGVufDB8fHx8MTc1ODcyMDE5M3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "keyboard close-up"
     },
     {
       "id": "why-choose-us",
       "description": "Image for the 'Why Choose Us' section",
-      "imageUrl": "https://picsum.photos/seed/8/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTg3MDExMTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "team collaboration"
     },
     {
@@ -148,31 +147,31 @@
     {
       "id": "about-us-header",
       "description": "Header image for the About Us page",
-      "imageUrl": "https://picsum.photos/seed/9/1600/600",
+      "imageUrl": "https://images.unsplash.com/photo-1525896544042-354764aa27e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwb2ZmaWNlfGVufDB8fHx8MTc1ODcwOTc4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern office"
     },
     {
       "id": "contact-header",
       "description": "Header image for the Contact page",
-      "imageUrl": "https://picsum.photos/seed/10/1600/600",
+      "imageUrl": "https://images.unsplash.com/photo-1756903646251-5f9d4154fe80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21tdW5pY2F0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3NTg3MjQ3ODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "communication technology"
     },
     {
       "id": "careers-header",
       "description": "Header image for the Careers page",
-      "imageUrl": "https://picsum.photos/seed/11/1600/600",
+      "imageUrl": "https://images.unsplash.com/photo-1758520144417-e1c432042dec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxqb2IlMjBvcHBvcnR1bml0eXxlbnwwfHx8fDE3NTg2MjcyMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "job opportunity"
     },
     {
       "id": "services-header",
       "description": "Header image for the Services page",
-      "imageUrl": "https://picsum.photos/seed/12/1600/600",
+      "imageUrl": "https://images.unsplash.com/photo-1543286386-713bdd548da4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMGdyb3d0aHxlbnwwfHx8fDE3NTg3MDQ1NzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "business growth"
     },
     {
       "id": "company-logo-large",
       "description": "A large version of the company logo on a building",
-      "imageUrl": "https://picsum.photos/seed/about1/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21wYW55JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzU4NzI0Nzc5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company building"
     },
     {
@@ -196,146 +195,152 @@
     {
       "id": "careers-cta-background",
       "description": "Background for the careers call to action section",
-      "imageUrl": "https://picsum.photos/seed/careercta/1600/600",
+      "imageUrl": "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b2ZmaWNlJTIwdGVhbXxlbnwwfHx8fDE3NTg2OTc3MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "office team"
     },
     {
       "id": "partner-1",
       "description": "Partner 1 Logo",
-      "imageUrl": "https://picsum.photos/seed/p1/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1687523327554-fa9f50423489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-2",
       "description": "Partner 2 Logo",
-      "imageUrl": "https://picsum.photos/seed/p2/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1619551734325-81aaf323686c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-3",
       "description": "Partner 3 Logo",
-      "imageUrl": "https://picsum.photos/seed/p3/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1687523327554-fa9f50423489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-4",
       "description": "Partner 4 Logo",
-      "imageUrl": "https://picsum.photos/seed/p4/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-5",
       "description": "Partner 5 Logo",
-      "imageUrl": "https://picsum.photos/seed/p5/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-6",
       "description": "Partner 6 Logo",
-      "imageUrl": "https://picsum.photos/seed/p6/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-7",
       "description": "Partner 7 Logo",
-      "imageUrl": "https://picsum.photos/seed/p7/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1562783912-21ad31ee2a83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-8",
       "description": "Partner 8 Logo",
-      "imageUrl": "https://picsum.photos/seed/p8/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1549924231-f129b911e442?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "tool-1",
       "description": "Tool 1 Logo",
-      "imageUrl": "https://picsum.photos/seed/t1/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1661347998648-79ad2d81bf26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-2",
       "description": "Tool 2 Logo",
-      "imageUrl": "https://picsum.photos/seed/t2/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1704089272382-201cf5c1bbbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-3",
       "description": "Tool 3 Logo",
-      "imageUrl": "https://picsum.photos/seed/t3/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1661347998996-dcf102498c63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-4",
       "description": "Tool 4 Logo",
-      "imageUrl": "https://picsum.photos/seed/t4/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1661347998423-b15d37d6f61e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-5",
       "description": "Tool 5 Logo",
-      "imageUrl": "https://picsum.photos/seed/t5/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1569605803663-e9337d901ff9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-6",
       "description": "Tool 6 Logo",
-      "imageUrl": "https://picsum.photos/seed/t6/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1594136324914-0216d32fad9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGVjaCUyMGxvZ298ZW58MHx8fHwxNzU4Njc4MzY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-7",
       "description": "Tool 7 Logo",
-      "imageUrl": "https://picsum.photos/seed/t7/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1661347998423-b15d37d6f61e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-8",
       "description": "Tool 8 Logo",
-      "imageUrl": "https://picsum.photos/seed/t8/60/60",
+      "imageUrl": "https://images.unsplash.com/photo-1505156868547-9b49f4df4e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech logo"
     },
     {
       "id": "testimonial-avatar-1",
       "description": "Avatar of Sophie L.",
-      "imageUrl": "https://picsum.photos/seed/ta1/80/80",
+      "imageUrl": "https://images.unsplash.com/photo-1593351799227-75df2026356b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODY0MDczOHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman portrait"
     },
     {
       "id": "testimonial-avatar-2",
       "description": "Avatar of Jean D.",
-      "imageUrl": "https://picsum.photos/seed/ta2/80/80",
+      "imageUrl": "https://images.unsplash.com/photo-1715029005043-e88d219a3c48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3MDg5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man portrait"
     },
     {
       "id": "testimonial-avatar-3",
       "description": "Avatar of Marie C.",
-      "imageUrl": "https://picsum.photos/seed/ta3/80/80",
+      "imageUrl": "https://images.unsplash.com/photo-1610655507808-a59293f4e332?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODY0MDczOHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman portrait"
     },
     {
       "id": "testimonial-avatar-4",
       "description": "Decorative avatar 1",
-      "imageUrl": "https://picsum.photos/seed/td1/60/60",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg2OTE2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-avatar-5",
       "description": "Decorative avatar 2",
-      "imageUrl": "https://picsum.photos/seed/td2/50/50",
+      "imageUrl": "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg2OTE2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-avatar-6",
       "description": "Decorative avatar 3",
-      "imageUrl": "https://picsum.photos/seed/td3/70/70",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg2OTE2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person portrait"
     },
-     {
+    {
       "id": "testimonial-avatar-7",
       "description": "Decorative avatar 4",
-      "imageUrl": "https://picsum.photos/seed/td4/40/40",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg2OTE2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person portrait"
+    },
+    {
+      "id": "terms-header",
+      "description": "Header for Terms of Use page",
+      "imageUrl": "https://images.unsplash.com/photo-1423592707957-3b212afa6733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsZWdhbCUyMGRvY3VtZW50fGVufDB8fHx8MTc1ODY0MzA0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "legal document"
     }
   ]
 }

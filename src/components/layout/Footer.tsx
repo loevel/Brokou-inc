@@ -1,27 +1,53 @@
 
 "use client";
 
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { Mail, MapPin, Phone, Twitter, Linkedin, Github } from "lucide-react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
   const address = "3755 E Boul Matte, Brossard, QC J4Y 2P4, Canada";
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  
+  const footerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // This effect runs only on the client, ensuring the year is updated
     // after the initial server render, preventing a hydration mismatch.
     setYear(new Date().getFullYear());
   }, []);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+        const elements = gsap.utils.toArray('.footer-anim-item');
+        elements.forEach((el: any) => {
+            gsap.from(el, {
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 95%',
+                    toggleActions: 'play none none none',
+                }
+            });
+        });
+    }, footerRef);
+    return () => ctx.revert();
+  }, []);
   
   return (
-    <footer className="bg-zinc-900 text-zinc-300 border-t border-zinc-800">
+    <footer className="bg-zinc-900 text-zinc-300 border-t border-zinc-800" ref={footerRef}>
         <div className="container mx-auto px-4 py-12">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="flex flex-col">
+              <div className="flex flex-col footer-anim-item">
                 <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-4">
                   <Image src="/logo.png" alt="Brokou Inc. Logo" width={140} height={40} />
                 </Link>
@@ -30,7 +56,7 @@ export function Footer() {
                 </p>
               </div>
 
-              <div>
+              <div className="footer-anim-item">
                 <h3 className="font-semibold text-white text-lg mb-4">Navigation</h3>
                 <ul className="space-y-2">
                   <li><Link href="/a-propos" className="text-zinc-400 hover:text-white transition-colors">À Propos</Link></li>
@@ -41,7 +67,7 @@ export function Footer() {
                 </ul>
               </div>
 
-              <div>
+              <div className="footer-anim-item">
                 <h3 className="font-semibold text-white text-lg mb-4">Contact</h3>
                 <ul className="space-y-3 text-zinc-400">
                   <li className="flex items-start gap-3">
@@ -59,7 +85,7 @@ export function Footer() {
                 </ul>
               </div>
               
-              <div>
+              <div className="footer-anim-item">
                 <h3 className="font-semibold text-white text-lg mb-4">Suivez-nous</h3>
                 <div className="flex items-center gap-4">
                   <a href="#" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-white transition-colors"><Twitter /></a>
@@ -69,7 +95,7 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="mt-8 pt-8 border-t border-white/20 text-center text-sm text-zinc-400">
+            <div className="mt-8 pt-8 border-t border-white/20 text-center text-sm text-zinc-400 footer-anim-item">
               <p>&copy; {year} Brokou Inc. Tous droits réservés.</p>
             </div>
         </div>

@@ -296,51 +296,57 @@
     },
     {
       "id": "testimonial-avatar-1",
-      "description": "Avatar of Sophie L.",
-      "imageUrl": "https://images.unsplash.com/photo-1593351799227-75df2026356b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODY0MDczOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Portrait of a smiling woman",
+      "imageUrl": "https://images.unsplash.com/photo-1558557342-990a4b31a89c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTc1ODU0NzQ4OXww&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "woman portrait"
     },
     {
       "id": "testimonial-avatar-2",
-      "description": "Avatar of Jean D.",
-      "imageUrl": "https://images.unsplash.com/photo-1715029005043-e88d219a3c48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3MDg5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Portrait of a smiling man",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMG1hbnxlbnwwfHx8fDE3NTg1NDc0ODl8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "man portrait"
     },
     {
       "id": "testimonial-avatar-3",
-      "description": "Avatar of Marie C.",
-      "imageUrl": "https://images.unsplash.com/photo-1610655507808-a59293f4e332?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODY0MDczOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Portrait of another smiling woman",
+      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8fDE3NTg1NDc0ODl8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "woman portrait"
     },
     {
       "id": "testimonial-avatar-4",
-      "description": "Decorative avatar 1",
-      "imageUrl": "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg2OTE2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Another portrait of a smiling person",
+      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-avatar-5",
-      "description": "Decorative avatar 2",
-      "imageUrl": "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg2OTE2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Another portrait of a smiling person",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-avatar-6",
-      "description": "Decorative avatar 3",
-      "imageUrl": "https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg2OTE2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Another portrait of a smiling person",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
       "id": "testimonial-avatar-7",
-      "description": "Decorative avatar 4",
-      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg2OTE2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Another portrait of a smiling person",
+      "imageUrl": "https://images.unsplash.com/photo-1504593811423-6dd665756598?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
       "id": "terms-header",
-      "description": "Header for Terms of Use page",
-      "imageUrl": "https://images.unsplash.com/photo-1423592707957-3b212afa6733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsZWdhbCUyMGRvY3VtZW50fGVufDB8fHx8MTc1ODY0MzA0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "legal document"
+      "description": "Header for the terms of use page",
+      "imageUrl": "https://images.unsplash.com/photo-1579546929662-7112e75fdcf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMGdyYWRpZW50fGVufDB8fHx8MTc1ODcwOTY5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract gradient"
+    },
+    {
+      "id": "privacy-header",
+      "description": "Header for the privacy policy page",
+      "imageUrl": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdyYWRpZW50fGVufDB8fHx8MTc1ODcwOTY5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract gradient"
     }
   ]
 }

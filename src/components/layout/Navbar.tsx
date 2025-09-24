@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/a-propos", label: "À Propos" },
   { href: "/services", label: "Services" },
+  { href: "/eco-responsable", label: "Eco-responsable" },
   { href: "/carrieres", label: "Carrières" },
   { href: "/contact", label: "Contact" },
 ];

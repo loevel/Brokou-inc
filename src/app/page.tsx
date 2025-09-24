@@ -49,15 +49,17 @@ export default function Home() {
         <CarouselContent>
             {items.map((item) => (
                 <CarouselItem key={item.id} className="basis-1/4 md:basis-1/6 lg:basis-1/8 flex justify-center">
-                    <div className="p-1 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
-                        <Image
+                    <div className="p-1 grayscale-0 opacity-100 hover:grayscale-0 hover:opacity-100 transition-all">
+                      
+                        <Image                        
                             src={item.src || item.imageUrl!}
                             alt={item.alt || item.description!}
-                            data-ai-hint={item.imageHint}
-                            width={80}
-                            height={80}
+                            width={300}
+                            height={400}
+                            data-ai-hint={item.imageHint}                          
                             className="object-contain"
                         />
+                     
                     </div>
                 </CarouselItem>
             ))}

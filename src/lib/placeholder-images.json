@@ -201,97 +201,99 @@
     {
       "id": "partner-1",
       "description": "Partner 1 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1687523327554-fa9f50423489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/partenaires/Dell.png",
       "imageHint": "company logo"
     },
     {
       "id": "partner-2",
       "description": "Partner 2 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1619551734325-81aaf323686c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/partenaires/lenovo-logo.png",
       "imageHint": "company logo"
     },
     {
       "id": "partner-3",
       "description": "Partner 3 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1687523327554-fa9f50423489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/partenaires/cisco-logo.svg",
       "imageHint": "company logo"
     },
     {
       "id": "partner-4",
       "description": "Partner 4 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/partenaires/hp-logo.svg",
       "imageHint": "company logo"
     },
     {
       "id": "partner-5",
       "description": "Partner 5 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/partenaires/Ingram-Micro.jpg",
       "imageHint": "company logo"
     },
     {
       "id": "partner-6",
       "description": "Partner 6 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/partenaires/MICROSOFT.png",
       "imageHint": "company logo"
     },
     {
       "id": "partner-7",
       "description": "Partner 7 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1562783912-21ad31ee2a83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/partenaires/ISACA.png",
       "imageHint": "company logo"
     },
-    {
-      "id": "partner-8",
-      "description": "Partner 8 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1549924231-f129b911e442?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
-      "imageHint": "company logo"
-    },
+   
+   
     {
       "id": "tool-1",
       "description": "Tool 1 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1661347998648-79ad2d81bf26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/outils/AWS.png",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-2",
       "description": "Tool 2 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1704089272382-201cf5c1bbbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/outils/ISO.png",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-3",
       "description": "Tool 3 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1661347998996-dcf102498c63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/outils/NIST.png",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-4",
       "description": "Tool 4 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1661347998423-b15d37d6f61e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/outils/safe.png",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-5",
       "description": "Tool 5 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1569605803663-e9337d901ff9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/outils/SQLSERVER.png",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-6",
       "description": "Tool 6 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1594136324914-0216d32fad9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGVjaCUyMGxvZ298ZW58MHx8fHwxNzU4Njc4MzY0fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/outils/AZURE.png",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-7",
       "description": "Tool 7 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1661347998423-b15d37d6f61e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/outils/Oracle.png",
       "imageHint": "tech logo"
     },
     {
       "id": "tool-8",
       "description": "Tool 8 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1505156868547-9b49f4df4e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NTg2NzgzNjR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/outils/VSTUDIO.webp",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "tool-9",
+      "description": "Tool 9 Logo",
+      "imageUrl": "/images/outils/COBIT.png",
       "imageHint": "tech logo"
     },
     {

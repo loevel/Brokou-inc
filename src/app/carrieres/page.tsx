@@ -35,10 +35,10 @@ const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: {
 );
 
 const demandedJobs = [
-    { title: "Directeur ou directrice de comptes", link: "#job-offers" },
+    { title: "Chef de Projet Technique", link: "/carrieres/chef-projet" },
     { title: "Développeur ou développeuse TI", link: "/carrieres/dev-fullstack" },
-    { title: "Chef de projet", link: "/carrieres/chef-projet" },
-    { title: "Conseiller ou conseillère en service à la clientèle", link: "#job-offers" },
+    { title: "Data Scientist", link: "/carrieres/data-scientist" },
+    { title: "Designer UX/UI", link: "/carrieres/designer-ux-ui" },
 ];
 
 const recruitmentProcess = [
@@ -175,18 +175,7 @@ export default function CarrieresPage() {
                             </a>
                         </Button>
                     </Card>
-                    {forbesImage && (
-                        <div className="flex justify-center">
-                             <Image
-                                src={forbesImage.imageUrl}
-                                alt={forbesImage.description}
-                                data-ai-hint={forbesImage.imageHint}
-                                width={120}
-                                height={120}
-                                className="object-contain"
-                            />
-                        </div>
-                    )}
+                    
                 </div>
             </div>
         </div>

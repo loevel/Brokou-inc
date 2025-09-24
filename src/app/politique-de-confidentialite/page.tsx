@@ -68,7 +68,7 @@ export default function PolitiqueDeConfidentialitePage() {
           <div className="max-w-6xl mx-auto">
             <Accordion type="single" collapsible className="w-full" defaultValue="item-0">
                 <AccordionItem value="item-0">
-                    <AccordionTrigger className="text-2xl font-bold">SECTION 1 : RÈGLES APPLICABLES AUX PERSONNES CONCERNÉES PAR LES RENSEIGNEMENTS PERSONNELS RÉGIS PAR LE RGPD</AccordionTrigger>
+                    <AccordionTrigger className="text-2xl font-bold text-sky-700">SECTION 1 : RÈGLES APPLICABLES AUX PERSONNES CONCERNÉES PAR LES RENSEIGNEMENTS PERSONNELS RÉGIS PAR LE RGPD</AccordionTrigger>
                     <AccordionContent>
                         <div className="prose dark:prose-invert max-w-none font-body pt-4">
                             <h3>Article 1. Définitions</h3>
@@ -163,7 +163,7 @@ export default function PolitiqueDeConfidentialitePage() {
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-1">
-                     <AccordionTrigger className="text-2xl font-bold">SECTION 2 : RÈGLES APPLICABLES AUX PERSONNES CONCERNÉES PAR LES RENSEIGNEMENTS PERSONNELS RÉGIS PAR LA LPRPSP (QUÉBEC, CANADA)</AccordionTrigger>
+                     <AccordionTrigger className="text-2xl font-bold text-sky-700">SECTION 2 : RÈGLES APPLICABLES AUX PERSONNES CONCERNÉES PAR LES RENSEIGNEMENTS PERSONNELS RÉGIS PAR LA LPRPSP (QUÉBEC, CANADA)</AccordionTrigger>
                       <AccordionContent>
                         <div className="prose dark:prose-invert max-w-none font-body pt-4">
                             <p>Toutes collectes, usages, communication, conservation et destruction des renseignements personnels (ci-après tout « Traitements ») qui sont régis par la Loi sur la protection des renseignements personnels dans le secteur privé (ci-après « LPRPSP ») telle que modifiée par la Loi 25 du 23 septembre 2021 sur la protection des renseignements personnels dans le secteur privé bénéficient des protections visées par la présente section. Sans s’y limiter, la présente politique de confidentialité vise à vous informer :</p>

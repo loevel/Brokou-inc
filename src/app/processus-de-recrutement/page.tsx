@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import placeholderImages from "@/lib/placeholder-images.json";
-import { FileText, Phone, Laptop, ClipboardList, PenSquare, ArrowRight, Lightbulb, UserCheck, Sparkles } from "lucide-react";
+import { FileText, Phone, Laptop, ClipboardList, PenSquare, ArrowRight, Lightbulb, UserCheck, Sparkles, CheckCircle, MessageSquareQuote } from "lucide-react";
 
 export const metadata = {
   title: "Processus de Recrutement - BROKOU INC",
@@ -60,6 +60,7 @@ const candidateTips = [
 
 export default function RecruitmentProcessPage() {
     const headerImage = placeholderImages.placeholderImages.find(p => p.id === "recruitment-header");
+    const testimonialAvatar = placeholderImages.placeholderImages.find(p => p.id === "testimonial-samuel");
 
     return (
         <div>
@@ -139,6 +140,56 @@ export default function RecruitmentProcessPage() {
                                 <CardDescription>{tip.description}</CardDescription>
                             </Card>
                         )})}
+                    </div>
+                </div>
+            </section>
+
+             <section className="py-20 lg:py-24 bg-background">
+                <div className="container mx-auto px-4">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-8">
+                            <div>
+                                <h2 className="text-3xl font-bold tracking-tight">Bienvenue chez BROKOU INC.!</h2>
+                                <p className="mt-2 text-muted-foreground">Voici ce qui vous attend lors de votre entrée en poste:</p>
+                                <ul className="mt-4 space-y-2 text-muted-foreground">
+                                    <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-green-500" /><span>Un programme d'accueil et d'intégration</span></li>
+                                    <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-green-500" /><span>Le soutien d'un parrain ou d'une marraine pour répondre à vos questions</span></li>
+                                    <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-green-500" /><span>Des outils concrets pour vous accompagner dans vos premiers pas chez nous</span></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold tracking-tight">Profitez de conditions de travail avantageuses</h3>
+                                <p className="mt-2 text-muted-foreground">Vous travaillez maintenant pour une organisation humaine et vous profitez de nombreux avantages distinctifs. Découvrez-les!</p>
+                                <Button variant="link" asChild className="px-0 mt-2">
+                                    <Link href="/a-propos">En savoir plus sur nos valeurs<ArrowRight className="ml-1 h-4 w-4" /></Link>
+                                </Button>
+                            </div>
+                        </div>
+
+                        <Card className="bg-secondary/50 p-8">
+                            <CardContent className="p-0">
+                                <MessageSquareQuote className="h-8 w-8 text-primary mb-4" />
+                                <blockquote className="text-muted-foreground italic mb-6">
+                                    "Dès mon entrée chez BROKOU, je me suis senti spécial et accueilli. J'avais un parrain qui s'assurait que mes tâches étaient intéressantes et que j'avais tout le soutien dont j'avais besoin."
+                                </blockquote>
+                                <div className="flex items-center gap-4">
+                                     {testimonialAvatar && (
+                                        <Image 
+                                            src={testimonialAvatar.imageUrl}
+                                            alt={testimonialAvatar.description}
+                                            data-ai-hint={testimonialAvatar.imageHint}
+                                            width={48}
+                                            height={48}
+                                            className="rounded-full"
+                                        />
+                                    )}
+                                    <div>
+                                        <p className="font-semibold">Samuel Tremblay</p>
+                                        <p className="text-sm text-muted-foreground">Conseiller en ingénierie de données</p>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
                     </div>
                 </div>
             </section>

@@ -53,9 +53,6 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild className="hidden md:flex">
-            <Link href="/login">Espace Admin</Link>
-          </Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
@@ -78,9 +75,6 @@ export function Navbar() {
                   <NavLink key={link.href} {...link} />
                 ))}
               </nav>
-              <Button asChild className="w-full mt-8">
-                <Link href="/login" onClick={() => setIsOpen(false)}>Espace Admin</Link>
-              </Button>
             </SheetContent>
           </Sheet>
         </div>

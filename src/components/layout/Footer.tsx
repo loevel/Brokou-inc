@@ -63,7 +63,6 @@ export function Footer() {
                   <li><Link href="/services" className="text-zinc-400 hover:text-white transition-colors">Services</Link></li>
                   <li><Link href="/carrieres" className="text-zinc-400 hover:text-white transition-colors">Carrières</Link></li>
                   <li><Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">Contact</Link></li>
-                  <li><Link href="/login" className="text-zinc-400 hover:text-white transition-colors">Espace Admin</Link></li>
                 </ul>
               </div>
 

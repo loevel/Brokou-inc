@@ -33,13 +33,13 @@
     {
       "id": "service-dev",
       "description": "Image for software development service",
-      "imageUrl": "https://images.unsplash.com/photo-1742072593996-ebdc5d605a54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29kaW5nJTIwc2NyZWVufGVufDB8fHx8MTc1ODYxOTc2OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1742072593996-ebdc5d605a54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29kaW5nJTIwc2NyZWVufGVufDB8fHx8fDE3NTg2MTk3NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "coding screen"
     },
     {
       "id": "service-cloud",
       "description": "Image for cloud solutions service",
-      "imageUrl": "https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZXJ2ZXIlMjByb29tfGVufDB8fHx8MTc1ODY4ODI3OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZXJ2ZXIlMjByb29tfGVufDB8fHx8fDE3NTg2ODgyNzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "server room"
     },
     {
@@ -401,6 +401,30 @@
       "description": "Forbes Best Employers 2025 Badge",
       "imageUrl": "https://images.unsplash.com/photo-1753723880818-843238aa129f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Zm9yYmVzJTIwYmFkZ2V8ZW58MHx8fHwxNzU4NzI5NzUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "forbes badge"
+    },
+    {
+      "id": "why-work-1",
+      "description": "Portrait of a smiling man",
+      "imageUrl": "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYW4lMjBzbWlsaW5nfGVufDB8fHx8MTc1OTEzMTY2Nnww&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "man smiling"
+    },
+    {
+      "id": "why-work-2",
+      "description": "Portrait of a smiling woman",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNtaWxpbmd8ZW58MHx8fHwxNzU5MTMxNjY2fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "woman smiling"
+    },
+    {
+      "id": "why-work-3",
+      "description": "Portrait of another smiling man",
+      "imageUrl": "https://images.unsplash.com/photo-1583864697784-a0efc8379f70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYW4lMjBzbWlsaW5nfGVufDB8fHx8MTc1OTEzMTY2Nnww&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "man smiling"
+    },
+    {
+      "id": "why-work-4",
+      "description": "Portrait of another smiling woman",
+      "imageUrl": "https://images.unsplash.com/photo-1601412436009-d964402b8996?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHNtaWxpbmd8ZW58MHx8fHwxNzU5MTMxNjY2fDA&ixlib=rb-4.1.0&q=80&w=400",
+      "imageHint": "woman smiling"
     }
   ]
 }

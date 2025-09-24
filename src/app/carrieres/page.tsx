@@ -8,7 +8,7 @@ import { JobOfferCard } from "@/components/ui/JobOfferCard";
 import { jobOffers } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search, Mail, Mailbox, Send } from "lucide-react";
+import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search, Mail, Mailbox, Send, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -44,6 +44,10 @@ export default function CarrieresPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "careers-header");
   const ctaImage = placeholderImages.placeholderImages.find(p => p.id === "careers-cta-background");
   const forbesImage = placeholderImages.placeholderImages.find(p => p.id === "forbes-badge");
+  const whyWorkCollage1 = placeholderImages.placeholderImages.find(p => p.id === "why-work-1");
+  const whyWorkCollage2 = placeholderImages.placeholderImages.find(p => p.id === "why-work-2");
+  const whyWorkCollage3 = placeholderImages.placeholderImages.find(p => p.id === "why-work-3");
+  const whyWorkCollage4 = placeholderImages.placeholderImages.find(p => p.id === "why-work-4");
 
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
@@ -179,7 +183,39 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section id="job-offers" className="py-20 lg:py-24 bg-secondary">
+      <section className="py-20 lg:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 className="text-3xl font-bold tracking-tight mb-4">Pourquoi travailler chez BROKOU INC.?</h2>
+                    
+                    <h3 className="text-xl font-semibold text-primary">Des conditions de travail avantageuses</h3>
+                    <p className="mt-2 text-muted-foreground">Évoluez au sein d'une entreprise qui vous permet de vous réaliser autant dans votre vie professionnelle que personnelle.</p>
+                    <ul className="mt-4 space-y-2 text-muted-foreground">
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Télétravail selon la nature du poste</span></li>
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Salaire concurrentiel</span></li>
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Boni annuel en fonction de la performance</span></li>
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Conciliation travail et vie personnelle</span></li>
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Formation continue et mentorat</span></li>
+                    </ul>
+
+                    <h3 className="text-xl font-semibold text-primary mt-8">Des valeurs qui donnent un sens à votre travail</h3>
+                    <p className="mt-2 text-muted-foreground">Notre entreprise citoyenne partage des valeurs qui vous sont importantes et fait partie de votre quotidien.</p>
+                    <Button variant="link" asChild className="px-0 mt-2">
+                        <Link href="/a-propos">En savoir plus sur nos valeurs <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
+                </div>
+                <div className="grid grid-cols-2 grid-rows-2 gap-4">
+                    {whyWorkCollage1 && <Image src={whyWorkCollage1.imageUrl} alt={whyWorkCollage1.description} data-ai-hint={whyWorkCollage1.imageHint} width={300} height={300} className="rounded-lg object-cover aspect-square" />}
+                    {whyWorkCollage2 && <Image src={whyWorkCollage2.imageUrl} alt={whyWorkCollage2.description} data-ai-hint={whyWorkCollage2.imageHint} width={300} height={300} className="rounded-lg object-cover aspect-square" />}
+                    {whyWorkCollage3 && <Image src={whyWorkCollage3.imageUrl} alt={whyWorkCollage3.description} data-ai-hint={whyWorkCollage3.imageHint} width={300} height={300} className="rounded-lg object-cover aspect-square" />}
+                    {whyWorkCollage4 && <Image src={whyWorkCollage4.imageUrl} alt={whyWorkCollage4.description} data-ai-hint={whyWorkCollage4.imageHint} width={300} height={300} className="rounded-lg object-cover aspect-square" />}
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section id="job-offers" className="py-20 lg:py-24 bg-background">
         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold tracking-tight">
@@ -273,7 +309,7 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24 bg-background">
+      <section className="py-20 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -306,7 +342,7 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section className="relative py-20 lg:py-24 bg-secondary">
+      <section className="relative py-20 lg:py-24 bg-background">
         {ctaImage && (
             <div className="absolute inset-0">
                 <Image 
@@ -349,3 +385,4 @@ export default function CarrieresPage() {
     
 
     
+

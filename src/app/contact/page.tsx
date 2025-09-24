@@ -87,7 +87,7 @@ export default function ContactPage() {
               </div>
             </div>
             
-            <div className="p-8 border rounded-lg bg-card shadow-lg">
+            <div className="bg-card text-card-foreground p-8 rounded-2xl shadow-xl border">
                 <ContactForm />
             </div>
           </div>

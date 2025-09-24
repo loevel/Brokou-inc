@@ -2,43 +2,53 @@
   "clientImages": [
     {
       "id": "client-1",
-      "alt": "Client 1 Logo",
-      "src": "/images/clients/logo-1.svg"
+      "alt": "MCN",
+      "src": "/images/clients/MCN.png"
     },
     {
       "id": "client-2",
       "alt": "Client 2 Logo",
-      "src": "/images/clients/logo-2.svg"
+      "src": "/images/clients/UDS.png"
     },
     {
       "id": "client-3",
       "alt": "Client 3 Logo",
-      "src": "/images/clients/logo-3.svg"
+      "src": "/images/clients/CLIMAT.jpg"
     },
     {
       "id": "client-4",
       "alt": "Client 4 Logo",
-      "src": "/images/clients/logo-4.svg"
+      "src": "/images/clients/CPQ.webp"
     },
     {
       "id": "client-5",
       "alt": "Client 5 Logo",
-      "src": "/images/clients/logo-5.svg"
+      "src": "/images/clients/Laval.png"
     },
     {
       "id": "client-6",
       "alt": "Client 6 Logo",
-      "src": "/images/clients/logo-6.svg"
+      "src": "/images/clients/MAHN.webp"
     },
     {
       "id": "client-7",
       "alt": "Client 7 Logo",
-      "src": "/images/clients/logo-7.svg"
+      "src": "/images/clients/RQ.png"
     },
     {
       "id": "client-8",
       "alt": "Client 8 Logo",
-      "src": "/images/clients/logo-8.svg"
+      "src": "/images/clients/BIC.PNG"
+    },
+    {
+      "id": "client-9",
+      "alt": "Client 9 Logo",
+      "src": "/images/clients/VQ.jpg"
+    },
+    {
+      "id": "client-10",
+      "alt": "Client 10 Logo",
+      "src": "/images/clients/CENSST.png"
     }
   ]
 }

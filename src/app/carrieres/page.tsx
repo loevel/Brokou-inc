@@ -8,7 +8,7 @@ import { JobOfferCard } from "@/components/ui/JobOfferCard";
 import { jobOffers } from "@/lib/data";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search } from "lucide-react";
+import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search, Mail, Mailbox, Send, Check, Phone, Laptop, ClipboardList, PenSquare, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/select";
 import type { JobOffer } from "@/lib/types";
 import { gsap } from "gsap";
+import { FaqSection } from "@/components/ui/FaqSection";
 
 const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: { icon: React.ElementType, title: React.ReactNode, description: string, colorClass: string }) => (
     <div className="bg-secondary/50 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-start gap-4 h-full">
@@ -33,9 +34,29 @@ const CitizenCompanyFeature = ({ icon: Icon, title, description, colorClass }: {
     </div>
 );
 
+const demandedJobs = [
+    { title: "Chef de Projet Technique", link: "/carrieres/chef-projet" },
+    { title: "Développeur ou développeuse TI", link: "/carrieres/dev-fullstack" },
+    { title: "Data Scientist", link: "/carrieres/data-scientist" },
+    { title: "Designer UX/UI", link: "/carrieres/designer-ux-ui" },
+];
+
+const recruitmentProcess = [
+    { title: "Dépôt de votre CV", icon: FileText, description: "Via notre portail carrière" },
+    { title: "Entrevue téléphonique", icon: Phone, description: "Présélection" },
+    { title: "Entrevue de sélection", icon: Laptop, description: "Par conférence vidéo" },
+    { title: "Suivi de votre candidature", icon: ClipboardList, description: "Nous vous tenons informé" },
+    { title: "Offre d'embauche", icon: PenSquare, description: "Bienvenue dans l'équipe !" }
+];
+
 export default function CarrieresPage() {
   const headerImage = placeholderImages.placeholderImages.find(p => p.id === "careers-header");
   const ctaImage = placeholderImages.placeholderImages.find(p => p.id === "careers-cta-background");
+  const forbesImage = placeholderImages.placeholderImages.find(p => p.id === "forbes-badge");
+  const whyWorkCollage1 = placeholderImages.placeholderImages.find(p => p.id === "why-work-1");
+  const whyWorkCollage2 = placeholderImages.placeholderImages.find(p => p.id === "why-work-2");
+  const whyWorkCollage3 = placeholderImages.placeholderImages.find(p => p.id === "why-work-3");
+  const whyWorkCollage4 = placeholderImages.placeholderImages.find(p => p.id === "why-work-4");
 
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
@@ -73,6 +94,13 @@ export default function CarrieresPage() {
                 duration: 1,
                 delay: -0.8,
                 ease: 'power3.out'
+            })
+            .from("#cta-button", {
+                opacity: 0,
+                y: '+=30',
+                duration: 1,
+                delay: -0.8,
+                ease: 'power3.out'
             });
 
         }, comp);
@@ -97,15 +125,122 @@ export default function CarrieresPage() {
         )}
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 id="title" className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-            Rejoignez Notre Équipe
+            Trouver un emploi chez BROKOU INC.
           </h1>
-          <p id="subtitle" className="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
-            Nous sommes toujours à la recherche de talents passionnés pour nous aider à innover.
+          <p id="subtitle" className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
+            Nous sommes une belle entreprise Québécoise et nous avons à cœur d'être un employeur de choix depuis quelques années . Réalisez vos ambitions et trouvez votre prochain défi parmi plusieurs types d’emplois dans plusieurs domaines des technologies de l’information et les communications.
           </p>
+           <div id="cta-button" className="mt-8">
+                <Button size="lg" asChild>
+                    <Link href="#job-offers">
+                        Voir les offres d'emploi
+                    </Link>
+                </Button>
+            </div>
         </div>
       </section>
 
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 className="text-3xl font-bold tracking-tight">Emplois en demande</h2>
+                    <p className="mt-2 text-muted-foreground">
+                        Nous recrutons en continu pour ces postes clés. Postulez pour faire partie de notre banque de candidatures et ne rater aucune offre.
+                    </p>
+                    <div className="mt-6 space-y-3">
+                        {demandedJobs.map(job => (
+                            <Button key={job.title} variant="outline" asChild className="w-full justify-between h-12 text-base">
+                                <Link href={job.link}>
+                                    <span>{job.title}</span>
+                                    <ArrowRight className="h-4 w-4" />
+                                </Link>
+                            </Button>
+                        ))}
+                    </div>
+                </div>
+                <div className="space-y-6">
+                    <Card className="bg-primary/5 border-primary/20 p-8 text-center flex flex-col items-center">
+                        <div className="p-3 bg-primary/10 rounded-full mb-4">
+                           <Mailbox className="h-8 w-8 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-bold">Candidature spontanée</h3>
+                        <p className="mt-2 text-muted-foreground flex-grow">
+                           Vous voulez travailler chez BROKOU INC., mais vous ne trouvez pas d'offre qui correspond à votre profil? Faites-vous connaître en nous envoyant votre CV.
+                        </p>
+                        <Button asChild className="mt-6">
+                            <a href="mailto:emploi@brokou.com?subject=Candidature%20spontanée">
+                                <Send className="mr-2 h-4 w-4"/>
+                                Soumettre une candidature
+                            </a>
+                        </Button>
+                    </Card>
+                    
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 className="text-3xl font-bold tracking-tight mb-4">Pourquoi travailler chez BROKOU INC.?</h2>
+                    
+                    <h3 className="text-xl font-semibold text-primary">Des conditions de travail avantageuses</h3>
+                    <p className="mt-2 text-muted-foreground">Évoluez au sein d'une entreprise qui vous permet de vous réaliser autant dans votre vie professionnelle que personnelle.</p>
+                    <ul className="mt-4 space-y-2 text-muted-foreground">
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Télétravail selon la nature du poste</span></li>
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Salaire concurrentiel</span></li>
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Boni annuel en fonction de la performance</span></li>
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Conciliation travail et vie personnelle</span></li>
+                        <li className="flex items-center gap-2"><Check className="h-4 w-4 text-green-500" /><span>Formation continue et mentorat</span></li>
+                    </ul>
+
+                    <h3 className="text-xl font-semibold text-primary mt-8">Des valeurs qui donnent un sens à votre travail</h3>
+                    <p className="mt-2 text-muted-foreground">Notre entreprise citoyenne partage des valeurs qui vous sont importantes et fait partie de votre quotidien.</p>
+                    <Button variant="link" asChild className="px-0 mt-2">
+                        <Link href="/a-propos">En savoir plus sur nos valeurs <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    </Button>
+                </div>
+                <div className="grid grid-cols-2 grid-rows-2 gap-4">
+                    {whyWorkCollage1 && <Image src={whyWorkCollage1.imageUrl} alt={whyWorkCollage1.description} data-ai-hint={whyWorkCollage1.imageHint} width={300} height={300} className="rounded-lg object-cover aspect-square" />}
+                    {whyWorkCollage2 && <Image src={whyWorkCollage2.imageUrl} alt={whyWorkCollage2.description} data-ai-hint={whyWorkCollage2.imageHint} width={300} height={300} className="rounded-lg object-cover aspect-square" />}
+                    {whyWorkCollage3 && <Image src={whyWorkCollage3.imageUrl} alt={whyWorkCollage3.description} data-ai-hint={whyWorkCollage3.imageHint} width={300} height={300} className="rounded-lg object-cover aspect-square" />}
+                    {whyWorkCollage4 && <Image src={whyWorkCollage4.imageUrl} alt={whyWorkCollage4.description} data-ai-hint={whyWorkCollage4.imageHint} width={300} height={300} className="rounded-lg object-cover aspect-square" />}
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold tracking-tight text-center mb-12">Comment postuler?</h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-5xl mx-auto items-start">
+            {recruitmentProcess.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                    <div key={index} className="flex flex-col items-center text-center">
+                        <div className="bg-primary/10 p-4 rounded-full mb-4">
+                            <Icon className="h-8 w-8 text-primary" />
+                        </div>
+                        <p className="font-semibold text-sm">{index + 1}. {step.title}</p>
+                        <p className="text-xs text-muted-foreground">{step.description}</p>
+                    </div>
+                )
+            })}
+          </div>
+           <div className="text-center mt-8">
+                <Button variant="link" asChild>
+                    <Link href="/processus-de-recrutement">Voir le processus de recrutement <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                </Button>
+            </div>
+        </div>
+      </section>
+
+      <FaqSection />
+
+      <section id="job-offers" className="py-20 lg:py-24 bg-secondary">
         <div className="container mx-auto px-4">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold tracking-tight">
@@ -199,7 +334,7 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24 bg-secondary">
+      <section className="py-20 lg:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -232,7 +367,7 @@ export default function CarrieresPage() {
         </div>
       </section>
 
-      <section className="relative py-20 lg:py-24">
+      <section className="relative py-20 lg:py-24 bg-secondary">
         {ctaImage && (
             <div className="absolute inset-0">
                 <Image 

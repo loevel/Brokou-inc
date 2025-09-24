@@ -96,6 +96,7 @@ export function Footer() {
                  <ul className="space-y-2">
                     <li><Link href="/conditions-d-utilisation" className="text-zinc-400 hover:text-white transition-colors">Conditions d'utilisation</Link></li>
                     <li><Link href="/politique-de-confidentialite" className="text-zinc-400 hover:text-white transition-colors">Politique de confidentialité</Link></li>
+                    <li><Link href="/eco-responsable" className="text-zinc-400 hover:text-white transition-colors">Une entreprise éco-responsable</Link></li>
                 </ul>
               </div>
             </div>

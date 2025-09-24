@@ -107,7 +107,7 @@ export default function CarrieresPage() {
             Trouver un emploi chez BROKOU INC.
           </h1>
           <p id="subtitle" className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
-            Nous sommes le plus grand groupe financier coopératif en Amérique du Nord et nous avons à cœur d'être un employeur de choix depuis 125 ans. Réalisez vos ambitions et trouvez votre prochain défi parmi plus de 800 types d’emplois dans plusieurs domaines au-delà de la finance comme l'éducation, les technologies de l’information et les communications.
+            Nous sommes une belle entreprise Québécoise et nous avons à cœur d'être un employeur de choix depuis quelques années . Réalisez vos ambitions et trouvez votre prochain défi parmi plusieurs types d’emplois dans plusieurs domaines des technologies de l’information et les communications.
           </p>
            <div id="cta-button" className="mt-8">
                 <Button size="lg" asChild>
@@ -285,5 +285,7 @@ export default function CarrieresPage() {
     </div>
   );
 }
+
+    
 
     

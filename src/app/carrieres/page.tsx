@@ -243,7 +243,7 @@ export default function CarrieresPage() {
           </div>
            <div className="text-center mt-8">
                 <Button variant="link" asChild>
-                    <Link href="#">Voir le processus de recrutement <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                    <Link href="/processus-de-recrutement">Voir le processus de recrutement <ArrowRight className="ml-1 h-4 w-4" /></Link>
                 </Button>
             </div>
         </div>

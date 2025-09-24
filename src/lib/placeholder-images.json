@@ -141,7 +141,7 @@
     {
       "id": "home-about-us",
       "description": "Image for the 'About Us' section on the homepage",
-      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8dGVjaG5vbG9naWV8ZW58MHx8fHwxNzU4NTk3MzExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8dGVjaG5vbG9naWV8ZW58MHx8fHwxNzU4NTk3MzExfDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "robot technology"
     },
     {
@@ -201,19 +201,19 @@
     {
       "id": "partner-1",
       "description": "Partner 1 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1687523327554-fa9f50423489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1687523327554-fa9f50423489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-2",
       "description": "Partner 2 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1619551734325-81aaf323686c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1619551734325-81aaf323686c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-3",
       "description": "Partner 3 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1687523327554-fa9f50423489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1687523327554-fa9f50423489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
@@ -225,19 +225,19 @@
     {
       "id": "partner-5",
       "description": "Partner 5 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-6",
       "description": "Partner 6 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
       "id": "partner-7",
       "description": "Partner 7 Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1562783912-21ad31ee2a83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1562783912-21ad31ee2a83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg2NzI0MTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "company logo"
     },
     {
@@ -381,7 +381,7 @@
     {
       "id": "eco-furniture",
       "description": "A modern wooden chair",
-      "imageUrl": "https://images.unsplash.com/photo-1592078615290-033ee584e267?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBjaGFpcnxlbnwwfHx8fDE3NTkwNDIwNzV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1592078615290-033ee584e267?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBjaGFpcnxlbnwwfHx8fDE3NTkwNDIwNzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "wooden chair"
     },
     {
@@ -393,7 +393,7 @@
     {
       "id": "eco-solutions",
       "description": "A person holding a lightbulb with a plant inside",
-      "imageUrl": "https://images.unsplash.com/photo-1511227138147-3a1b1d763d3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMHNvbHV0aW9ufGVufDB8fHx8fDE3NTkwNDIwNzV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1511227138147-3a1b1d763d3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMHNvbHV0aW9ufGVufDB8fHx8fDE3NTkwNDIwNzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "sustainable solution"
     },
     {
@@ -425,6 +425,12 @@
       "description": "Portrait of another smiling woman",
       "imageUrl": "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmZW1tZSUyMG5vaXJlfGVufDB8fHx8MTc1ODczMDc2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman smiling"
+    },
+    {
+      "id": "recruitment-header",
+      "description": "Header for the recruitment process page",
+      "imageUrl": "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyZWNydWl0bWVudHxlbnwwfHx8fDE3NTkxMzU5MDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "recruitment handshake"
     }
   ]
 }

@@ -13,6 +13,7 @@ function rowToJobOffer(row: any): JobOffer {
         deliverables: JSON.parse(row.deliverables),
         requirements: JSON.parse(row.requirements),
         socialBenefits: Boolean(row.socialBenefits),
+        duration_months: row.duration_months,
     };
 }
 
@@ -83,10 +84,12 @@ export async function createJobOffer(offer: Omit<JobOffer, 'id'>): Promise<JobOf
         const stmt = db.prepare(`
             INSERT INTO job_offers (
                 id, title, location, type, description, mode, validityDate, introduction, 
-                activities, deliverables, requirements, remuneration, status, startDate, socialBenefits
+                activities, deliverables, requirements, remuneration, status, startDate, socialBenefits,
+                duration_months
             ) VALUES (
                 @id, @title, @location, @type, @description, @mode, @validityDate, @introduction, 
-                @activities, @deliverables, @requirements, @remuneration, @status, @startDate, @socialBenefits
+                @activities, @deliverables, @requirements, @remuneration, @status, @startDate, @socialBenefits,
+                @duration_months
             )
         `);
 
@@ -95,7 +98,8 @@ export async function createJobOffer(offer: Omit<JobOffer, 'id'>): Promise<JobOf
             activities: JSON.stringify(newOffer.activities),
             deliverables: JSON.stringify(newOffer.deliverables),
             requirements: JSON.stringify(newOffer.requirements),
-            socialBenefits: newOffer.socialBenefits ? 1 : 0
+            socialBenefits: newOffer.socialBenefits ? 1 : 0,
+            duration_months: newOffer.duration_months || null
         });
 
         revalidatePath('/admin/offres');
@@ -118,7 +122,7 @@ export async function updateJobOffer(id: string, offer: Omit<JobOffer, 'id'>): P
                 mode = @mode, validityDate = @validityDate, introduction = @introduction, 
                 activities = @activities, deliverables = @deliverables, requirements = @requirements, 
                 remuneration = @remuneration, status = @status, startDate = @startDate, 
-                socialBenefits = @socialBenefits
+                socialBenefits = @socialBenefits, duration_months = @duration_months
             WHERE id = @id
         `);
 
@@ -127,7 +131,8 @@ export async function updateJobOffer(id: string, offer: Omit<JobOffer, 'id'>): P
             activities: JSON.stringify(updatedOffer.activities),
             deliverables: JSON.stringify(updatedOffer.deliverables),
             requirements: JSON.stringify(updatedOffer.requirements),
-            socialBenefits: updatedOffer.socialBenefits ? 1 : 0
+            socialBenefits: updatedOffer.socialBenefits ? 1 : 0,
+            duration_months: updatedOffer.duration_months || null
         });
 
         revalidatePath('/admin/offres');

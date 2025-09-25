@@ -25,16 +25,25 @@ function initializeDb() {
     );
   `);
 
+  // Add duration_months column if it doesn't exist
+  const columns: { name: string }[] = db.pragma('table_info(job_offers)');
+  if (!columns.some(col => col.name === 'duration_months')) {
+    db.exec('ALTER TABLE job_offers ADD COLUMN duration_months INTEGER');
+  }
+
+
   // Seed data if the table is empty
   const count = db.prepare('SELECT COUNT(*) as count FROM job_offers').get() as { count: number };
   if (count.count === 0) {
     const insert = db.prepare(`
       INSERT INTO job_offers (
         id, title, location, type, description, mode, validityDate, introduction, 
-        activities, deliverables, requirements, remuneration, status, startDate, socialBenefits
+        activities, deliverables, requirements, remuneration, status, startDate, socialBenefits,
+        duration_months
       ) VALUES (
         @id, @title, @location, @type, @description, @mode, @validityDate, @introduction, 
-        @activities, @deliverables, @requirements, @remuneration, @status, @startDate, @socialBenefits
+        @activities, @deliverables, @requirements, @remuneration, @status, @startDate, @socialBenefits,
+        @duration_months
       )
     `);
 
@@ -56,7 +65,8 @@ function initializeDb() {
             activities: JSON.stringify(offer.activities),
             deliverables: JSON.stringify(offer.deliverables),
             requirements: JSON.stringify(offer.requirements),
-            socialBenefits: offer.socialBenefits ? 1 : 0
+            socialBenefits: offer.socialBenefits ? 1 : 0,
+            duration_months: offer.duration_months || null
         });
       }
     });

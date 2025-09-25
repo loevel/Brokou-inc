@@ -42,6 +42,7 @@ const formSchema = z.object({
   remuneration: z.string().min(3, { message: "La rémunération est requise." }),
   status: z.string().min(3, { message: "Le statut est requis." }),
   startDate: z.string().min(3, { message: "La date de début est requise." }),
+  duration_months: z.coerce.number().optional(),
   socialBenefits: z.boolean().default(false),
 });
 
@@ -72,6 +73,7 @@ export function AddOfferForm({ onOfferAdded, onFormSubmitted }: AddOfferFormProp
       remuneration: "À négocier",
       status: "Permanent",
       startDate: "Dès que possible",
+      duration_months: undefined,
       socialBenefits: true,
     },
   });
@@ -81,6 +83,7 @@ export function AddOfferForm({ onOfferAdded, onFormSubmitted }: AddOfferFormProp
     
     const offerData: Omit<JobOffer, 'id'> = {
         ...values,
+        duration_months: values.duration_months || undefined,
         activities: values.activities.split('\n').filter(s => s.trim() !== ''),
         deliverables: values.deliverables.split('\n').filter(s => s.trim() !== ''),
         requirements: values.requirements.split('\n').filter(s => s.trim() !== ''),
@@ -111,7 +114,8 @@ export function AddOfferForm({ onOfferAdded, onFormSubmitted }: AddOfferFormProp
         <FormField control={form.control} name="remuneration" render={({ field }) => ( <FormItem><FormLabel>Rémunération</FormLabel><FormControl><Input placeholder="Selon profil" {...field} /></FormControl><FormMessage /></FormItem> )} />
         <FormField control={form.control} name="status" render={({ field }) => ( <FormItem><FormLabel>Statut</FormLabel><FormControl><Input placeholder="Permanent" {...field} /></FormControl><FormMessage /></FormItem> )} />
         <FormField control={form.control} name="startDate" render={({ field }) => ( <FormItem><FormLabel>Date d'entrée en fonction</FormLabel><FormControl><Input placeholder="Dès que possible" {...field} /></FormControl><FormMessage /></FormItem> )} />
-        <FormField control={form.control} name="socialBenefits" render={({ field }) => ( <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 md:col-span-2"><FormControl><Checkbox checked={field.value} onCheckedChange={field.onChange} /></FormControl><div className="space-y-1 leading-none"><FormLabel>Avantages sociaux</FormLabel></div></FormItem> )} />
+        <FormField control={form.control} name="duration_months" render={({ field }) => ( <FormItem><FormLabel>Durée (en mois)</FormLabel><FormControl><Input type="number" placeholder="Ex: 12" {...field} onChange={event => field.onChange(+event.target.value)} /></FormControl><FormMessage /></FormItem> )} />
+        <FormField control={form.control} name="socialBenefits" render={({ field }) => ( <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4"><FormControl><Checkbox checked={field.value} onCheckedChange={field.onChange} /></FormControl><div className="space-y-1 leading-none"><FormLabel>Avantages sociaux</FormLabel></div></FormItem> )} />
         <FormField control={form.control} name="introduction" render={({ field }) => ( <FormItem className="md:col-span-2"><FormLabel>Introduction</FormLabel><FormControl><Textarea placeholder="Courte introduction pour la carte..." {...field} /></FormControl><FormMessage /></FormItem> )} />
         <FormField control={form.control} name="description" render={({ field }) => ( <FormItem className="md:col-span-2"><FormLabel>Description</FormLabel><FormControl><Textarea placeholder="Description générale du poste..." className="min-h-[100px]" {...field} /></FormControl><FormMessage /></FormItem> )} />
         <FormField control={form.control} name="activities" render={({ field }) => ( <FormItem className="md:col-span-2"><FormLabel>Activités à réaliser</FormLabel><FormControl><Textarea placeholder="Listez chaque activité sur une nouvelle ligne..." className="min-h-[120px]" {...field} /></FormControl><FormMessage /></FormItem> )} />

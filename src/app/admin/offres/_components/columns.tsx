@@ -34,11 +34,14 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { EditOfferForm } from "./edit-offer-form";
+import { Switch } from "@/components/ui/switch";
 
 declare module '@tanstack/react-table' {
   interface TableMeta<TData extends JobOffer> {
-    onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id'>) => Promise<JobOffer | null>;
+    onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id' | 'isActive'>) => Promise<JobOffer | null>;
     onOfferDeleted: (offerId: string) => Promise<void>;
+    onToggleStatus: (offerId: string, currentStatus: boolean) => void;
+    pendingStatusChange: boolean;
   }
 }
 
@@ -136,6 +139,21 @@ export const columns: ColumnDef<JobOffer>[] = [
   {
     accessorKey: "validityDate",
     header: "Date de fin",
+  },
+  {
+    accessorKey: "isActive",
+    header: "Actif",
+    cell: ({ row, table }) => {
+      const offer = row.original;
+      return (
+        <Switch
+          checked={offer.isActive}
+          onCheckedChange={() => table.options.meta?.onToggleStatus(offer.id, offer.isActive)}
+          disabled={table.options.meta?.pendingStatusChange}
+          aria-label="Toggle offer status"
+        />
+      );
+    },
   },
   {
     id: "actions",

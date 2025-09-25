@@ -14,13 +14,17 @@ function rowToJobOffer(row: any): JobOffer {
         requirements: JSON.parse(row.requirements),
         socialBenefits: Boolean(row.socialBenefits),
         duration_months: row.duration_months,
+        isActive: Boolean(row.isActive),
     };
 }
 
 
-export async function getAllJobOffers(): Promise<JobOffer[]> {
+export async function getAllJobOffers({ activeOnly = false }: { activeOnly?: boolean } = {}): Promise<JobOffer[]> {
     try {
-        const stmt = db.prepare('SELECT * FROM job_offers ORDER BY validityDate DESC');
+        const query = activeOnly 
+            ? 'SELECT * FROM job_offers WHERE isActive = 1 ORDER BY validityDate DESC'
+            : 'SELECT * FROM job_offers ORDER BY validityDate DESC';
+        const stmt = db.prepare(query);
         const rows = stmt.all() as any[];
         return rows.map(rowToJobOffer);
     } catch (error) {
@@ -60,7 +64,7 @@ function generateRandomLetters(length: number): string {
     return result;
 }
 
-export async function createJobOffer(offer: Omit<JobOffer, 'id'>): Promise<JobOffer> {
+export async function createJobOffer(offer: Omit<JobOffer, 'id' | 'isActive'>): Promise<JobOffer> {
     // Generate new reference ID
     const stmtGetLastId = db.prepare("SELECT id FROM job_offers WHERE id LIKE 'BRK%' ORDER BY id DESC LIMIT 1");
     const lastOffer = stmtGetLastId.get() as { id: string } | undefined;
@@ -78,18 +82,18 @@ export async function createJobOffer(offer: Omit<JobOffer, 'id'>): Promise<JobOf
     const randomLetters = generateRandomLetters(2);
     const newId = `BRK${paddedNumber}${randomLetters}`;
 
-    const newOffer: JobOffer = { id: newId, ...offer };
+    const newOffer: JobOffer = { id: newId, ...offer, isActive: true };
     
     try {
         const stmt = db.prepare(`
             INSERT INTO job_offers (
                 id, title, location, type, description, mode, validityDate, introduction, 
                 activities, deliverables, requirements, remuneration, status, startDate, socialBenefits,
-                duration_months
+                duration_months, isActive
             ) VALUES (
                 @id, @title, @location, @type, @description, @mode, @validityDate, @introduction, 
                 @activities, @deliverables, @requirements, @remuneration, @status, @startDate, @socialBenefits,
-                @duration_months
+                @duration_months, @isActive
             )
         `);
 
@@ -99,7 +103,8 @@ export async function createJobOffer(offer: Omit<JobOffer, 'id'>): Promise<JobOf
             deliverables: JSON.stringify(newOffer.deliverables),
             requirements: JSON.stringify(newOffer.requirements),
             socialBenefits: newOffer.socialBenefits ? 1 : 0,
-            duration_months: newOffer.duration_months || null
+            duration_months: newOffer.duration_months || null,
+            isActive: newOffer.isActive ? 1 : 0,
         });
 
         revalidatePath('/admin/offres');
@@ -112,8 +117,12 @@ export async function createJobOffer(offer: Omit<JobOffer, 'id'>): Promise<JobOf
     }
 }
 
-export async function updateJobOffer(id: string, offer: Omit<JobOffer, 'id'>): Promise<JobOffer> {
-    const updatedOffer: JobOffer = { id, ...offer };
+export async function updateJobOffer(id: string, offer: Omit<JobOffer, 'id' | 'isActive'>): Promise<JobOffer> {
+    const existingOffer = await getJobOfferById(id);
+    if (!existingOffer) {
+        throw new Error('Job offer not found');
+    }
+    const updatedOffer: JobOffer = { id, ...offer, isActive: existingOffer.isActive };
      try {
         const stmt = db.prepare(`
             UPDATE job_offers
@@ -163,5 +172,25 @@ export async function deleteJobOffer(id: string): Promise<{ success: boolean }> 
     } catch (error) {
         console.error(`Failed to delete job offer with id ${id}:`, error);
         throw new Error('Failed to delete job offer.');
+    }
+}
+
+export async function toggleJobOfferStatus(id: string, isActive: boolean): Promise<JobOffer> {
+    try {
+        const stmt = db.prepare('UPDATE job_offers SET isActive = ? WHERE id = ?');
+        stmt.run(isActive ? 1 : 0, id);
+
+        const updatedOffer = await getJobOfferById(id);
+        if (!updatedOffer) {
+            throw new Error('Failed to retrieve updated offer.');
+        }
+        
+        revalidatePath('/admin/offres');
+        revalidatePath('/carrieres');
+        revalidatePath(`/carrieres/${id}`);
+        return updatedOffer;
+    } catch (error) {
+        console.error(`Failed to toggle status for job offer with id ${id}:`, error);
+        throw new Error('Failed to toggle job offer status.');
     }
 }

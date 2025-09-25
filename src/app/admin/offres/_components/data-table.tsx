@@ -35,9 +35,11 @@ import type { JobOffer } from "@/lib/types";
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  onOfferAdded: (offerData: Omit<JobOffer, 'id'>) => Promise<JobOffer | null>;
-  onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id'>) => Promise<JobOffer | null>;
+  onOfferAdded: (offerData: Omit<JobOffer, 'id' | 'isActive'>) => Promise<JobOffer | null>;
+  onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id' | 'isActive'>) => Promise<JobOffer | null>;
   onOfferDeleted: (offerId: string) => Promise<void>;
+  onToggleStatus: (offerId: string, currentStatus: boolean) => void;
+  pendingStatusChange: boolean;
 }
 
 export function DataTable<TData extends JobOffer, TValue>({
@@ -46,6 +48,8 @@ export function DataTable<TData extends JobOffer, TValue>({
   onOfferAdded,
   onOfferUpdated,
   onOfferDeleted,
+  onToggleStatus,
+  pendingStatusChange
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [isAddDialogOpen, setIsAddDialogOpen] = React.useState(false);
@@ -64,7 +68,9 @@ export function DataTable<TData extends JobOffer, TValue>({
       onOfferUpdated: onOfferUpdated,
       onOfferDeleted: (offerId: string) => {
         onOfferDeleted(offerId);
-      }
+      },
+      onToggleStatus,
+      pendingStatusChange
     }
   });
 

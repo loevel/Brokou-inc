@@ -16,7 +16,7 @@ export function JobsSection() {
     useEffect(() => {
         async function fetchJobs() {
             setLoading(true);
-            const allJobs = await getAllJobOffers();
+            const allJobs = await getAllJobOffers({ activeOnly: true });
             setFeaturedJobs(allJobs.slice(0, 2));
             setLoading(false);
         }

@@ -31,6 +31,11 @@ function initializeDb() {
     db.exec('ALTER TABLE job_offers ADD COLUMN duration_months INTEGER');
   }
 
+  // Add isActive column if it doesn't exist
+  if (!columns.some(col => col.name === 'isActive')) {
+    db.exec('ALTER TABLE job_offers ADD COLUMN isActive INTEGER DEFAULT 1');
+  }
+
 
   // Seed data if the table is empty
   const count = db.prepare('SELECT COUNT(*) as count FROM job_offers').get() as { count: number };
@@ -39,11 +44,11 @@ function initializeDb() {
       INSERT INTO job_offers (
         id, title, location, type, description, mode, validityDate, introduction, 
         activities, deliverables, requirements, remuneration, status, startDate, socialBenefits,
-        duration_months
+        duration_months, isActive
       ) VALUES (
         @id, @title, @location, @type, @description, @mode, @validityDate, @introduction, 
         @activities, @deliverables, @requirements, @remuneration, @status, @startDate, @socialBenefits,
-        @duration_months
+        @duration_months, @isActive
       )
     `);
 
@@ -66,7 +71,8 @@ function initializeDb() {
             deliverables: JSON.stringify(offer.deliverables),
             requirements: JSON.stringify(offer.requirements),
             socialBenefits: offer.socialBenefits ? 1 : 0,
-            duration_months: offer.duration_months || null
+            duration_months: offer.duration_months || null,
+            isActive: 1 // Default to active
         });
       }
     });

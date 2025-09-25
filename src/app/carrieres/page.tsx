@@ -68,7 +68,7 @@ export default function CarrieresPage() {
   useEffect(() => {
     async function fetchOffers() {
       setLoading(true);
-      const offers = await getAllJobOffers();
+      const offers = await getAllJobOffers({ activeOnly: true });
       setJobOffers(offers);
       setLoading(false);
     }

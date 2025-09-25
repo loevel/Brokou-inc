@@ -15,7 +15,7 @@ type JobOfferPageProps = {
 };
 
 export async function generateStaticParams() {
-    const jobOffers = await getAllJobOffers();
+    const jobOffers = await getAllJobOffers({ activeOnly: true });
     return jobOffers.map((offer) => ({
       id: offer.id,
     }));
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: JobOfferPageProps) {
 export default async function JobOfferPage({ params }: JobOfferPageProps) {
   const offer = await getJobOfferById(params.id);
 
-  if (!offer) {
+  if (!offer || !offer.isActive) {
     notFound();
   }
 

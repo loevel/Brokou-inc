@@ -50,7 +50,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 interface EditOfferFormProps {
   offer: JobOffer;
-  onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id'>) => Promise<JobOffer | null>;
+  onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id' | 'isActive'>) => Promise<JobOffer | null>;
   onFormSubmitted: () => void;
 }
 
@@ -82,7 +82,7 @@ export function EditOfferForm({ offer, onOfferUpdated, onFormSubmitted }: EditOf
   async function onSubmit(values: FormValues) {
     setIsSubmitting(true);
     
-    const offerData: Omit<JobOffer, 'id'> = {
+    const offerData: Omit<JobOffer, 'id' | 'isActive'> = {
         ...values,
         duration_months: values.duration_months || undefined,
         activities: values.activities.split('\n').filter(s => s.trim() !== ''),

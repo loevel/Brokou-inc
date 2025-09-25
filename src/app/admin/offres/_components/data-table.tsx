@@ -61,10 +61,7 @@ export function DataTable<TData extends JobOffer, TValue>({
       sorting,
     },
     meta: {
-      onOfferUpdated: (updatedOffer: JobOffer) => {
-        const { id, ...offerData } = updatedOffer;
-        onOfferUpdated(id, offerData);
-      },
+      onOfferUpdated: onOfferUpdated,
       onOfferDeleted: (offerId: string) => {
         onOfferDeleted(offerId);
       }

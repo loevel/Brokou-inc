@@ -10,6 +10,7 @@ import {
   getSortedRowModel,
   SortingState,
   useReactTable,
+  RowSelectionState,
 } from "@tanstack/react-table";
 import {
   Table,
@@ -20,7 +21,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, Upload } from "lucide-react";
+import { PlusCircle, Upload, Download } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -53,6 +54,7 @@ export function DataTable<TData extends JobOffer, TValue>({
   pendingStatusChange
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({});
   const [isAddDialogOpen, setIsAddDialogOpen] = React.useState(false);
   const [isImportDialogOpen, setIsImportDialogOpen] = React.useState(false);
   
@@ -63,8 +65,10 @@ export function DataTable<TData extends JobOffer, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onRowSelectionChange: setRowSelection,
     state: {
       sorting,
+      rowSelection,
     },
     meta: {
       onOfferUpdated: onOfferUpdated,
@@ -84,6 +88,26 @@ export function DataTable<TData extends JobOffer, TValue>({
       });
   };
 
+  const handleExport = () => {
+    const selectedRows = table.getFilteredSelectedRowModel().rows;
+    const dataToExport = selectedRows.map(row => {
+      // Exclude isActive and potentially other internal fields if needed
+      const { isActive, ...rest } = row.original as JobOffer;
+      return rest;
+    });
+
+    const jsonString = JSON.stringify(dataToExport, null, 2);
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "job-offers.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div>
         <div className="flex items-center justify-between mb-6">
@@ -92,6 +116,14 @@ export function DataTable<TData extends JobOffer, TValue>({
                 <p className="text-muted-foreground">Ajoutez, modifiez ou supprimez les offres d'emploi.</p>
             </div>
             <div className="flex gap-2">
+                 <Button
+                    variant="outline"
+                    onClick={handleExport}
+                    disabled={Object.keys(rowSelection).length === 0}
+                    >
+                    <Download className="mr-2 h-4 w-4" />
+                    Exporter ({Object.keys(rowSelection).length})
+                </Button>
                 <Dialog open={isImportDialogOpen} onOpenChange={setIsImportDialogOpen}>
                   <DialogTrigger asChild>
                     <Button variant="outline">
@@ -182,23 +214,29 @@ export function DataTable<TData extends JobOffer, TValue>({
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Précédent
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Suivant
-        </Button>
+      <div className="flex items-center justify-between space-x-2 py-4">
+        <div className="text-sm text-muted-foreground">
+          {table.getFilteredSelectedRowModel().rows.length} sur{" "}
+          {table.getFilteredRowModel().rows.length} ligne(s) sélectionnée(s).
+        </div>
+        <div className="flex items-center space-x-2">
+            <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+            >
+            Précédent
+            </Button>
+            <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+            >
+            Suivant
+            </Button>
+        </div>
       </div>
     </div>
   );

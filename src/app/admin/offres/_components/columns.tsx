@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ColumnDef, Row, Table } from "@tanstack/react-table";
@@ -33,34 +34,21 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { EditOfferForm } from "./edit-offer-form";
-import { useToast } from "@/hooks/use-toast";
 
 declare module '@tanstack/react-table' {
-  interface TableMeta<TData> {
-    onOfferUpdated: (updatedOffer: TData) => void;
-    onOfferDeleted: (offerId: string) => void;
+  interface TableMeta<TData extends JobOffer> {
+    onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id'>) => Promise<JobOffer | null>;
+    onOfferDeleted: (offerId: string) => Promise<void>;
   }
 }
 
 const ActionsCell = ({ row, table }: { row: Row<JobOffer>, table: Table<JobOffer> }) => {
   const offer = row.original;
-  const { toast } = useToast();
   const [isEditDialogOpen, setIsEditDialogOpen] = React.useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
 
-
-  const handleOfferUpdated = (updatedOffer: JobOffer) => {
-    table.options.meta?.onOfferUpdated(updatedOffer);
-    setIsEditDialogOpen(false);
-  };
-
   const handleOfferDeleted = () => {
     table.options.meta?.onOfferDeleted(offer.id);
-     toast({
-      title: "Offre supprimée !",
-      description: "L'offre a été supprimée avec succès.",
-      variant: 'destructive'
-    });
     setIsDeleteDialogOpen(false);
   }
   
@@ -74,7 +62,11 @@ const ActionsCell = ({ row, table }: { row: Row<JobOffer>, table: Table<JobOffer
             Mettez à jour les détails de l'offre ci-dessous.
           </DialogDescription>
         </DialogHeader>
-        <EditOfferForm offer={offer} onOfferUpdated={handleOfferUpdated} />
+        <EditOfferForm 
+            offer={offer} 
+            onOfferUpdated={table.options.meta!.onOfferUpdated}
+            onFormSubmitted={() => setIsEditDialogOpen(false)}
+        />
       </DialogContent>
     </Dialog>
 

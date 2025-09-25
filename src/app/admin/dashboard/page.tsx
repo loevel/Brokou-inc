@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -5,12 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { services, jobOffers } from "@/lib/data";
+import { services } from "@/lib/data";
+import { getTotalJobOffers } from "@/lib/job-offers.service";
 import { BriefcaseBusiness, FileText, Users } from "lucide-react";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
   const totalServices = services.length;
-  const totalJobOffers = jobOffers.length;
+  const totalJobOffers = await getTotalJobOffers();
   const totalVisitors = 1253; // Mock data
 
   return (

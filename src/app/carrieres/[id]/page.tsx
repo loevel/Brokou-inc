@@ -1,7 +1,7 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { jobOffers } from "@/lib/data";
+import { getJobOfferById, getAllJobOffers } from "@/lib/job-offers.service";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle, Calendar, Clock, MapPin, Briefcase, Target, ListChecks, Award, BriefcaseBusiness, Mail, AlertTriangle } from "lucide-react";
 import ReactMarkdown from 'react-markdown';
@@ -15,13 +15,14 @@ type JobOfferPageProps = {
 };
 
 export async function generateStaticParams() {
+    const jobOffers = await getAllJobOffers();
     return jobOffers.map((offer) => ({
       id: offer.id,
     }));
 }
 
 export async function generateMetadata({ params }: JobOfferPageProps) {
-  const offer = jobOffers.find((o) => o.id === params.id);
+  const offer = await getJobOfferById(params.id);
   if (!offer) {
     return { title: "Offre non trouvée" };
   }
@@ -32,8 +33,8 @@ export async function generateMetadata({ params }: JobOfferPageProps) {
 }
 
 
-export default function JobOfferPage({ params }: JobOfferPageProps) {
-  const offer = jobOffers.find((o) => o.id === params.id);
+export default async function JobOfferPage({ params }: JobOfferPageProps) {
+  const offer = await getJobOfferById(params.id);
 
   if (!offer) {
     notFound();

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -44,16 +45,19 @@ const formSchema = z.object({
   socialBenefits: z.boolean().default(false),
 });
 
+type FormValues = z.infer<typeof formSchema>;
+
 interface EditOfferFormProps {
   offer: JobOffer;
-  onOfferUpdated: (updatedOffer: JobOffer) => void;
+  onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id'>) => Promise<JobOffer | null>;
+  onFormSubmitted: () => void;
 }
 
-export function EditOfferForm({ offer, onOfferUpdated }: EditOfferFormProps) {
+export function EditOfferForm({ offer, onOfferUpdated, onFormSubmitted }: EditOfferFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: offer.title,
@@ -61,9 +65,9 @@ export function EditOfferForm({ offer, onOfferUpdated }: EditOfferFormProps) {
       type: offer.type,
       description: offer.description,
       introduction: offer.introduction,
-      activities: offer.activities.join('\n'),
-      deliverables: offer.deliverables.join('\n'),
-      requirements: offer.requirements.join('\n'),
+      activities: Array.isArray(offer.activities) ? offer.activities.join('\n') : '',
+      deliverables: Array.isArray(offer.deliverables) ? offer.deliverables.join('\n') : '',
+      requirements: Array.isArray(offer.requirements) ? offer.requirements.join('\n') : '',
       mode: offer.mode,
       validityDate: offer.validityDate,
       remuneration: offer.remuneration,
@@ -73,25 +77,26 @@ export function EditOfferForm({ offer, onOfferUpdated }: EditOfferFormProps) {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: FormValues) {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
     
-    const updatedOffer: JobOffer = {
-        id: offer.id,
+    const offerData: Omit<JobOffer, 'id'> = {
         ...values,
         activities: values.activities.split('\n').filter(s => s.trim() !== ''),
         deliverables: values.deliverables.split('\n').filter(s => s.trim() !== ''),
         requirements: values.requirements.split('\n').filter(s => s.trim() !== ''),
     }
 
-    onOfferUpdated(updatedOffer);
+    const updatedOffer = await onOfferUpdated(offer.id, offerData);
 
-    toast({
-      title: "Offre modifiée !",
-      description: "L'offre d'emploi a été mise à jour avec succès.",
-    });
-
+    if (updatedOffer) {
+        toast({
+          title: "Offre modifiée !",
+          description: "L'offre d'emploi a été mise à jour avec succès.",
+        });
+        onFormSubmitted();
+    }
+    // Error toast is handled in the parent component
     setIsSubmitting(false);
   }
 

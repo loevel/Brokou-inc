@@ -45,15 +45,18 @@ const formSchema = z.object({
   socialBenefits: z.boolean().default(false),
 });
 
+type FormValues = z.infer<typeof formSchema>;
+
 interface AddOfferFormProps {
-  onOfferAdded: (newOffer: JobOffer) => void;
+  onOfferAdded: (offerData: Omit<JobOffer, 'id'>) => Promise<JobOffer | null>;
+  onFormSubmitted: () => void;
 }
 
-export function AddOfferForm({ onOfferAdded }: AddOfferFormProps) {
+export function AddOfferForm({ onOfferAdded, onFormSubmitted }: AddOfferFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: "",
@@ -73,26 +76,27 @@ export function AddOfferForm({ onOfferAdded }: AddOfferFormProps) {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: FormValues) {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
     
-    const newOffer: JobOffer = {
-        id: `offer-${Date.now()}`,
+    const offerData: Omit<JobOffer, 'id'> = {
         ...values,
         activities: values.activities.split('\n').filter(s => s.trim() !== ''),
         deliverables: values.deliverables.split('\n').filter(s => s.trim() !== ''),
         requirements: values.requirements.split('\n').filter(s => s.trim() !== ''),
+    };
+
+    const newOffer = await onOfferAdded(offerData);
+
+    if (newOffer) {
+        toast({
+            title: "Offre ajoutée !",
+            description: "La nouvelle offre d'emploi a été créée avec succès.",
+        });
+        form.reset();
+        onFormSubmitted();
     }
-
-    onOfferAdded(newOffer);
-
-    toast({
-      title: "Offre ajoutée !",
-      description: "La nouvelle offre d'emploi a été créée avec succès.",
-    });
-
-    form.reset();
+    // Error toast is handled in the parent component
     setIsSubmitting(false);
   }
 

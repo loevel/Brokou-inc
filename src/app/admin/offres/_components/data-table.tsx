@@ -35,9 +35,9 @@ import type { JobOffer } from "@/lib/types";
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  onOfferAdded: (newOffer: JobOffer) => void;
-  onOfferUpdated: (updatedOffer: JobOffer) => void;
-  onOfferDeleted: (offerId: string) => void;
+  onOfferAdded: (offerData: Omit<JobOffer, 'id'>) => Promise<JobOffer | null>;
+  onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id'>) => Promise<JobOffer | null>;
+  onOfferDeleted: (offerId: string) => Promise<void>;
 }
 
 export function DataTable<TData extends JobOffer, TValue>({
@@ -62,18 +62,14 @@ export function DataTable<TData extends JobOffer, TValue>({
     },
     meta: {
       onOfferUpdated: (updatedOffer: JobOffer) => {
-        onOfferUpdated(updatedOffer);
+        const { id, ...offerData } = updatedOffer;
+        onOfferUpdated(id, offerData);
       },
       onOfferDeleted: (offerId: string) => {
         onOfferDeleted(offerId);
       }
     }
   });
-
-  const handleOfferAdded = (newOffer: JobOffer) => {
-    onOfferAdded(newOffer);
-    setIsAddDialogOpen(false);
-  };
 
   return (
     <div>
@@ -96,7 +92,10 @@ export function DataTable<TData extends JobOffer, TValue>({
                     Remplissez les détails de l'offre d'emploi ci-dessous.
                   </DialogDescription>
                 </DialogHeader>
-                <AddOfferForm onOfferAdded={handleOfferAdded} />
+                <AddOfferForm 
+                  onOfferAdded={onOfferAdded} 
+                  onFormSubmitted={() => setIsAddDialogOpen(false)}
+                />
               </DialogContent>
             </Dialog>
         </div>
@@ -143,7 +142,7 @@ export function DataTable<TData extends JobOffer, TValue>({
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  Aucun résultat.
+                  Aucune offre d'emploi.
                 </TableCell>
               </TableRow>
             )}

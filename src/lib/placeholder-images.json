@@ -27,7 +27,7 @@
     {
       "id": "service-marketing",
       "description": "Image for marketing service",
-      "imageUrl": "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYXJrZXRpbmclMjBzdHJhdGVneXxlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYXJrZXRpbmclMjBzdHJhdGVneXxlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "marketing strategy"
     },
     {
@@ -45,7 +45,7 @@
     {
       "id": "service-projects",
       "description": "Image for project management service",
-      "imageUrl": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9qZWN0JTIwbWFuYWdlbWVudHxlbnwwfHx8fDE3NTg1ODA4ODR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9qZWN0JTIwbWFuYWdlbWVudHxlbnwwfHx8fDE3NTg1ODA4ODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "project management"
     },
     {
@@ -57,19 +57,19 @@
     {
       "id": "service-security",
       "description": "Image for security management service",
-      "imageUrl": "https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjeWJlciUyMHNlY3VyaXR5fGVufDB8fHx8fDE3NTg1ODA4ODR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjeWJlciUyMHNlY3VyaXR5fGVufDB8fHx8fDE3NTg1ODA4ODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "cyber security"
     },
     {
       "id": "service-fibre",
       "description": "Workers installing fiber optic cables",
-      "imageUrl": "https://images.unsplash.com/photo-1607723619497-98a79f01ba90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmliZXIlMjBvcHRpY3xlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1607723619497-98a79f01ba90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmliZXIlMjBvcHRpY3xlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fiber optic"
     },
     {
       "id": "service-telephonie",
       "description": "IP phone patch panel",
-      "imageUrl": "https://images.unsplash.com/photo-1691435828932-911a7801adfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bmV0d29yayUyMGNhYmxlc3xlbnwwfHx8fDE3NTg2NDMwMzR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1691435828932-911a7801adfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bmV0d29yayUyMGNhYmxlc3xlbnwwfHx8fDE3NTg2NDMwMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "network cables"
     },
     {
@@ -81,55 +81,55 @@
     {
       "id": "service-pc-config",
       "description": "Computer setup and configuration",
-      "imageUrl": "https://images.unsplash.com/photo-1589875703627-f2eea568229a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wdXRlciUyMHNldHVwfGVufDB8fHx8MTc1ODcwMjY5MHww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1589875703627-f2eea568229a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wdXRlciUyMHNldHVwfGVufDB8fHx8MTc1ODcwMjY5MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "computer setup"
     },
     {
       "id": "service-pc-software",
       "description": "Software installation on a laptop",
-      "imageUrl": "https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c29mdHdhcmUlMjBpbnN0YWxsfGVufDB8fHx8MTc1ODcyNDc3OXww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1554306274-f23873d9a26c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c29mdHdhcmUlMjBpbnN0YWxsfGVufDB8fHx8MTc1ODcyNDc3OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "software install"
     },
     {
       "id": "service-pc-accessories",
       "description": "Various computer accessories on a desk",
-      "imageUrl": "https://images.unsplash.com/photo-1720767020329-200c8ee4ffa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21wdXRlciUyMGFjY2Vzc29yaWVzfGVufDB8fHx8MTc1ODY3MTU4Mnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1720767020329-200c8ee4ffa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21wdXRlciUyMGFjY2Vzc29yaWVzfGVufDB8fHx8MTc1ODY3MTU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "computer accessories"
     },
     {
       "id": "service-pc-transfer",
       "description": "Data transfer between two laptops",
-      "imageUrl": "https://images.unsplash.com/photo-1531492746076-161ca9bcad58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMHRyYW5zZmVyfGVufDB8fHx8MTc1ODcyNDc3OXww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1531492746076-161ca9bcad58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMHRyYW5zZmVyfGVufDB8fHx8MTc1ODcyNDc3OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "data transfer"
     },
     {
       "id": "service-pc-support",
       "description": "Person providing remote IT support",
-      "imageUrl": "https://images.unsplash.com/photo-1730602942862-f049461a8e3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8U291dGllbiUyMCVDMyVBMCUyMGRpc3RhbmNlfGVufDB8fHx8MTc1ODUwOTUyOXww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1730602942862-f049461a8e3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOXx8U291dGllbiUyMCVDMyVBMCUyMGRpc3RhbmNlfGVufDB8fHx8MTc1ODUwOTUyOXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "remote support"
     },
     {
       "id": "service-pc-sales",
       "description": "Colorful bars representing sales charts",
-      "imageUrl": "https://images.unsplash.com/photo-1728044849321-4cbffc50cc1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWxlcyUyMGNoYXJ0fGVufDB8fHx8MTc1ODY4OTM4OXww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1728044849321-4cbffc50cc1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzYWxlcyUyMGNoYXJ0fGVufDB8fHx8MTc1ODY4OTM4OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "sales chart"
     },
     {
       "id": "service-pc-repair",
       "description": "Inside of a computer with glowing components",
-      "imageUrl": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wdXRlciUyMHJlcGFpcnxlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb21wdXRlciUyMHJlcGFpcnxlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "computer repair"
     },
     {
       "id": "service-pc-recovery",
       "description": "Close-up of a hard drive platter",
-      "imageUrl": "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkYXRhJTIwcmVjb3Zlcnl8ZW58MHx8fHwxNzU4NzI0NzgwfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkYXRhJTIwcmVjb3Zlcnl8ZW58MHx8fHwxNzU4NzI0NzgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "data recovery"
     },
     {
       "id": "service-pc-update",
       "description": "Close-up of a computer keyboard",
-      "imageUrl": "https://images.unsplash.com/photo-1698080054260-8fdebd0e3cdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxrZXlib2FyZCUyMGNsb3NlLXVwfGVufDB8fHx8MTc1ODcyMDE5M3ww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1698080054260-8fdebd0e3cdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxrZXlib2FyZCUyMGNsb3NlLXVwfGVufDB8fHx8MTc1ODcyMDE5M3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "keyboard close-up"
     },
     {
@@ -141,19 +141,19 @@
     {
       "id": "home-about-us",
       "description": "Image for the 'About Us' section on the homepage",
-      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8dGVjaG5vbG9naWV8ZW58MHx8fHwxNzU4NTk3MzExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8dGVjaG5vbG9naWV8ZW58MHx8fHwxNzU4NTk3MzExfDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "robot technology"
     },
     {
       "id": "about-us-header",
       "description": "Header image for the About Us page",
-      "imageUrl": "https://images.unsplash.com/photo-1525896544042-354764aa27e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwb2ZmaWNlfGVufDB8fHx8MTc1ODcwOTc4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1525896544042-354764aa27e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwb2ZmaWNlfGVufDB8fHx8fDE3NTg3MDk3ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern office"
     },
     {
       "id": "contact-header",
       "description": "Header image for the Contact page",
-      "imageUrl": "https://images.unsplash.com/photo-1756903646251-5f9d4154fe80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21tdW5pY2F0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3NTg3MjQ3ODB8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1756903646251-5f9d4154fe80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21tdW5pY2F0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3NTg3MjQ3ODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "communication technology"
     },
     {
@@ -183,7 +183,7 @@
     {
       "id": "mission-image",
       "description": "Scrabble tiles spelling out a positive message",
-      "imageUrl": "https://images.unsplash.com/photo-1638866411782-5f59287c19e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8bWlzc2lvbnN8ZW58MHx8fHwxNzU4NDI0MDcxfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1638866411782-5f59287c19e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNHx8bWlzc2lvbnN8ZW58MHx8fHwxNzU4NDI0MDcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "inspirational message"
     },
     {
@@ -195,7 +195,7 @@
     {
       "id": "careers-cta-background",
       "description": "Background for the careers call to action section",
-      "imageUrl": "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b2ZmaWNlJTIwdGVhbXxlbnwwfHx8fDE3NTg2OTc3MDd8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b2ZmaWNlJTIwdGVhbXxlbnwwfHx8fDE3NTg2OTc3MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "office team"
     },
     {
@@ -315,7 +315,7 @@
     {
       "id": "testimonial-avatar-4",
       "description": "Another portrait of a smiling person",
-      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib-rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTg1NDgwODR8MA&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "person portrait"
     },
     {
@@ -339,7 +339,7 @@
     {
       "id": "terms-header",
       "description": "Header for the terms of use page",
-      "imageUrl": "https://images.unsplash.com/photo-1579546929662-7112e75fdcf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMGdyYWRpZW50fGVufDB8fHx8MTc1ODcwOTY5MHww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1579546929662-7112e75fdcf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMGdyYWRpZW50fGVufDB8fHx8MTc1ODcwOTY5MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "abstract gradient"
     },
     {
@@ -351,37 +351,37 @@
     {
       "id": "eco-windmills",
       "description": "Windmills at sunset",
-      "imageUrl": "https://images.unsplash.com/photo-1625947992140-5cdcabf29501?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8d2luZG1pbGxzJTIwYXQlMjBzdW5zZXR8ZW58MHx8fHwxNzU4NzI3ODc2fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1625947992140-5cdcabf29501?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8d2luZG1pbGxzJTIwYXQlMjBzdW5zZXR8ZW58MHx8fHwxNzU4NzI3ODc2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "windmills sunset"
     },
     {
       "id": "eco-landscape",
       "description": "Lush green landscape with a forest path",
-      "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bmF0dXJlfGVufDB8fHx8MTc1ODgxMTgzNXww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bmF0dXJlfGVufDB8fHx8MTc1ODgxMTgzNXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "green landscape"
     },
     {
       "id": "eco-energy",
       "description": "Vintage lightbulb glowing",
-      "imageUrl": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsaWdodCUyMGJ1bGJ8ZW58MHx8fHwxNzU5MDQyMDc1fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsaWdodCUyMGJ1bGJ8ZW58MHx8fHwxNzU5MDQyMDc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "light bulb"
     },
     {
       "id": "eco-waste",
       "description": "Colorful recycling bins",
-      "imageUrl": "https://images.unsplash.com/photo-1719399924262-ebb6f2a8de80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8cmVjeWNsYWdlc3xlbnwwfHx8fDE3NTg3MjgyMTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1719399924262-ebb6f2a8de80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8cmVjeWNsYWdlc3xlbnwwfHx8fDE3NTg3MjgyMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "recycling bins"
     },
     {
       "id": "eco-water",
       "description": "A single drop of water",
-      "imageUrl": "https://images.unsplash.com/photo-1611082532988-3e0d8f339d6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3YXRlciUyMGRyb3B8ZW58MHx8fHwxNzU5MDQyMDc1fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1593410007149-d56f28d22493?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyb2JpbmV0JTIwZCUyN2VhdXxlbnwwfHx8fDE3NTg4MTIzNzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "water drop"
     },
     {
       "id": "eco-furniture",
       "description": "A modern wooden chair",
-      "imageUrl": "https://images.unsplash.com/photo-1592078615290-033ee584e267?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBjaGFpcnxlbnwwfHx8fDE3NTkwNDIwNzV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1592078615290-033ee584e267?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBjaGFpcnxlbnwwfHx8fDE3NTkwNDIwNzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "wooden chair"
     },
     {
@@ -399,13 +399,13 @@
     {
       "id": "forbes-badge",
       "description": "Forbes Best Employers 2025 Badge",
-      "imageUrl": "https://images.unsplash.com/photo-1753723880818-843238aa129f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Zm9yYmVzJTIwYmFkZ2V8ZW58MHx8fHwxNzU4NzI5NzUwfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1753723880818-843238aa129f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Zm9yYmVzJTIwYmFkZ2V8ZW58MHx8fHwxNzU4NzI5NzUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "forbes badge"
     },
     {
       "id": "why-work-1",
       "description": "Portrait of a smiling man",
-      "imageUrl": "https://images.unsplash.com/photo-1758519290802-516e99b4688a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8Z2VzdGlvbm5haXJlJTIwYnVyZWF1JTIwbm9pcmV8ZW58MHx8fHwxNzU4NzMxMDc0fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1758519290802-516e99b4688a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8Z2VzdGlvbm5haXJlJTIwYnVyZWF1JTIwbm9pcmV8ZW58MHx8fHwxNzU4NzMxMDc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man smiling"
     },
     {
@@ -417,13 +417,13 @@
     {
       "id": "why-work-3",
       "description": "Portrait of another smiling man",
-      "imageUrl": "https://images.unsplash.com/photo-1657727534662-d0e38d3a011b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxob21tZSUyMGJsYW5jJTIwYXUlMjBidXJlYXV8ZW58MHx8fHwxNzU4NzMxNjY2fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1657727534662-d0e38d3a011b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxob21tZSUyMGJsYW5jJTIwYXUlMjBidXJlYXV8ZW58MHx8fHwxNzU4NzMxNjY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man smiling"
     },
     {
       "id": "why-work-4",
       "description": "Portrait of another smiling woman",
-      "imageUrl": "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmZW1tZSUyMG5vaXJlfGVufDB8fHx8MTc1ODczMDc2N3ww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmZW1tZSUyMG5vaXJlfGVufDB8fHx8MTc1ODczMDc2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman smiling"
     },
     {

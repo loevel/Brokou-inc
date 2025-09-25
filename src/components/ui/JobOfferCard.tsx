@@ -52,7 +52,12 @@ export function JobOfferCard({ offer }: JobOfferCardProps) {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [state, formAction] = useActionState(async (prevState: any, formData: FormData) => {
         try {
-        const result = await summarizeJobDescription({ jobDescription: offer.description });
+        const result = await summarizeJobDescription({ 
+            description: offer.description,
+            activities: offer.activities,
+            deliverables: offer.deliverables,
+            requirements: offer.requirements,
+         });
         return { summary: result.summary, error: '' };
         } catch (e: any) {
         return { summary: '', error: e.message || 'Une erreur est survenue.' };

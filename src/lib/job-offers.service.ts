@@ -50,8 +50,33 @@ export async function getTotalJobOffers(): Promise<number> {
     }
 }
 
+function generateRandomLetters(length: number): string {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
+
 export async function createJobOffer(offer: Omit<JobOffer, 'id'>): Promise<JobOffer> {
-    const newId = `offer-${Date.now()}`;
+    // Generate new reference ID
+    const stmtGetLastId = db.prepare("SELECT id FROM job_offers WHERE id LIKE 'BRK%' ORDER BY id DESC LIMIT 1");
+    const lastOffer = stmtGetLastId.get() as { id: string } | undefined;
+    
+    let newNumber = 1;
+    if (lastOffer) {
+        const lastNumberStr = lastOffer.id.substring(3, 7);
+        const lastNumber = parseInt(lastNumberStr, 10);
+        if (!isNaN(lastNumber)) {
+            newNumber = lastNumber + 1;
+        }
+    }
+
+    const paddedNumber = newNumber.toString().padStart(4, '0');
+    const randomLetters = generateRandomLetters(2);
+    const newId = `BRK${paddedNumber}${randomLetters}`;
+
     const newOffer: JobOffer = { id: newId, ...offer };
     
     try {

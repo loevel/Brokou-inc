@@ -60,7 +60,7 @@ export default async function JobOfferPage({ params }: JobOfferPageProps) {
                 </Button>
                 <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
                     <div>
-                        <Badge variant="secondary" className="mb-2">Offre d'emploi #{offer.id.toUpperCase()}</Badge>
+                        <Badge variant="secondary" className="mb-2">Référence #{offer.id}</Badge>
                         <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-primary">
                             {offer.title}
                         </h1>

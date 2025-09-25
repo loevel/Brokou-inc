@@ -39,9 +39,20 @@ function initializeDb() {
     `);
 
     const insertMany = db.transaction((offers) => {
+      let counter = 1;
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       for (const offer of offers) {
+         const paddedNumber = counter.toString().padStart(4, '0');
+         let randomLetters = '';
+         for (let i = 0; i < 2; i++) {
+            randomLetters += characters.charAt(Math.floor(Math.random() * characters.length));
+         }
+        const newId = `BRK${paddedNumber}${randomLetters}`;
+        counter++;
+
         insert.run({
             ...offer,
+            id: newId, // Use the new generated ID
             activities: JSON.stringify(offer.activities),
             deliverables: JSON.stringify(offer.deliverables),
             requirements: JSON.stringify(offer.requirements),
@@ -50,7 +61,10 @@ function initializeDb() {
       }
     });
 
-    insertMany(initialJobOffers);
+    // We remove the id from the initial data so it can be generated
+    const offersToSeed = initialJobOffers.map(({ id, ...rest }) => rest);
+    insertMany(offersToSeed);
+
     console.log('Database seeded with initial job offers.');
   }
 }

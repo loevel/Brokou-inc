@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -5,13 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { services, jobOffers } from "@/lib/data";
-import { BriefcaseBusiness, FileText, Users } from "lucide-react";
+import { services } from "@/lib/data";
+import { getTotalJobOffers } from "@/lib/job-offers.service";
+import { BriefcaseBusiness, FileText } from "lucide-react";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
   const totalServices = services.length;
-  const totalJobOffers = jobOffers.length;
-  const totalVisitors = 1253; // Mock data
+  const totalJobOffers = await getTotalJobOffers();
 
   return (
     <div>
@@ -40,18 +41,6 @@ export default function DashboardPage() {
             <div className="text-2xl font-bold">{totalJobOffers}</div>
             <p className="text-xs text-muted-foreground">
               Nombre d'offres d'emploi actives
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Visiteurs (30j)</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{totalVisitors.toLocaleString('fr-FR')}</div>
-            <p className="text-xs text-muted-foreground">
-              +5.2% par rapport au mois dernier
             </p>
           </CardContent>
         </Card>

@@ -29,6 +29,8 @@ export type JobOffer = {
   status: string;
   startDate: string;
   socialBenefits: boolean;
+  duration_months?: number;
+  isActive: boolean;
 };
 
 export type Testimonial = {

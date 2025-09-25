@@ -3,12 +3,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useMemo, useLayoutEffect, useRef } from "react";
+import { useState, useMemo, useLayoutEffect, useRef, useEffect } from "react";
 import { JobOfferCard } from "@/components/ui/JobOfferCard";
-import { jobOffers } from "@/lib/data";
+import { getAllJobOffers } from "@/lib/job-offers.service";
 import placeholderImages from "@/lib/placeholder-images.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search, Mail, Mailbox, Send, Check, Phone, Laptop, ClipboardList, PenSquare, FileText } from "lucide-react";
+import { Scale, HeartHandshake, ShieldCheck, ThumbsUp, ArrowRight, Search, Mail, Mailbox, Send, Check, Phone, Laptop, ClipboardList, PenSquare, FileText, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -58,14 +58,26 @@ export default function CarrieresPage() {
   const whyWorkCollage3 = placeholderImages.placeholderImages.find(p => p.id === "why-work-3");
   const whyWorkCollage4 = placeholderImages.placeholderImages.find(p => p.id === "why-work-4");
 
+  const [jobOffers, setJobOffers] = useState<JobOffer[]>([]);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
   const [typeFilter, setTypeFilter] = useState<JobOffer["type"] | "all">("all");
   const [modeFilter, setModeFilter] = useState("all");
 
-  const locations = useMemo(() => ["all", ...Array.from(new Set(jobOffers.map(o => o.location)))], []);
+  useEffect(() => {
+    async function fetchOffers() {
+      setLoading(true);
+      const offers = await getAllJobOffers({ activeOnly: true });
+      setJobOffers(offers);
+      setLoading(false);
+    }
+    fetchOffers();
+  }, []);
+
+  const locations = useMemo(() => ["all", ...Array.from(new Set(jobOffers.map(o => o.location)))], [jobOffers]);
   const types: (JobOffer["type"] | "all")[] = ["all", "Temps plein", "Temps partiel", "Contrat"];
-  const modes = useMemo(() => ["all", ...Array.from(new Set(jobOffers.map(o => o.mode)))], []);
+  const modes = useMemo(() => ["all", ...Array.from(new Set(jobOffers.map(o => o.mode)))], [jobOffers]);
 
   const filteredOffers = useMemo(() => {
     return jobOffers.filter(offer => {
@@ -75,7 +87,7 @@ export default function CarrieresPage() {
       const matchesMode = modeFilter === "all" || offer.mode === modeFilter;
       return matchesSearch && matchesLocation && matchesType && matchesMode;
     });
-  }, [searchTerm, locationFilter, typeFilter, modeFilter]);
+  }, [jobOffers, searchTerm, locationFilter, typeFilter, modeFilter]);
   
   const comp = useRef(null);
 
@@ -318,17 +330,24 @@ export default function CarrieresPage() {
 
                 {/* Job Offers List */}
                 <main className="lg:col-span-3">
+                  {loading ? (
+                     <div className="flex justify-center items-center h-64">
+                        <Loader2 className="h-8 w-8 animate-spin" />
+                      </div>
+                  ) : (
                     <div className="space-y-6">
-                    {filteredOffers.map((offer) => (
-                        <JobOfferCard key={offer.id} offer={offer} />
-                    ))}
+                      {filteredOffers.length > 0 ? (
+                        filteredOffers.map((offer) => (
+                          <JobOfferCard key={offer.id} offer={offer} />
+                        ))
+                      ) : (
+                        <div className="text-center py-16 border rounded-lg bg-card mt-6">
+                          <p className="text-lg font-semibold">Aucune offre ne correspond à votre recherche.</p>
+                          <p className="text-muted-foreground mt-2">Essayez d'ajuster vos filtres ou revenez bientôt !</p>
+                        </div>
+                      )}
                     </div>
-                    {filteredOffers.length === 0 && (
-                    <div className="text-center py-16 border rounded-lg bg-card mt-6">
-                        <p className="text-lg font-semibold">Aucune offre ne correspond à votre recherche.</p>
-                        <p className="text-muted-foreground mt-2">Essayez d'ajuster vos filtres ou revenez bientôt !</p>
-                    </div>
-                    )}
+                  )}
                 </main>
             </div>
         </div>

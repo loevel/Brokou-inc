@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ColumnDef, Row, Table } from "@tanstack/react-table";
@@ -33,34 +34,25 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { EditOfferForm } from "./edit-offer-form";
-import { useToast } from "@/hooks/use-toast";
+import { Switch } from "@/components/ui/switch";
+import { Checkbox } from "@/components/ui/checkbox";
 
 declare module '@tanstack/react-table' {
-  interface TableMeta<TData> {
-    onOfferUpdated: (updatedOffer: TData) => void;
-    onOfferDeleted: (offerId: string) => void;
+  interface TableMeta<TData extends JobOffer> {
+    onOfferUpdated: (id: string, offerData: Omit<JobOffer, 'id' | 'isActive'>) => Promise<JobOffer | null>;
+    onOfferDeleted: (offerId: string) => Promise<void>;
+    onToggleStatus: (offerId: string, currentStatus: boolean) => void;
+    pendingStatusChange: boolean;
   }
 }
 
 const ActionsCell = ({ row, table }: { row: Row<JobOffer>, table: Table<JobOffer> }) => {
   const offer = row.original;
-  const { toast } = useToast();
   const [isEditDialogOpen, setIsEditDialogOpen] = React.useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = React.useState(false);
 
-
-  const handleOfferUpdated = (updatedOffer: JobOffer) => {
-    table.options.meta?.onOfferUpdated(updatedOffer);
-    setIsEditDialogOpen(false);
-  };
-
   const handleOfferDeleted = () => {
     table.options.meta?.onOfferDeleted(offer.id);
-     toast({
-      title: "Offre supprimée !",
-      description: "L'offre a été supprimée avec succès.",
-      variant: 'destructive'
-    });
     setIsDeleteDialogOpen(false);
   }
   
@@ -74,7 +66,11 @@ const ActionsCell = ({ row, table }: { row: Row<JobOffer>, table: Table<JobOffer
             Mettez à jour les détails de l'offre ci-dessous.
           </DialogDescription>
         </DialogHeader>
-        <EditOfferForm offer={offer} onOfferUpdated={handleOfferUpdated} />
+        <EditOfferForm 
+            offer={offer} 
+            onOfferUpdated={table.options.meta!.onOfferUpdated}
+            onFormSubmitted={() => setIsEditDialogOpen(false)}
+        />
       </DialogContent>
     </Dialog>
 
@@ -116,6 +112,28 @@ const ActionsCell = ({ row, table }: { row: Row<JobOffer>, table: Table<JobOffer
 
 export const columns: ColumnDef<JobOffer>[] = [
   {
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
     accessorKey: "title",
     header: ({ column }) => {
       return (
@@ -144,6 +162,21 @@ export const columns: ColumnDef<JobOffer>[] = [
   {
     accessorKey: "validityDate",
     header: "Date de fin",
+  },
+  {
+    accessorKey: "isActive",
+    header: "Actif",
+    cell: ({ row, table }) => {
+      const offer = row.original;
+      return (
+        <Switch
+          checked={offer.isActive}
+          onCheckedChange={() => table.options.meta?.onToggleStatus(offer.id, offer.isActive)}
+          disabled={table.options.meta?.pendingStatusChange}
+          aria-label="Toggle offer status"
+        />
+      );
+    },
   },
   {
     id: "actions",

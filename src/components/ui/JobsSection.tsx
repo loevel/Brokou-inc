@@ -1,15 +1,27 @@
 
-
 "use client";
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { jobOffers } from "@/lib/data";
+import { getAllJobOffers } from "@/lib/job-offers.service";
 import { JobOfferCard } from "@/components/ui/JobOfferCard";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import type { JobOffer } from "@/lib/types";
 
 export function JobsSection() {
-    const featuredJobs = jobOffers.slice(0, 2);
+    const [featuredJobs, setFeaturedJobs] = useState<JobOffer[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchJobs() {
+            setLoading(true);
+            const allJobs = await getAllJobOffers({ activeOnly: true });
+            setFeaturedJobs(allJobs.slice(0, 2));
+            setLoading(false);
+        }
+        fetchJobs();
+    }, []);
 
     return (
         <section id="jobs-home" className="bg-secondary min-h-[95vh] flex flex-col justify-center">
@@ -24,9 +36,20 @@ export function JobsSection() {
                 </div>
 
                 <div className="max-w-4xl mx-auto space-y-4">
-                    {featuredJobs.map(offer => (
-                        <JobOfferCard key={offer.id} offer={offer} />
-                    ))}
+                    {loading ? (
+                        <div className="flex justify-center items-center h-48">
+                            <Loader2 className="h-8 w-8 animate-spin" />
+                        </div>
+                    ) : featuredJobs.length > 0 ? (
+                        featuredJobs.map(offer => (
+                            <JobOfferCard key={offer.id} offer={offer} />
+                        ))
+                    ) : (
+                         <div className="text-center py-16 border rounded-lg bg-card">
+                            <p className="text-lg font-semibold">Aucune offre d'emploi pour le moment.</p>
+                            <p className="text-muted-foreground mt-2">Revenez bientôt !</p>
+                        </div>
+                    )}
                 </div>
                 
                 <div className="text-center mt-12">

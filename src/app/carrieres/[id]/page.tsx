@@ -1,9 +1,9 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { jobOffers } from "@/lib/data";
+import { getJobOfferById, getAllJobOffers } from "@/lib/job-offers.service";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle, Calendar, Clock, MapPin, Briefcase, Target, ListChecks, Award, BriefcaseBusiness, Mail, AlertTriangle } from "lucide-react";
+import { ArrowLeft, CheckCircle, Calendar, Clock, MapPin, Briefcase, Target, ListChecks, Award, BriefcaseBusiness, Mail, AlertTriangle, Hourglass } from "lucide-react";
 import ReactMarkdown from 'react-markdown';
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -15,13 +15,14 @@ type JobOfferPageProps = {
 };
 
 export async function generateStaticParams() {
+    const jobOffers = await getAllJobOffers({ activeOnly: true });
     return jobOffers.map((offer) => ({
       id: offer.id,
     }));
 }
 
 export async function generateMetadata({ params }: JobOfferPageProps) {
-  const offer = jobOffers.find((o) => o.id === params.id);
+  const offer = await getJobOfferById(params.id);
   if (!offer) {
     return { title: "Offre non trouvée" };
   }
@@ -32,10 +33,10 @@ export async function generateMetadata({ params }: JobOfferPageProps) {
 }
 
 
-export default function JobOfferPage({ params }: JobOfferPageProps) {
-  const offer = jobOffers.find((o) => o.id === params.id);
+export default async function JobOfferPage({ params }: JobOfferPageProps) {
+  const offer = await getJobOfferById(params.id);
 
-  if (!offer) {
+  if (!offer || !offer.isActive) {
     notFound();
   }
 
@@ -44,7 +45,11 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
       { icon: Calendar, label: "Entrée en fonction:", value: offer.startDate },
       { icon: Clock, label: "Rémunération:", value: offer.remuneration },
       { icon: MapPin, label: "Lieu:", value: offer.location },
-  ]
+  ];
+  
+  if (offer.duration_months) {
+      detailItems.splice(2, 0, { icon: Hourglass, label: "Durée:", value: `${offer.duration_months} mois` });
+  }
 
   return (
     <div className="bg-secondary">
@@ -59,7 +64,7 @@ export default function JobOfferPage({ params }: JobOfferPageProps) {
                 </Button>
                 <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
                     <div>
-                        <Badge variant="secondary" className="mb-2">Offre d'emploi #{offer.id.toUpperCase()}</Badge>
+                        <Badge variant="secondary" className="mb-2">Référence #{offer.id}</Badge>
                         <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-primary">
                             {offer.title}
                         </h1>

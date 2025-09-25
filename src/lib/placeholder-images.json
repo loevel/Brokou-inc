@@ -33,13 +33,13 @@
     {
       "id": "service-dev",
       "description": "Image for software development service",
-      "imageUrl": "https://images.unsplash.com/photo-1742072593996-ebdc5d605a54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29kaW5nJTIwc2NyZWVufGVufDB8fHx8fDE3NTg2MTk3NjV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1742072593996-ebdc5d605a54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29kaW5nJTIwc2NyZWVufGVufDB8fHx8fDE3NTg2MTk3NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "coding screen"
     },
     {
       "id": "service-cloud",
       "description": "Image for cloud solutions service",
-      "imageUrl": "https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZXJ2ZXIlMjByb29tfGVufDB8fHx8fDE3NTg2ODgyNzh8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZXJ2ZXIlMjByb29tfGVufDB8fHx8fDE3NTg2ODgyNzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "server room"
     },
     {
@@ -75,7 +75,7 @@
     {
       "id": "service-iot",
       "description": "Connected devices on a shelf",
-      "imageUrl": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzbWFydCUyMGhvbWV8ZW58MHx8fHwxNzU4NzA2OTE0fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzbWFydCUyMGhvbWV8ZW58MHx8fHwxNzU4NzA2OTE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "smart home"
     },
     {
@@ -135,19 +135,19 @@
     {
       "id": "why-choose-us",
       "description": "Image for the 'Why Choose Us' section",
-      "imageUrl": "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTg3MDExMTd8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTg3MDExMTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "team collaboration"
     },
     {
       "id": "home-about-us",
       "description": "Image for the 'About Us' section on the homepage",
-      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8dGVjaG5vbG9naWV8ZW58MHx8fHwxNzU4NTk3MzExfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8dGVjaG5vbG9naWV8ZW58MHx8fHwxNzU4NTk3MzExfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "robot technology"
     },
     {
       "id": "about-us-header",
       "description": "Header image for the About Us page",
-      "imageUrl": "https://images.unsplash.com/photo-1525896544042-354764aa27e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwb2ZmaWNlfGVufDB8fHx8MTc1ODcwOTc4Mnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1525896544042-354764aa27e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwb2ZmaWNlfGVufDB8fHx8MTc1ODcwOTc4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern office"
     },
     {
@@ -159,19 +159,19 @@
     {
       "id": "careers-header",
       "description": "Header image for the Careers page",
-      "imageUrl": "https://images.unsplash.com/photo-1758520144417-e1c432042dec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxqb2IlMjBvcHBvcnR1bml0eXxlbnwwfHx8fDE3NTg2MjcyMDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1758520144417-e1c432042dec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxqb2IlMjBvcHBvcnR1bml0eXxlbnwwfHx8fDE3NTg2MjcyMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "job opportunity"
     },
     {
       "id": "services-header",
       "description": "Header image for the Services page",
-      "imageUrl": "https://images.unsplash.com/photo-1543286386-713bdd548da4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMGdyb3d0aHxlbnwwfHx8fDE3NTg3MDQ1NzB8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1543286386-713bdd548da4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMGdyb3d0aHxlbnwwfHx8fDE3NTg3MDQ1NzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "business growth"
     },
     {
       "id": "company-logo-large",
       "description": "A large version of the company logo on a building",
-      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21wYW55JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzU4NzI0Nzc5fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb21wYW55JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzU4NzI0Nzc5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "company building"
     },
     {
@@ -189,7 +189,7 @@
     {
       "id": "engagement-image",
       "description": "A team collaborating in a modern office",
-      "imageUrl": "https://images.unsplash.com/photo-1573164574511-73c773193279?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8YmxhY2slMjBnaXJscyUyMGluJTIwbWVldGluZ3N8ZW58MHx8fHwxNzU4NDIzNzU2fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1573164574511-73c773193279?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8YmxhY2slMjBnaXJscyUyMGluJTIwbWVldGluZ3N8ZW58MHx8fHwxNzU4NDIzNzU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "team meeting"
     },
     {
@@ -309,7 +309,7 @@
     {
       "id": "testimonial-avatar-3",
       "description": "Portrait of another smiling woman",
-      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTc1ODU0NzQ4OXww&ixlib-rb-4.1.0&q=80&w=200",
+      "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTc1ODU0NzQ4OXww&ixlib=rb-4.1.0&q=80&w=200",
       "imageHint": "woman portrait"
     },
     {
@@ -357,7 +357,7 @@
     {
       "id": "eco-landscape",
       "description": "Lush green landscape with a forest path",
-      "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bmF0dXJlfGVufDB8fHx8MTc1ODgxMTgzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bmF0dXJlfGVufDB8fHx8MTc1ODgxMTgzNXww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "green landscape"
     },
     {
@@ -387,7 +387,7 @@
     {
       "id": "eco-reusable",
       "description": "Reusable shopping bags",
-      "imageUrl": "https://images.unsplash.com/photo-1590611482833-2a5c5c1f5a9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZXVzYWJsZSUyMGJhZ3N8ZW58MHx8fHwxNzU5MDQyMDc1fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1646803101279-d1a2461a5eb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxN3x8cmV1c2FibGUlMjBzaG9wcGluZyUyMGJhZ3N8ZW58MHx8fHwxNzU4ODEyMDEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "reusable bags"
     },
     {
@@ -405,13 +405,13 @@
     {
       "id": "why-work-1",
       "description": "Portrait of a smiling man",
-      "imageUrl": "https://images.unsplash.com/photo-1758519290802-516e99b4688a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8Z2VzdGlvbm5haXJlJTIwYnVyZWF1JTIwbm9pcmV8ZW58MHx8fHwxNzU4NzMxMDc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1758519290802-516e99b4688a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8Z2VzdGlvbm5haXJlJTIwYnVyZWF1JTIwbm9pcmV8ZW58MHx8fHwxNzU4NzMxMDc0fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "man smiling"
     },
     {
       "id": "why-work-2",
       "description": "Portrait of a smiling woman",
-      "imageUrl": "https://images.unsplash.com/photo-1668606144076-8478f318a346?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmZW1tZSUyMGJsYWNoZSUyMGF1JTIwYnVyZWF1fGVufDB8fHx8MTc1ODczMTkwNnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1668606144076-8478f318a346?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmZW1tZSUyMGJsYWNoZSUyMGF1JTIwYnVyZWF1fGVufDB8fHx8MTc1ODczMTkwNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman smiling"
     },
     {

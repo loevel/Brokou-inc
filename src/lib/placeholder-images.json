@@ -3,79 +3,73 @@
     {
       "id": "hero-background",
       "description": "Abstract background for hero section",
-      "imageUrl": "https://images.unsplash.com/photo-1627704442358-61c8e05c7bf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YWJzdHJhY3QlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc1ODY5NjYwMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/hero-background.jpg",
       "imageHint": "abstract background"
     },
     {
       "id": "service-consulting",
       "description": "Image for strategic consulting service",
-      "imageUrl": "https://images.unsplash.com/photo-1616587656977-ac36a5a430bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzU4NjkwNzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-consulting.jpg",
       "imageHint": "business meeting"
     },
     {
       "id": "service-digital",
       "description": "Image for digital transformation service",
-      "imageUrl": "https://images.unsplash.com/photo-1720933017801-f9c93807cfc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkYXRhJTIwbmV0d29ya3xlbnwwfHx8fDE3NTg3MjEwNjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-digital.jpg",
       "imageHint": "data network"
     },
     {
       "id": "service-data",
       "description": "Image for data analysis service",
-      "imageUrl": "https://images.unsplash.com/photo-1701099153647-bf447f0a855a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkYXNoYm9hcmQlMjBjaGFydHxlbnwwfHx8fDE3NTg3MTgwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-data.jpg",
       "imageHint": "dashboard chart"
-    },
-    {
-      "id": "service-marketing",
-      "description": "Image for marketing service",
-      "imageUrl": "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYXJrZXRpbmclMjBzdHJhdGVneXxlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "marketing strategy"
-    },
+    },   
     {
       "id": "service-dev",
       "description": "Image for software development service",
-      "imageUrl": "https://images.unsplash.com/photo-1742072593996-ebdc5d605a54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29kaW5nJTIwc2NyZWVufGVufDB8fHx8fDE3NTg2MTk3NjV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-dev.jpg",
       "imageHint": "coding screen"
     },
     {
       "id": "service-cloud",
       "description": "Image for cloud solutions service",
-      "imageUrl": "https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzZXJ2ZXIlMjByb29tfGVufDB8fHx8fDE3NTg2ODgyNzh8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-cloud.jpg",
       "imageHint": "server room"
     },
     {
       "id": "service-projects",
       "description": "Image for project management service",
-      "imageUrl": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9qZWN0JTIwbWFuYWdlbWVudHxlbnwwfHx8fDE3NTg1ODA4ODR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-projects.jpg",
       "imageHint": "project management"
     },
     {
       "id": "service-risk",
       "description": "Image for risk management service",
-      "imageUrl": "https://images.unsplash.com/photo-1517984922331-8dbaa8ffa9c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyaXNxdWV8ZW58MHx8fHwxNzU4NzM0MjMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-risk.jpg",
       "imageHint": "risk assessment"
     },
     {
       "id": "service-security",
       "description": "Image for security management service",
-      "imageUrl": "https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjeWJlciUyMHNlY3VyaXR5fGVufDB8fHx8fDE3NTg1ODA4ODR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-security.jpg",
       "imageHint": "cyber security"
     },
     {
       "id": "service-fibre",
       "description": "Workers installing fiber optic cables",
-      "imageUrl": "https://images.unsplash.com/photo-1607723619497-98a79f01ba90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZmliZXIlMjBvcHRpY3xlbnwwfHx8fDE3NTg3MjQ3Nzl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-fibre.jpg",
       "imageHint": "fiber optic"
     },
     {
       "id": "service-telephonie",
       "description": "IP phone patch panel",
-      "imageUrl": "https://images.unsplash.com/photo-1691435828932-911a7801adfb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bmV0d29yayUyMGNhYmxlc3xlbnwwfHx8fDE3NTg2NDMwMzR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-telephonie.jpg",
       "imageHint": "network cables"
     },
     {
       "id": "service-iot",
       "description": "Connected devices on a shelf",
-      "imageUrl": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzbWFydCUyMGhvbWV8ZW58MHx8fHwxNzU4NzA2OTE0fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/service/service-iot.jpg",
       "imageHint": "smart home"
     },
     {
@@ -135,25 +129,25 @@
     {
       "id": "why-choose-us",
       "description": "Image for the 'Why Choose Us' section",
-      "imageUrl": "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTg3MDExMTd8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/why-choose-us.jpg",
       "imageHint": "team collaboration"
     },
     {
       "id": "home-about-us",
       "description": "Image for the 'About Us' section on the homepage",
-      "imageUrl": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8dGVjaG5vbG9naWV8ZW58MHx8fHwxNzU4NTk3MzExfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/home-about-us",
       "imageHint": "robot technology"
     },
     {
       "id": "about-us-header",
       "description": "Header image for the About Us page",
-      "imageUrl": "https://images.unsplash.com/photo-1525896544042-354764aa27e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwb2ZmaWNlfGVufDB8fHx8fDE3NTg3MDk3ODJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/about-us-header.jpg",
       "imageHint": "modern office"
     },
     {
       "id": "contact-header",
       "description": "Header image for the Contact page",
-      "imageUrl": "https://images.unsplash.com/photo-1756903646251-5f9d4154fe80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21tdW5pY2F0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3NTg3MjQ3ODB8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/contact-header.jpg",
       "imageHint": "communication technology"
     },
     {
@@ -345,55 +339,55 @@
     {
       "id": "privacy-header",
       "description": "Header for the privacy policy page",
-      "imageUrl": "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdyYWRpZW50fGVufDB8fHx8fDE3NTg3MDk2OTB8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/privacy-header.jpg",
       "imageHint": "abstract gradient"
     },
     {
       "id": "eco-windmills",
       "description": "Windmills at sunset",
-      "imageUrl": "https://images.unsplash.com/photo-1625947992140-5cdcabf29501?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8d2luZG1pbGxzJTIwYXQlMjBzdW5zZXR8ZW58MHx8fHwxNzU4NzI3ODc2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/eco/eco-windmills.jpg",
       "imageHint": "windmills sunset"
     },
     {
       "id": "eco-landscape",
       "description": "Lush green landscape with a forest path",
-      "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8bmF0dXJlfGVufDB8fHx8MTc1ODgxMTgzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/eco/eco-landscape.jpg",
       "imageHint": "green landscape"
     },
     {
       "id": "eco-energy",
       "description": "Vintage lightbulb glowing",
-      "imageUrl": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsaWdodCUyMGJ1bGJ8ZW58MHx8fHwxNzU5MDQyMDc1fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/eco/eco-energy.jpg",
       "imageHint": "light bulb"
     },
     {
       "id": "eco-waste",
       "description": "Colorful recycling bins",
-      "imageUrl": "https://images.unsplash.com/photo-1719399924262-ebb6f2a8de80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMnx8cmVjeWNsYWdlc3xlbnwwfHx8fDE3NTg3MjgyMTR8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/eco/eco-waste.jpg",
       "imageHint": "recycling bins"
     },
     {
       "id": "eco-water",
       "description": "A single drop of water",
-      "imageUrl": "https://images.unsplash.com/photo-1593410007149-d56f28d22493?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyb2JpbmV0JTIwZCUyN2VhdXxlbnwwfHx8fDE3NTg4MTIzNzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/eco/eco-water.jpg",
       "imageHint": "water drop"
     },
     {
       "id": "eco-furniture",
       "description": "A modern wooden chair",
-      "imageUrl": "https://images.unsplash.com/photo-1592078615290-033ee584e267?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBjaGFpcnxlbnwwfHx8fDE3NTkwNDIwNzV8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/eco/eco-furniture.jpg",
       "imageHint": "wooden chair"
     },
     {
       "id": "eco-reusable",
       "description": "Reusable shopping bags",
-      "imageUrl": "https://images.unsplash.com/photo-1646803101279-d1a2461a5eb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxN3x8cmV1c2FibGUlMjBzaG9wcGluZyUyMGJhZ3N8ZW58MHx8fHwxNzU4ODEyMDEwfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/eco/eco-reusable.jpg",
       "imageHint": "reusable bags"
     },
     {
       "id": "eco-solutions",
       "description": "A person holding a lightbulb with a plant inside",
-      "imageUrl": "https://images.unsplash.com/photo-1648384428777-1255f7ac1519?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxM3x8JTIwaG9sZGluZyUyMHdpdGglMjBhJTIwcGxhbnQlMjBpbnNpZGUlMjB0aGUlMjBwYXJ0JTIwb2YlMjB0YWJsZSUyMGluJTIwb2ZmaWNlJTIwfGVufDB8fHx8MTc1ODgxMjgxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/images/eco/eco-solutions.jpg",
       "imageHint": "sustainable solution"
     },
     {

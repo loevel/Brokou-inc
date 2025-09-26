@@ -77,6 +77,7 @@ export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
                                 alt={serviceImage.description} 
                                 data-ai-hint={serviceImage.imageHint}
                                 fill
+                                
                                 className="object-cover"
                             />
                         </div>

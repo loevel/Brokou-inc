@@ -128,16 +128,6 @@ export const services: Service[] = [
     category: "Gouvernance, audit et sécurité des TI"
   },
   {
-    id: "marketing-digital",
-    name: "Marketing Digital",
-    iconName: "Megaphone",
-    icon: Megaphone,
-    description_short: "Augmentez votre visibilité et engagez votre audience cible.",
-    description_long: "Nos stratégies de marketing digital sont conçues pour accroître votre présence en ligne et générer des leads qualifiés. Nous couvrons le SEO, le marketing de contenu, les médias sociaux et la publicité payante pour créer une stratégie intégrée qui atteint votre public là où il se trouve.",
-    imageId: "service-marketing",
-    category: "Solutions d'affaires"
-  },
-  {
     id: "solutions-cloud",
     name: "Solutions Cloud",
     iconName: "Cloud",

@@ -73,7 +73,7 @@ export default function ServicesPage() {
                     src={headerImage.imageUrl} 
                     alt={headerImage.description}
                     data-ai-hint={headerImage.imageHint}
-                    fill 
+                    fill
                     className="object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50"></div>

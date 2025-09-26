@@ -62,7 +62,7 @@ const IdeaCard = ({ idea }: { idea: typeof ideas[0] }) => {
                         alt={image.description}
                         data-ai-hint={image.imageHint}
                         fill
-                        className="object-cover"
+                        className="object-fill"
                     />
                 </div>
             )}

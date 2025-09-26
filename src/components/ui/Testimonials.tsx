@@ -64,11 +64,11 @@ export function Testimonials({ data }: TestimonialsProps) {
     
   return (
     <section className="bg-secondary min-h-[95vh] flex flex-col justify-center relative overflow-hidden">
-       <DecorativeAvatar id="testimonial-avatar-4" className="w-16 h-16 top-1/4 left-[5%]" delay={0} />
+      {/*<DecorativeAvatar id="testimonial-avatar-4" className="w-16 h-16 top-1/4 left-[5%]" delay={0} />
        <DecorativeAvatar id="testimonial-avatar-5" className="w-12 h-12 top-[15%] right-[8%]" delay={1} />
        <DecorativeAvatar id="testimonial-avatar-6" className="w-20 h-20 bottom-[10%] left-[15%]" delay={0.5} />
        <DecorativeAvatar id="testimonial-avatar-7" className="w-10 h-10 bottom-[20%] right-[12%]" delay={1.5} />
-
+      */}
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto">

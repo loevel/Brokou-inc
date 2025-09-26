@@ -52,7 +52,7 @@ export function Footer() {
                   <Image src="/logo.png" alt="Brokou Inc. Logo" width={140} height={40} />
                 </Link>
                 <p className="text-zinc-400 max-w-xs">
-                  Solutions innovantes pour un monde en pleine transformation numérique.
+                  Solutions d'affaires durables et innovantes pour un monde en pleine transformation numérique.
                 </p>
               </div>
 

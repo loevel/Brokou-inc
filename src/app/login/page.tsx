@@ -1,15 +1,23 @@
+
 "use client";
 
 import { useMsal } from "@azure/msal-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { loginRequest } from "@/auth/msal";
+import { useAuth } from "@/hooks/use-auth";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const { instance } = useMsal();
+  const { login } = useAuth();
+  const router = useRouter();
 
   const handleLogin = () => {
-    instance.loginRedirect(loginRequest).catch((e) => {
+    instance.loginPopup(loginRequest).then(response => {
+        login(response.accessToken);
+        router.push("/admin/dashboard");
+    }).catch((e) => {
       console.error(e);
     });
   };

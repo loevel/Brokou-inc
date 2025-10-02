@@ -1,34 +1,57 @@
+
 "use client";
 
 import { useEffect } from "react";
-import { useMsal } from "@azure/msal-react";
+import { useMsal, useIsAuthenticated } from "@azure/msal-react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/use-auth";
+import { loginRequest } from "@/auth/msal";
+import { Loader2 } from "lucide-react";
 
 export default function AuthPage() {
   const { instance, accounts } = useMsal();
   const router = useRouter();
   const { login } = useAuth();
+  const isAuthenticated = useIsAuthenticated();
 
   useEffect(() => {
-    if (accounts.length > 0) {
+    if (isAuthenticated && accounts.length > 0) {
       const account = accounts[0];
       instance
         .acquireTokenSilent({
-          scopes: ["User.Read"],
+          scopes: loginRequest.scopes,
           account: account,
         })
         .then((response) => {
           login(response.accessToken);
-          router.push("/admin/dashboard");
+          // Redirect to the originally intended page or dashboard
+          const redirectUrl = sessionStorage.getItem("postLoginRedirect") || "/admin/dashboard";
+          sessionStorage.removeItem("postLoginRedirect");
+          router.replace(redirectUrl);
+        }).catch((error) => {
+            console.error("Silent token acquisition failed:", error);
+            // Fallback to interactive method if silent fails
+            instance.acquireTokenPopup(loginRequest).then(response => {
+                login(response.accessToken);
+                const redirectUrl = sessionStorage.getItem("postLoginRedirect") || "/admin/dashboard";
+                sessionStorage.removeItem("postLoginRedirect");
+                router.replace(redirectUrl);
+            }).catch(popupError => {
+                console.error("Popup token acquisition failed:", popupError);
+                router.replace("/login");
+            })
         });
-    } else {
-      // Handle the case where there is no account
-      // This might happen if the user navigates to this page directly
-      // or if the authentication flow is interrupted.
-      router.push("/login");
+    } else if (!isAuthenticated) {
+      router.replace("/login");
     }
-  }, [accounts, instance, login, router]);
+  }, [accounts, instance, login, router, isAuthenticated]);
 
-  return <div>Authenticating...</div>;
+  return (
+    <div className="flex h-screen w-full items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+            <Loader2 className="h-8 w-8 animate-spin" />
+            <p>Authentification en cours...</p>
+        </div>
+    </div>
+  );
 }

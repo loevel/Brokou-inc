@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "BROKOU INC",
@@ -19,10 +20,12 @@ export default function RootLayout({
       <head>
       </head>
       <body className="font-body antialiased flex flex-col min-h-screen bg-background">
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <Toaster />
+        <Providers>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );

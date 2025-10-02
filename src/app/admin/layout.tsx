@@ -1,6 +1,7 @@
+
 "use client";
 
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { useAuth } from "@/hooks/use-auth";
 import { useRouter } from "next/navigation";
 import {
@@ -39,22 +40,8 @@ const AdminNavLink = ({ href, children, icon: Icon }: { href: string; children: 
 };
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
-  const { isAuthenticated, isLoading, logout } = useAuth();
+  const { logout } = useAuth();
   const router = useRouter();
-
-  useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
-      router.replace("/login");
-    }
-  }, [isLoading, isAuthenticated, router]);
-
-  if (isLoading || !isAuthenticated) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin" />
-      </div>
-    );
-  }
 
   return (
     <SidebarProvider>
